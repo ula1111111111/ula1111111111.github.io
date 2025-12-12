@@ -129,7 +129,7 @@ Here we present some initial explorations of the datasets used in this project. 
 
 <h2 id="hierarchizing">Hierarchizing Market Participants</h2>
 
-{% include_relative hierarchizing.md %}
+<!-- {% include_relative hierarchizing.md %} -->
 
 ---
 
