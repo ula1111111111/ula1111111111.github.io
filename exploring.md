@@ -1,7 +1,0 @@
----
-layout: default
-title: "Exploring The Data"
----
-
-
-Here we present some initial explorations of the datasets used in this project. The goal is to understand the structure and characteristics of the data before diving into deeper analysis. We will look at summary statistics, visualizations, and preliminary findings that can guide our subsequent modeling efforts. Just like Amine did for the milestone2. TASK#2 to copy all the results form exploration in milestone2 and add storytelling.
