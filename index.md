@@ -1,6 +1,8 @@
 ---
 layout: home
-title: ADA Project THEOUTLIERS
+title: ""
+subtitle: ""
+
 ---
 <div class="hero-full">
   <div class="hero-full-inner">
