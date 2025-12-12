@@ -59,3 +59,48 @@
   font-size: 0.75rem;
   color: #666;
 }
+.hero-full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 3.5rem 1rem;
+  background: radial-gradient(circle at 20% 20%, #ffe5ec 0%, #f7f7f9 55%, #ffffff 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.hero-full-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-full-text h1 {
+  margin: 0 0 0.6rem 0;
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+.hero-full-text p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.hero-full-graphic svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.08));
+}
+
+@media (max-width: 900px) {
+  .hero-full-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-full-text h1 {
+    font-size: 2rem;
+  }
+}

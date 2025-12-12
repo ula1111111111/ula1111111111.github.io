@@ -2,57 +2,55 @@
 layout: home
 title: ADA Project THEOUTLIERS
 ---
-<div class="hero-banner">
-  <div class="hero-text">
-    <h1>The Pulse of the Market</h1>
-    <p class="hero-subtitle">
-      ADA 2025 project – exploring who <b>leads</b> and who <b>follows</b> in the stock market.
-    </p>
-    <ul class="hero-tags">
-      <li>Granger causality</li>
-      <li>Cross-correlation</li>
-      <li>Sector networks</li>
-    </ul>
-  </div>
+<div class="hero-full">
+  <div class="hero-full-inner">
+    <div class="hero-full-text">
+      <h1>The Pulse of the Market: Who Sets the Rhythm?</h1>
+      <p>Detecting leader–follower dynamics in stock returns using cross-correlation and Granger causality.</p>
+    </div>
 
-  <div class="hero-graphic">
-    <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-      <!-- grid -->
-      <line x1="10" y1="100" x2="210" y2="100" stroke="#f8c9da" stroke-width="1"/>
-      <line x1="10" y1="60"  x2="210" y2="60"  stroke="#f8c9da" stroke-width="1"/>
-      <line x1="10" y1="20"  x2="210" y2="20"  stroke="#f8c9da" stroke-width="1"/>
+    <div class="hero-full-graphic" aria-label="Leader-follower lag illustration">
+      <svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg" role="img">
+        <!-- faint guide lines -->
+        <g opacity="0.25">
+          <line x1="20" y1="150" x2="500" y2="150" stroke="#ff4d88" stroke-width="2"/>
+          <line x1="20" y1="105" x2="500" y2="105" stroke="#ff4d88" stroke-width="2"/>
+          <line x1="20" y1="60"  x2="500" y2="60"  stroke="#ff4d88" stroke-width="2"/>
+        </g>
 
-      <!-- “leader” series -->
-      <polyline
-        points="10,90 50,70 90,80 130,40 170,55 210,25"
-        fill="none"
-        stroke="#ff4d88"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+        <!-- leader (pink) -->
+        <polyline
+          points="25,135 95,118 165,128 235,85 305,98 375,62 445,78 495,40"
+          fill="none"
+          stroke="#ff4d88"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
 
-      <!-- “follower” series (lagged) -->
-      <polyline
-        points="10,100 50,90 90,72 130,82 170,48 210,60"
-        fill="none"
-        stroke="#8ecae6"
-        stroke-width="3"
-        stroke-dasharray="4 4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+        <!-- follower (blue dashed, lagged) -->
+        <polyline
+          points="25,150 95,142 165,120 235,128 305,92 375,104 445,70 495,90"
+          fill="none"
+          stroke="#8ecae6"
+          stroke-width="8"
+          stroke-dasharray="10 10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
 
-      <!-- arrows to suggest leadership -->
-      <defs>
-        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-          <polygon points="0 0, 6 3, 0 6" fill="#ff4d88" />
-        </marker>
-      </defs>
-      <line x1="80" y1="78" x2="110" y2="68" stroke="#ff4d88" stroke-width="2" marker-end="url(#arrowhead)" />
-      <line x1="150" y1="52" x2="180" y2="42" stroke="#ff4d88" stroke-width="2" marker-end="url(#arrowhead)" />
-    </svg>
-    <p class="hero-caption">Pink line: leader · Blue dashed: follower (lagged)</p>
+        <!-- arrows indicating "leads" -->
+        <defs>
+          <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <polygon points="0 0, 12 6, 0 12" fill="#ff4d88"></polygon>
+          </marker>
+        </defs>
+
+        <line x1="210" y1="120" x2="255" y2="105" stroke="#ff4d88" stroke-width="6" marker-end="url(#arrowhead)"/>
+        <line x1="350" y1="92"  x2="395" y2="77"  stroke="#ff4d88" stroke-width="6" marker-end="url(#arrowhead)"/>
+        <line x1="430" y1="72"  x2="470" y2="58"  stroke="#ff4d88" stroke-width="6" marker-end="url(#arrowhead)"/>
+      </svg>
+    </div>
   </div>
 </div>
 
