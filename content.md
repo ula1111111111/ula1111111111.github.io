@@ -1,10 +1,3 @@
----
-layout: default
-title: "The Pulse of the Market: Who Sets the Rhythm?"
----
-
-
----
 
 
 
