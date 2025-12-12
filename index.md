@@ -2,6 +2,59 @@
 layout: home
 title: ADA Project THEOUTLIERS
 ---
+<div class="hero-banner">
+  <div class="hero-text">
+    <h1>The Pulse of the Market</h1>
+    <p class="hero-subtitle">
+      ADA 2025 project – exploring who <b>leads</b> and who <b>follows</b> in the stock market.
+    </p>
+    <ul class="hero-tags">
+      <li>Granger causality</li>
+      <li>Cross-correlation</li>
+      <li>Sector networks</li>
+    </ul>
+  </div>
+
+  <div class="hero-graphic">
+    <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- grid -->
+      <line x1="10" y1="100" x2="210" y2="100" stroke="#f8c9da" stroke-width="1"/>
+      <line x1="10" y1="60"  x2="210" y2="60"  stroke="#f8c9da" stroke-width="1"/>
+      <line x1="10" y1="20"  x2="210" y2="20"  stroke="#f8c9da" stroke-width="1"/>
+
+      <!-- “leader” series -->
+      <polyline
+        points="10,90 50,70 90,80 130,40 170,55 210,25"
+        fill="none"
+        stroke="#ff4d88"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- “follower” series (lagged) -->
+      <polyline
+        points="10,100 50,90 90,72 130,82 170,48 210,60"
+        fill="none"
+        stroke="#8ecae6"
+        stroke-width="3"
+        stroke-dasharray="4 4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- arrows to suggest leadership -->
+      <defs>
+        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <polygon points="0 0, 6 3, 0 6" fill="#ff4d88" />
+        </marker>
+      </defs>
+      <line x1="80" y1="78" x2="110" y2="68" stroke="#ff4d88" stroke-width="2" marker-end="url(#arrowhead)" />
+      <line x1="150" y1="52" x2="180" y2="42" stroke="#ff4d88" stroke-width="2" marker-end="url(#arrowhead)" />
+    </svg>
+    <p class="hero-caption">Pink line: leader · Blue dashed: follower (lagged)</p>
+  </div>
+</div>
 
 <h2 id="content">The Pulse of the Market: Who Sets the Rhythm?</h2>
 
