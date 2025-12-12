@@ -20,11 +20,16 @@ author: Some Person
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  "The Pulse of the Market: Who Sets the Rhythm?": "/#content"
+  "Exploring The Market": "/#exploring"
+  "Hierarchizing Market Participants": "/#hierarchizing"
+  "Analysis of Stock Leadership": "/#analysis"
+  "ETFs vs Equal Weighted Portfolios": "/#etfsvsequallyweighted"
+  "Example": "/#example"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Data: "https://github.com/epfl-dlab/YouNiverse/"
+    - Repository: "https://github.com/epfl-ada/ada-2024-project-ooohfada/"
+
 
 ################
 # --- Logo --- #
