@@ -90,6 +90,13 @@ We calculated and compared:
 
 ![Health Care Analysis](/assets/img/sector_health_care.png)
 
+<iframe 
+    src="https://visualize.graphy.app/view/e9449b98-367f-4923-b374-8b9d10814cee" 
+    width="100%" 
+    height="600" 
+    style="border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+    allow="fullscreen">
+</iframe>
 **Performance Highlights:**
 - **Equally-Weighted Return:** 15.99% annually
 - **ETF Return:** 9.95% annually
@@ -303,4 +310,5 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
