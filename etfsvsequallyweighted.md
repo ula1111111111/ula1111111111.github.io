@@ -60,6 +60,13 @@ We calculated and compared:
 ## Executive Summary
 
 ![Summary Dashboard](/assets/img/sector_summary_dashboard.png)
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/26797913">
+  <script src="https://public.flourish.studio/resources/embed.js"></script>
+  <noscript>
+    <img src="https://public.flourish.studio/visualisation/26797913/thumbnail" width="100%" alt="chart visualization" />
+  </noscript>
+</div>
 *Comprehensive overview of all sector comparisons*
 
 ### Key Findings
@@ -296,3 +303,4 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
