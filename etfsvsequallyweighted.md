@@ -337,22 +337,6 @@ The results challenge the assumption that market leaders (value-weighted) always
 
 ---
 
-## Limitations & Considerations
-
-### Survivorship Bias
-⚠️ **Important Note:** This analysis includes only companies that survived until 2020. Companies that were delisted, went bankrupt, or merged before 2020 are excluded. This may bias results toward successful companies, potentially inflating equally-weighted portfolio returns.
-
-### Data Quality
-- Daily returns were clipped at ±50% to prevent data errors from skewing results
-- Minimum 2 years of data required for inclusion
-- Some sectors may have limited data availability in earlier periods
-
-### Market Conditions
-- Analysis period (2005-2020) includes multiple market cycles
-- Results may vary in different market environments
-- Sector-specific factors (regulations, disruptions) affect outcomes
-
----
 
 ## Conclusion
 
@@ -378,39 +362,8 @@ For investors and portfolio managers:
 
 ---
 
-## Visualizations
 
-All plots and analyses are available in the repository:
 
-- **Summary Dashboard:** Overview of all sector comparisons
-- **Individual Sector Plots:** Detailed analysis for each sector
-- **Time Period Analysis:** Performance across different market periods
-- **Rolling Window Analysis:** Dynamic relationship over time
-
----
-
-## Technical Details
-
-**Analysis Tools:**
-- Python (Pandas, NumPy, Matplotlib, Seaborn)
-- Custom portfolio construction algorithms
-- Statistical performance metrics calculation
-
-**Data Sources:**
-- NASDAQ company listings
-- Historical stock price data (2005-2020)
-- Sector-specific ETF data
-
-**Code Repository:**
-All analysis code and scripts are available in the project repository for reproducibility and further research.
-
----
-
-*This analysis provides insights into portfolio construction strategies and market dynamics. Past performance does not guarantee future results. Always consult with financial professionals before making investment decisions.*
-
----
-
-**Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
 
 
 
