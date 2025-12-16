@@ -175,20 +175,7 @@ The chart highlights a critical transition period that defines the modern NASDAQ
 **Conclusion:** The dominance of the Equally-Weighted strategy in the total 15-year return is largely accumulated before 2015. The recent trend points toward a market where size is the primary factor for superior returns.
 
 
-## Executive Summary
 
-
-
-
-![Summary Dashboard](/assets/img/sector_summary_dashboard.png)
-
-<div class="flourish-embed flourish-chart" data-src="visualisation/26797913">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-  <noscript>
-    <img src="https://public.flourish.studio/visualisation/26797913/thumbnail" width="100%" alt="chart visualization" />
-  </noscript>
-</div>
-*Comprehensive overview of all sector comparisons*
 
 ### Key Findings
 
@@ -211,13 +198,6 @@ The chart highlights a critical transition period that defines the modern NASDAQ
 
 ![Health Care Analysis](/assets/img/sector_health_care.png)
 
-<iframe 
-    src="https://visualize.graphy.app/view/e9449b98-367f-4923-b374-8b9d10814cee" 
-    width="100%" 
-    height="600" 
-    style="border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
-    allow="fullscreen">
-</iframe>
 **Performance Highlights:**
 - **Equally-Weighted Return:** 15.99% annually
 - **ETF Return:** 9.95% annually
