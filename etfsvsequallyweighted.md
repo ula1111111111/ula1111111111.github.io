@@ -153,6 +153,28 @@ function updateGlobalAnalysis(periodKey) {
   textContainer.innerHTML = `<strong>${data.title}</strong><br>${data.text}`;
 }
 </script>
+
+### Rolling Window Analysis: The 2015 Regime Shift
+
+To understand *when* market dynamics changed, we analyzed performance over rolling 2-year windows. This reveals a distinct structural shift in the middle of the decade.
+
+![Rolling Window Analysis](/assets/img/rolling_window_analysis.png)
+*Rolling 2-year returns comparison. Green areas indicate periods where the Equally-Weighted portfolio (Followers) outperformed.*
+
+**The "Pivot Point" (2014-2016):**
+The chart highlights a critical transition period that defines the modern NASDAQ market structure:
+
+1.  **2009–2014 (The "Breadth" Era):**
+    * **Market Dynamic:** Post-crisis recovery was broad-based. Small and mid-cap companies ("Followers") grew faster than established giants.
+    * **Result:** The Equally-Weighted portfolio consistently outperformed the ETF. This was a "stock picker's market" where the average stock performed exceptionally well.
+
+2.  **2015–2020 (The "Concentration" Era):**
+    * **Market Dynamic:** A clear regime shift occurred around 2015. Investors flocked to "Safe Haven" mega-caps. This era saw the consolidation of the **GAFAM** (Google, Apple, Facebook, Amazon, Microsoft) dominance.
+    * **Result:** The standard ETF began to outperform significantly. While the index reached new highs, the "average" stock lagged behind. The market became "top-heavy," driven by a handful of leaders rather than broad economic participation.
+
+**Conclusion:** The dominance of the Equally-Weighted strategy in the total 15-year return is largely accumulated before 2015. The recent trend points toward a market where size is the primary factor for superior returns.
+
+
 ## Executive Summary
 
 
@@ -409,6 +431,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
