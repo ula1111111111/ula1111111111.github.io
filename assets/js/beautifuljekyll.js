@@ -140,3 +140,37 @@ let BeautifulJekyllJS = {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+
+// Smooth scroll for in-page anchor links (navbar shortcuts)
+document.addEventListener('DOMContentLoaded', function() {
+  // delegate click on links inside the navbar that point to anchors
+  $(document).on('click', '.navbar a.nav-link, .navbar .dropdown-item, .navbar-brand', function(e) {
+    var href = $(this).attr('href');
+    if (!href) return;
+    // only handle same-page hashes
+    if (href.charAt(0) === '#') {
+      var target = $(href);
+      if (target.length) {
+        e.preventDefault();
+        var offset = target.offset().top;
+        // account for fixed navbar height
+        var navHeight = $('.navbar').outerHeight() || 0;
+        $('html, body').animate({ scrollTop: offset - navHeight - 10 }, 600);
+      }
+    } else if (href.indexOf('#') > -1) {
+      // link to same page with path + hash
+      var parts = href.split('#');
+      var hash = '#' + parts[1];
+      if (location.pathname.replace(/\/$/, '') === ($(this).prop('pathname') || '').replace(/\/$/, '') 
+          && location.hostname === ($(this).prop('hostname') || location.hostname)) {
+        var target = $(hash);
+        if (target.length) {
+          e.preventDefault();
+          var offset = target.offset().top;
+          var navHeight = $('.navbar').outerHeight() || 0;
+          $('html, body').animate({ scrollTop: offset - navHeight - 10 }, 600);
+        }
+      }
+    }
+  });
+});
