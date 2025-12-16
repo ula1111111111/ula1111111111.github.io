@@ -100,10 +100,10 @@ Use the dropdown menu below to explore how this relationship changes over differ
 
 <div style="margin-bottom: 15px;">
   <label for="timePeriodSelect" style="font-weight: bold; margin-right: 10px;">Select Time Period:</label>
-  <select id="timePeriodSelect" onchange="updateGlobalGraph(this.value)" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;">
-    <option value="https://visualize.graphy.app/view/4c192612-84b8-45c4-ac51-93d98b1ce3ef">2005 - 2020 (Full Period)</option>
-    <option value="https://visualize.graphy.app/view/b51fa31b-4f14-41a6-bee0-4c7ef1f6bb21">2010 - 2020 (Post-Crisis)</option>
-    <option value="https://visualize.graphy.app/view/ed9b5f9b-1825-4dce-af2b-71612823dd62">2015 - 2020 (Recent Bull Market)</option>
+  <select id="timePeriodSelect" onchange="updateGlobalAnalysis(this.value)" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;">
+    <option value="full">2005 - 2020 (Full Period)</option>
+    <option value="post_crisis">2010 - 2020 (Post-Crisis)</option>
+    <option value="recent">2015 - 2020 (Recent Bull Market)</option>
   </select>
 </div>
 
@@ -116,16 +116,43 @@ Use the dropdown menu below to explore how this relationship changes over differ
     allow="fullscreen">
 </iframe>
 
+<div id="analysisText" style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+  <strong>Key Observation (2005-2020):</strong><br>
+  Over this long 15-year period, the equally-weighted portfolio shows solid performance. However, it is crucial to note that <strong>due to the length of this period, there is a possible influence of Survivorship Bias</strong>. Companies that went bankrupt before 2020 are excluded from the data, which may artificially inflate the apparent performance of small-cap stocks in the EW portfolio.
+</div>
+
 <script>
-function updateGlobalGraph(url) {
-  document.getElementById('globalGraphFrame').src = url;
+// Data Configuration (URLs and Texts)
+const analysisData = {
+  "full": {
+    url: "https://visualize.graphy.app/view/4c192612-84b8-45c4-ac51-93d98b1ce3ef",
+    title: "Key Observation (2005-2020):",
+    text: "Over this long 15-year period, the equally-weighted portfolio shows solid performance. However, it is crucial to note that <strong>due to the length of this period, there is a possible influence of Survivorship Bias</strong>. Companies that went bankrupt before 2020 are excluded from the data, which may artificially inflate the apparent performance of small-cap stocks in the EW portfolio."
+  },
+  "post_crisis": {
+    url: "https://visualize.graphy.app/view/b51fa31b-4f14-41a6-bee0-4c7ef1f6bb21",
+    title: "Key Observation (2010-2020):",
+    text: "This decade shows two faces. The beginning (2010-2014) is marked by an outperformance of the real economy (EW), where small companies rebound stronger after the crisis. However, the gap narrows towards the end of the decade as investors take refuge in safe havens (Large Caps), illustrating a market beginning to concentrate."
+  },
+  "recent": {
+    url: "https://visualize.graphy.app/view/ed9b5f9b-1825-4dce-af2b-71612823dd62",
+    title: "Key Observation (2015-2020):",
+    text: "This is the period of the 'Leaders' revenge. The ETF (ONEQ) significantly outperforms because the market rally is driven almost exclusively by Tech giants (GAFAM). The equally-weighted portfolio reveals an underlying weakness here: the majority of NASDAQ stocks actually underperformed the weighted index during this phase of extreme concentration."
+  }
+};
+
+function updateGlobalAnalysis(periodKey) {
+  // Retrieve corresponding data
+  const data = analysisData[periodKey];
+  
+  // Update Iframe
+  document.getElementById('globalGraphFrame').src = data.url;
+  
+  // Update Text
+  const textContainer = document.getElementById('analysisText');
+  textContainer.innerHTML = `<strong>${data.title}</strong><br>${data.text}`;
 }
 </script>
-
-**Key Observations:**
-* **2005-2020:** [Insérez ici votre analyse pour la période complète]
-* **2010-2020:** [Insérez ici votre analyse post-crise]
-* **2015-2020:** [Insérez ici votre analyse récente]
 
 ## Executive Summary
 
@@ -383,6 +410,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
