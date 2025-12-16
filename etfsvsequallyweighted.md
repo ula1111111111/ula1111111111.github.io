@@ -12,49 +12,78 @@ gh-badge: [star, fork]
 
 ## Introduction
 
-In the world of portfolio management, two fundamental approaches dominate: **value-weighted** (as represented by ETFs) and **equally-weighted** portfolios. This analysis dives deep into comparing these strategies across four major NASDAQ sectors to understand which approach delivers superior returns and why.
+This analysis explores the long-term performance dynamics between two distinct investment approaches within the NASDAQ market: **Value-Weighted (ETFs)** and **Equally-Weighted Portfolios**.
 
-**Key Question:** Do market leaders (value-weighted ETFs) outperform the average market participant (equally-weighted portfolios), or does diversification through equal weighting provide an edge?
+Beyond a simple performance comparison, this study serves as a proxy for understanding market structure:
+* **Market Leaders (ETFs):** Value-weighted indices give more importance to large firms, representing the dominance of market giants.
+* **Market Followers (Equally-Weighted):** By treating every company the same regardless of size, these portfolios capture the collective behavior of the broader market, including small and mid-sized firms.
 
+We apply this comparative framework at two levels:
+1.  **Global Analysis:** Comparing a general value-weighted benchmark against a comprehensive **Equally-Weighted portfolio** of all eligible NASDAQ stocks to assess overall market drivers.
+2.  **Sector Analysis:** Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.
+
+**Key Question:** Is market performance primarily driven by the concentrated power of a few "Leaders", or does the diversified strength of the "Followers" provide a superior edge?
 ---
 
 ## Methodology
 
-### Data & Time Period
-- **Analysis Period:** 2005-2020 (15 years)
-- **Dataset:** NASDAQ stocks with ≥2 years of historical data
-- **Total Stocks Analyzed:** 2,074 companies
-- **Sectors Analyzed:** 4 major sectors with sector-specific ETF benchmarks
+### 1. Conceptual Framework: Leaders vs. Followers
+This analysis employs a comparative method to assess market dynamics:
+* **Value-Weighted (ETFs):** Represents "Market Leaders." Weights are proportional to market capitalization, meaning performance is heavily driven by large-cap firms.
+* **Equally-Weighted (Portfolios):** Represents "Market Followers" and the broader economy. Every company has the same weight ($1/n$), regardless of size.
 
-### Sector-ETF Mapping
+**Interpretation Logic:**
+* If **ETF > Equally-Weighted**: Sector performance is driven by large-cap concentration (Leaders).
+* If **Equally-Weighted > ETF**: Returns are driven by broader participation of small and mid-sized firms (Followers).
 
-| Sector | ETF Benchmark | Number of Stocks | ETF Description |
-|--------|---------------|------------------|-----------------|
-| **Health Care** | IBB | 564 | iShares NASDAQ Biotechnology ETF |
-| **Finance** | FTXO | 484 | First Trust NASDAQ Bank ETF |
-| **Technology** | QTEC | 377 | First Trust NASDAQ-100 Technology Sector Index Fund |
-| **Consumer Services** | FTXD | 283 | First Trust Consumer Discretionary AlphaDEX Fund |
+### 2. Data Sources & Preparation
+The analysis relies on two primary datasets covering the period **2005-2020**:
+1.  **NASDAQ Company List:** Provides metadata (Sector, Industry, Market Cap) to classify firms.
+2.  **Stock Market Dataset:** Daily price data (Open, Close, Adjusted Close) used to compute returns.
 
-### Portfolio Construction
+**Data Cleaning Rules:**
+* **Time Period:** 15 years (2005-2020).
+* **Inclusion Criteria:** NASDAQ stocks with $\ge$ 2 years of historical data (Total: 2,074 companies).
+* **Outlier Handling:** Daily returns clipped at $\pm50\%$ to filter data errors.
+
+### 3. Portfolio Construction
+To ensure a robust comparison, we applied strict construction rules:
 
 **Equally-Weighted Portfolios:**
-- Daily rebalancing to equal weights
-- Mean-based averaging (robust to outliers)
-- Outlier filtering: Daily returns clipped at ±50% to prevent data errors from skewing results
+* **Weighting:** Each stock is assigned an identical weight of $1/n$.
+* **Rebalancing:** **Daily rebalancing** is performed to maintain equal exposure, preventing high-performing stocks from dominating the portfolio over time.
+* **Calculation:** Mean-based averaging of daily returns across all active constituents.
 
 **ETF Benchmarks:**
-- Value-weighted (market cap weighted)
-- Represent sector leaders and large-cap companies
-- Industry-standard benchmarks for sector performance
+* **Weighting:** Value-weighted (Market Capitalization).
+* **Rebalancing:** Follows the standard index methodology (typically quarterly).
 
-### Performance Metrics
+### 4. Limitations: Survivorship Bias
+A general limitation that affects all analyses in this project is the presence of **survivorship bias**. Because the NASDAQ dataset only includes companies that were still active and listed in 2020, firms that went bankrupt, were delisted, or merged before that date are missing from the data.
 
-We calculated and compared:
-- **Annualized Returns** - Long-term performance measure
-- **Volatility** - Risk measure (annualized standard deviation)
-- **Sharpe Ratio** - Risk-adjusted returns
-- **Cumulative Returns** - Time-series performance visualization
+This exclusion primarily affects small and mid-cap firms, which are more likely to disappear over time, and may lead to an overestimation of their average performance or an underestimation of market volatility.
 
+**Mitigation Strategies Considered:**
+* Shortening the analysis window to recent years (e.g., 2015–2020) where firm disappearance is less frequent.
+* Weighting companies according to their lifespan (using IPO year) to assign higher stability to long-standing firms.
+
+### 5. Global & Sector Benchmarks
+The analysis starts with a global market view before diving into specific sectors:
+
+| Scope | ETF Benchmark | Stock Count (EW Portfolio) | ETF Description |
+|-------|---------------|----------------------------|-----------------|
+| **Global Market** | **ONEQ** | **2,074** | **Fidelity Nasdaq Composite Index Tracking Stock** |
+| **Health Care** | IBB | 564 | iShares NASDAQ Biotechnology ETF |
+| **Finance** | FTXO | 484 | First Trust NASDAQ Bank ETF |
+| **Technology** | QTEC | 377 | First Trust NASDAQ-100 Tech Index |
+| **Consumer Services** | FTXD | 283 | First Trust Consumer Discretionary AlphaDEX |
+
+### 6. Performance Metrics
+To evaluate the "Leaders vs. Followers" dynamic, we calculated:
+* **Annualized Returns:** Geometric average of yearly growth.
+* **Volatility:** Annualized standard deviation of daily returns.
+* **Sharpe Ratio:** Risk-adjusted performance measure.
+* **Cumulative Returns:** Total growth over the 15-year period.
 ---
 
 ## Executive Summary
@@ -310,5 +339,6 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
