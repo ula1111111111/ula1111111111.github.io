@@ -103,7 +103,7 @@ Use the dropdown menu below to explore how this relationship changes over differ
   <select id="timePeriodSelect" onchange="updateGlobalGraph(this.value)" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;">
     <option value="https://visualize.graphy.app/view/e9449b98-367f-4923-b374-8b9d10814cee">2005 - 2020 (Full Period)</option>
     <option value="https://visualize.graphy.app/view/b51fa31b-4f14-41a6-bee0-4c7ef1f6bb21">2010 - 2020 (Post-Crisis)</option>
-    <option value="https://visualize.graphy.app/view/588a6339-7cb1-4dea-a15d-a2504e0b83aa">2015 - 2020 (Recent Bull Market)</option>
+    <option value="https://visualize.graphy.app/view/4c192612-84b8-45c4-ac51-93d98b1ce3ef">2015 - 2020 (Recent Bull Market)</option>
   </select>
 </div>
 
@@ -385,6 +385,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
