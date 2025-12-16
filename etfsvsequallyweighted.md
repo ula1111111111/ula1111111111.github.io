@@ -280,41 +280,19 @@ Consumer Services is the **only sector where ETFs outperformed**. This suggests 
 - Only sector where concentration in leaders was beneficial
 
 ---
+### Sector Overview & Key Findings
 
-## Time Period Analysis
+**Key Findings:**
 
-To understand how these relationships evolved over time, we analyzed performance across different market periods:
+🎯 **Equally-Weighted portfolios outperformed in 3 out of 4 sectors (75%)**
 
-![Time Period Comparison](/assets/img/time_period_comparison.png)
+| Sector | ETF Return | EW Return | Difference | Winner |
+|--------|-----------|-----------|------------|--------|
+| Health Care | 9.95% | **15.99%** | +6.04% | ✅ EW |
+| Finance | -7.55% | **0.98%** | +8.53% | ✅ EW |
+| Technology | 11.43% | **12.82%** | +1.39% | ✅ EW |
+| Consumer Services | **-2.59%** | -7.21% | -4.62% | ❌ ETF |
 
-### Period Breakdown
-
-| Period | ETF Return | EW Return | Difference | Market Context |
-|--------|-----------|-----------|------------|----------------|
-| **2005-2008** | -6.89% | 0.77% | +7.66% | Pre-crisis period |
-| **2009-2012** | 17.45% | 32.56% | +15.11% | Post-crisis recovery |
-| **2013-2016** | 15.89% | 19.62% | +3.74% | Mid-bull market |
-| **2017-2020** | 10.90% | -3.99% | -14.89% | Late bull & COVID |
-
-**Key Insights:**
-- **Strongest EW Outperformance:** 2009-2012 recovery period (+15.11%)
-- **Only ETF Outperformance:** 2017-2020 period (-14.89% underperformance)
-- **Crisis Period (2005-2008):** EW showed resilience (+7.66% outperformance)
-
----
-
-## Rolling Window Analysis
-
-To capture dynamic changes in the relationship, we performed a rolling 2-year window analysis with monthly steps:
-
-![Rolling Window Analysis](/assets/img/rolling_window_analysis.png)
-
-**Findings:**
-- **162 rolling windows analyzed** (2005-2020)
-- **EW outperformed in 113/162 windows (69.7%)**
-- **ETF outperformed in 49/162 windows (30.3%)**
-
-The rolling analysis reveals that equally-weighted portfolios have been consistently superior across most time periods, with particularly strong performance during recovery phases and market transitions.
 
 ---
 
