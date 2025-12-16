@@ -39,3 +39,28 @@
   margin: 3.8rem auto 0 auto; /* push graphic under the title */
   filter: drop-shadow(0 12px 30px rgba(0,0,0,0.08));
 }
+
+/* Footer big logo */
+.footer-big-logo {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-big-logo img {
+  width: 240px;
+  max-width: 35vw;
+  height: auto;
+  display: inline-block;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08));
+  transition: transform .25s ease-in-out;
+}
+.footer-big-logo img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 576px) {
+  .footer-big-logo img {
+    width: 160px;
+    max-width: 45vw;
+  }
+}
