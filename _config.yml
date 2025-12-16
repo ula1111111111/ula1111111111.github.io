@@ -44,6 +44,8 @@ navbar-links:
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
 title-img: "/assets/img/logo new.png"
+# Logo used specifically in the navbar (top-left). If set, this overrides `title-img` for the navbar only.
+nav-title-img: "/assets/img/Logo wide.png"
 
 
 #####################################
