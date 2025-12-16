@@ -172,4 +172,23 @@ document.addEventListener('DOMContentLoaded', function() {
       $('.navbar-toggler').click();
     }
   });
+  // If the page was loaded with a hash (link from another page), smoothly scroll to it
+  if (location.hash) {
+    try {
+      var targetOnLoad = document.querySelector(location.hash);
+      if (targetOnLoad) {
+        // small timeout to allow browser to finish any native jump
+        setTimeout(function() {
+          var rect = targetOnLoad.getBoundingClientRect();
+          var targetTop = rect.top + window.pageYOffset;
+          var nav = document.querySelector('.navbar');
+          var navHeight = nav ? nav.offsetHeight : 0;
+          var scrollTo = Math.max(0, targetTop - navHeight - 10);
+          window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        }, 50);
+      }
+    } catch (err) {
+      // ignore if invalid hash
+    }
+  }
 });
