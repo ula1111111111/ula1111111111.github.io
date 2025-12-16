@@ -23,6 +23,8 @@ We apply this comparative framework at two levels:
 2.  **Sector Analysis:** Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.
 
 **Key Question:** Is market performance primarily driven by the concentrated power of a few "Leaders", or does the diversified strength of the "Followers" provide a superior edge?
+
+
 ---
 
 ## Methodology
@@ -30,7 +32,7 @@ We apply this comparative framework at two levels:
 ### 1. Conceptual Framework: Leaders vs. Followers
 This analysis employs a comparative method to assess market dynamics:
 * **Value-Weighted (ETFs):** Represents "Market Leaders." Weights are proportional to market capitalization, meaning performance is heavily driven by large-cap firms.
-* **Equally-Weighted (Portfolios):** Represents "Market Followers" and the broader economy. Every company has the same weight ($1/n$), regardless of size.
+* **Equally-Weighted (Portfolios):** Represents "Market Followers" and the broader economy. Every company has the same weight (1/n), regardless of size.
 
 **Interpretation Logic:**
 * If **ETF > Equally-Weighted**: Sector performance is driven by large-cap concentration (Leaders).
@@ -43,14 +45,14 @@ The analysis relies on two primary datasets covering the period **2005-2020**:
 
 **Data Cleaning Rules:**
 * **Time Period:** 15 years (2005-2020).
-* **Inclusion Criteria:** NASDAQ stocks with $\ge$ 2 years of historical data (Total: 2,074 companies).
-* **Outlier Handling:** Daily returns clipped at $\pm50\%$ to filter data errors.
+* **Inclusion Criteria:** NASDAQ stocks with 2 years or more of historical data (Total: 2,074 companies).
+* **Outlier Handling:** Daily returns clipped at +/- 50% to filter data errors.
 
 ### 3. Portfolio Construction
 To ensure a robust comparison, we applied strict construction rules:
 
 **Equally-Weighted Portfolios:**
-* **Weighting:** Each stock is assigned an identical weight of $1/n$.
+* **Weighting:** Each stock is assigned an identical weight of 1/n.
 * **Rebalancing:** **Daily rebalancing** is performed to maintain equal exposure, preventing high-performing stocks from dominating the portfolio over time.
 * **Calculation:** Mean-based averaging of daily returns across all active constituents.
 
@@ -84,6 +86,8 @@ To evaluate the "Leaders vs. Followers" dynamic, we calculated:
 * **Volatility:** Annualized standard deviation of daily returns.
 * **Sharpe Ratio:** Risk-adjusted performance measure.
 * **Cumulative Returns:** Total growth over the 15-year period.
+
+  
 ---
 
 ## Executive Summary
@@ -339,6 +343,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
