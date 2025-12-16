@@ -118,7 +118,7 @@ Use the dropdown menu below to explore how this relationship changes over differ
 
 <div id="analysisText" style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
   <strong>Key Observation (2005-2020):</strong><br>
-  Over this long 15-year period, the equally-weighted portfolio shows solid performance. However, it is crucial to note that <strong>due to the length of this period, there is a possible influence of Survivorship Bias</strong>. Companies that went bankrupt before 2020 are excluded from the data, which may artificially inflate the apparent performance of small-cap stocks in the EW portfolio.
+  Over this 15-year period, the equally-weighted portfolio (EW) demonstrates the power of "Market Breadth". While the ETF (ONEQ) is driven by a handful of giants, the EW benefits from the explosive growth of mid-caps during recovery phases (2009-2013), building a lead that allows it to withstand the late dominance of Big Tech. <em>Note: Due to the long duration, these results might be partially influenced by Survivorship Bias.</em>
 </div>
 
 <script>
@@ -127,7 +127,7 @@ const analysisData = {
   "full": {
     url: "https://visualize.graphy.app/view/4c192612-84b8-45c4-ac51-93d98b1ce3ef",
     title: "Key Observation (2005-2020):",
-    text: "Over this long 15-year period, the equally-weighted portfolio shows solid performance. However, it is crucial to note that <strong>due to the length of this period, there is a possible influence of Survivorship Bias</strong>. Companies that went bankrupt before 2020 are excluded from the data, which may artificially inflate the apparent performance of small-cap stocks in the EW portfolio."
+    text: "Over this 15-year period, the equally-weighted portfolio (EW) demonstrates the power of \"Market Breadth\". While the ETF (ONEQ) is driven by a handful of giants, the EW benefits from the explosive growth of mid-caps during recovery phases (2009-2013), building a lead that allows it to withstand the late dominance of Big Tech. <em>Note: Due to the long duration, these results might be partially influenced by Survivorship Bias.</em>"
   },
   "post_crisis": {
     url: "https://visualize.graphy.app/view/b51fa31b-4f14-41a6-bee0-4c7ef1f6bb21",
@@ -153,7 +153,6 @@ function updateGlobalAnalysis(periodKey) {
   textContainer.innerHTML = `<strong>${data.title}</strong><br>${data.text}`;
 }
 </script>
-
 ## Executive Summary
 
 
@@ -410,6 +409,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
