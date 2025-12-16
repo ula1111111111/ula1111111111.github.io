@@ -180,26 +180,11 @@ The reversal is even more apparent when viewed dynamically. The chart below show
 * **The "Breadth" Era (2009–2014):** Post-crisis recovery was broad-based. Small and mid-cap companies ("Followers") grew faster than established giants. This was a "stock picker's market."
 * **The "Concentration" Era (2015–2020):** A clear regime shift occurred around 2015. Investors flocked to "Safe Haven" mega-caps (GAFAM), causing the standard ETF to outperform significantly while the average stock lagged behind.
 
-
-
-### Key Findings
-
-🎯 **Equally-Weighted portfolios outperformed in 3 out of 4 sectors (75%)**
-
-| Sector | ETF Return | EW Return | Difference | Winner |
-|--------|-----------|-----------|------------|--------|
-| Health Care | 9.95% | **15.99%** | +6.04% | ✅ EW |
-| Finance | -7.55% | **0.98%** | +8.53% | ✅ EW |
-| Technology | 11.43% | **12.82%** | +1.39% | ✅ EW |
-| Consumer Services | **-2.59%** | -7.21% | -4.62% | ❌ ETF |
-
-**Average Outperformance:** +2.84% in favor of Equally-Weighted portfolios
-
 ---
 
 ## Sector-by-Sector Analysis
 
-### 🏥 Health Care Sector (IBB)
+### Health Care Sector (IBB)
 
 ![Health Care Analysis](/assets/img/sector_health_care.png)
 
@@ -219,7 +204,7 @@ The Health Care sector shows the strongest outperformance of equally-weighted po
 
 ---
 
-### 💰 Finance Sector (FTXO)
+### Finance Sector (FTXO)
 
 ![Finance Analysis](/assets/img/sector_finance.png)
 
@@ -240,7 +225,7 @@ The Finance sector tells a dramatic story. The 2008 financial crisis devastated 
 
 ---
 
-### 💻 Technology Sector (QTEC)
+### Technology Sector (QTEC)
 
 ![Technology Analysis](/assets/img/sector_technology.png)
 
@@ -260,7 +245,7 @@ Technology shows the smallest outperformance gap, suggesting that large tech com
 
 ---
 
-### 🛒 Consumer Services Sector (FTXD)
+### Consumer Services Sector (FTXD)
 
 ![Consumer Services Analysis](/assets/img/sector_consumer_services.png)
 
@@ -284,7 +269,7 @@ Consumer Services is the **only sector where ETFs outperformed**. This suggests 
 
 **Key Findings:**
 
-🎯 **Equally-Weighted portfolios outperformed in 3 out of 4 sectors (75%)**
+ **Equally-Weighted portfolios outperformed in 3 out of 4 sectors (75%)**
 
 | Sector | ETF Return | EW Return | Difference | Winner |
 |--------|-----------|-----------|------------|--------|
