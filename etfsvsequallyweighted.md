@@ -90,7 +90,49 @@ To evaluate the "Leaders vs. Followers" dynamic, we calculated:
   
 ---
 
+
+
+## Global Market Analysis
+
+We begin with an overview of the entire NASDAQ market, comparing the **Fidelity Nasdaq Composite Index Tracking Stock (ONEQ)** against our **Equally-Weighted Global Portfolio** (composed of 2,074 stocks).
+
+Use the dropdown menu below to explore how this relationship changes over different time horizons:
+
+<div style="margin-bottom: 15px;">
+  <label for="timePeriodSelect" style="font-weight: bold; margin-right: 10px;">Select Time Period:</label>
+  <select id="timePeriodSelect" onchange="updateGlobalGraph(this.value)" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;">
+    <option value="https://visualize.graphy.app/view/e9449b98-367f-4923-b374-8b9d10814cee">2005 - 2020 (Full Period)</option>
+    <option value="https://visualize.graphy.app/view/b51fa31b-4f14-41a6-bee0-4c7ef1f6bb21">2010 - 2020 (Post-Crisis)</option>
+    <option value="https://visualize.graphy.app/view/588a6339-7cb1-4dea-a15d-a2504e0b83aa">2015 - 2020 (Recent Bull Market)</option>
+  </select>
+</div>
+
+<iframe 
+    id="globalGraphFrame"
+    src="https://visualize.graphy.app/view/e9449b98-367f-4923-b374-8b9d10814cee" 
+    width="100%" 
+    height="600" 
+    style="border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+    allow="fullscreen">
+</iframe>
+
+<script>
+function updateGlobalGraph(url) {
+  document.getElementById('globalGraphFrame').src = url;
+}
+</script>
+
+**Key Observations:**
+* **2005-2020:** [Insérez ici votre analyse pour la période complète - Qui gagne ?]
+* **2010-2020:** [Insérez ici votre analyse post-crise]
+* **2015-2020:** [Insérez ici votre analyse récente]
+
+
+
 ## Executive Summary
+
+
+
 
 ![Summary Dashboard](/assets/img/sector_summary_dashboard.png)
 
@@ -343,6 +385,7 @@ All analysis code and scripts are available in the project repository for reprod
 ---
 
 **Tags:** #Finance #PortfolioAnalysis #ETF #EquallyWeighted #MarketResearch #InvestmentStrategy #SectorAnalysis #NASDAQ
+
 
 
 
