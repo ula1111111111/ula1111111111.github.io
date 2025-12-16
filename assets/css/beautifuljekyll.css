@@ -162,6 +162,7 @@ img {
   -webkit-transition: padding .5s ease-in-out;
   -moz-transition: padding .5s ease-in-out;
   transition: padding .5s ease-in-out;
+  overflow: visible; /* allow logo to overflow visually when scaled */
 }
 
 .navbar-custom,
@@ -187,8 +188,9 @@ img {
 .navbar-custom .navbar-brand-logo,
 .navbar-custom.top-nav-short .navbar-brand-logo,
 .navbar-custom.top-nav-short-permanent .navbar-brand-logo {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: visible; /* reduce clipping around the logo */
 }
 
 .navbar-custom .navbar-brand-logo img {
@@ -201,6 +203,10 @@ img {
 .navbar-custom.top-nav-short .navbar-brand-logo img,
 .navbar-custom.top-nav-short-permanent .navbar-brand-logo img {
   height: 1.625rem;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); /* visually enlarge by 20% without changing layout height */
 }
 
 .navbar-custom .navbar-nav .nav-item {
