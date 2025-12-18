@@ -1,6 +1,6 @@
 
 
-
+<div class="intro-section" markdown="1">
 
 Here we do the whole storytelling and introduction about the project, nice graphics (story related, check how the best projwect from last years look like) and research questions. TASK#1
 
@@ -21,29 +21,7 @@ Financial markets are often portrayed as dominated by a handful of giants, but d
 
 </div>
 
-<style>
-.research-questions-box {
-    background-color: #f8f9fa;
-    border-left: 4px solid #8b0000; /* Merlot red */
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.research-questions-box h2 {
-    color: #8b0000; /* Merlot red */
-    margin-top: 0;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 10px;
-}
-
-.research-questions-box li {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-</style>
-
+</div>
 
 
 **Dataset 1: NASDAQ Company List**
