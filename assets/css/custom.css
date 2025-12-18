@@ -39,3 +39,75 @@
   margin: 3.8rem auto 0 auto; /* push graphic under the title */
   filter: drop-shadow(0 12px 30px rgba(0,0,0,0.08));
 }
+
+/* Footer big logo */
+.footer-big-logo {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-big-logo img {
+  width: 240px;
+  max-width: 35vw;
+  height: auto;
+  display: inline-block;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08));
+  transition: transform .25s ease-in-out;
+}
+.footer-big-logo img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 576px) {
+  .footer-big-logo img {
+    width: 160px;
+    max-width: 45vw;
+  }
+}
+
+
+
+
+.intro-section {
+  background-image: url("/assets/img/hands.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 90px 70px;
+  margin: 60px 0;
+  border-radius: 14px;
+  position: relative;
+}
+
+/* Overlay for readability */
+.intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 14px;
+}
+
+/* Keep content above overlay */
+.intro-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Research questions box (inside intro) */
+.research-questions-box {
+  background-color: rgba(248, 249, 250, 0.95);
+  border-left: 4px solid #8b0000;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.research-questions-box h2 {
+  color: #8b0000;
+}
+
+
+

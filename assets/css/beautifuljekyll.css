@@ -200,7 +200,7 @@ img {
 .navbar-custom .navbar-brand-logo img,
 .navbar-custom.top-nav-short .navbar-brand-logo img,
 .navbar-custom.top-nav-short-permanent .navbar-brand-logo img {
-  height: 2.5rem;
+  height: 1.625rem;
 }
 
 .navbar-custom .navbar-nav .nav-item {
@@ -250,7 +250,7 @@ img {
   }
 
   .navbar-custom .navbar-brand-logo img {
-    height: 3.125rem;
+    height: 2.03125rem;
   }
 
   .navbar-expand-xl .navbar-nav .nav-link {

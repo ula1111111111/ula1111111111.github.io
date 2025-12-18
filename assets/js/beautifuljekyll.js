@@ -140,3 +140,55 @@ let BeautifulJekyllJS = {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+
+// Smooth scroll for in-page anchor links (navbar shortcuts)
+document.addEventListener('DOMContentLoaded', function() {
+  // delegate click on navbar links and dropdown items; if the link contains a hash and
+  // the anchor exists on the current page, perform a smooth scroll to it.
+  $(document).on('click', '.navbar a, .navbar .dropdown-item, .navbar-brand', function(e) {
+    var href = $(this).attr('href');
+    if (!href || href.indexOf('#') === -1) return; // nothing to do
+
+    var hash = '#' + href.split('#').pop();
+    if (hash === '#' || hash === '#undefined') return;
+
+    // find the target element by id
+    var targetEl = document.querySelector(hash);
+    if (!targetEl) return;
+
+    // allow only same-page anchors (lenient check)
+    if (!(href.charAt(0) === '#' || href.indexOf(location.pathname) !== -1 || href.indexOf(location.hostname) === -1)) return;
+
+    e.preventDefault();
+    // compute target position and account for fixed navbar height
+    var rect = targetEl.getBoundingClientRect();
+    var targetTop = rect.top + window.pageYOffset;
+    var nav = document.querySelector('.navbar');
+    var navHeight = nav ? nav.offsetHeight : 0;
+    var scrollTo = Math.max(0, targetTop - navHeight - 10);
+    window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+    // close collapsed navbar on mobile after navigation
+    if ($('.navbar-collapse').hasClass('show')) {
+      $('.navbar-toggler').click();
+    }
+  });
+  // If the page was loaded with a hash (link from another page), smoothly scroll to it
+  if (location.hash) {
+    try {
+      var targetOnLoad = document.querySelector(location.hash);
+      if (targetOnLoad) {
+        // small timeout to allow browser to finish any native jump
+        setTimeout(function() {
+          var rect = targetOnLoad.getBoundingClientRect();
+          var targetTop = rect.top + window.pageYOffset;
+          var nav = document.querySelector('.navbar');
+          var navHeight = nav ? nav.offsetHeight : 0;
+          var scrollTo = Math.max(0, targetTop - navHeight - 10);
+          window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        }, 50);
+      }
+    } catch (err) {
+      // ignore if invalid hash
+    }
+  }
+});
