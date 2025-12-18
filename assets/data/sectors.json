@@ -1,0 +1,54 @@
+[
+  {
+    "sector": "Health Care",
+    "count": 743
+  },
+  {
+    "sector": "Finance",
+    "count": 682
+  },
+  {
+    "sector": "n/a",
+    "count": 482
+  },
+  {
+    "sector": "Technology",
+    "count": 430
+  },
+  {
+    "sector": "Consumer Services",
+    "count": 353
+  },
+  {
+    "sector": "Capital Goods",
+    "count": 170
+  },
+  {
+    "sector": "Consumer Non-Durables",
+    "count": 116
+  },
+  {
+    "sector": "Miscellaneous",
+    "count": 97
+  },
+  {
+    "sector": "Consumer Durables",
+    "count": 89
+  },
+  {
+    "sector": "Basic Industries",
+    "count": 75
+  },
+  {
+    "sector": "Energy",
+    "count": 66
+  },
+  {
+    "sector": "Public Utilities",
+    "count": 64
+  },
+  {
+    "sector": "Transportation",
+    "count": 59
+  }
+]
