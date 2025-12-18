@@ -272,3 +272,66 @@ fetch(DATA_URL_NETWORK)
   • <b>Hover</b> over a node to see the company ticker.<br>
   • <b>Drag</b> nodes to explore the structure of the sector.
 </div>
+
+### Sector-by-Sector Leadership Insights
+
+Our analysis reveals sparse but meaningful leader–follower relationships within sectors. Rather than dense interactions, leadership tends to concentrate around a small number of influential firms.
+
+#### Basic Industries
+
+**Methanex (MEOH)** and **Royal Gold (RGLD)** emerge as upstream firms, with **Stericycle (SRCL)** acting as a downstream follower.
+Leadership effects include both reinforcing and opposing movements, suggesting a small but structured hierarchy within the sector.
+
+#### Capital Goods
+
+**Garmin (GRMN)** clearly leads **Icahn Enterprises (IEP)**, forming a clean, one-directional relationship.
+This sector exhibits one of the strongest leadership signals detected in the analysis.
+
+#### Consumer Services
+
+Leadership is split across two independent channels:
+
+- **Amazon (AMZN)** influences **Netflix (NFLX)** with an opposite-direction response.
+
+- **Comcast (CMCSA)** leads **Starbucks (SBUX)** with a positive response.
+
+No single firm dominates the sector.
+
+#### Energy
+
+**Patterson-UTI Energy (PTEN)** and **Viper Energy (VNOM)** both influence **Centennial Resource Development (CDEV)** in the same (negative) direction.
+Centennial behaves as a clear follower, responding consistently to upstream movements.
+
+#### Finance
+
+A single directional relationship is detected, with **Huntington Bancshares (HBANO)** influencing **TD Ameritrade (AMTD)**.
+Leadership effects in this sector are weak but non-random.
+
+#### Health Care
+
+This sector displays the most structured leadership pattern:
+
+- **Biogen (BIIB)** acts as a central leader,
+
+- **Intuitive Surgical (ISRG)** influences **Vertex Pharmaceuticals (VRTX)**,
+
+- **Amgen (AMGN)** exhibits mixed leadership effects toward **Walgreens Boots Alliance (WBA)**.
+
+Both positive and negative influence patterns coexist.
+
+#### Miscellaneous
+
+A simple and intuitive relationship appears, with **Booking Holdings (BKNG)** leading **eBay (EBAY)**.
+
+#### Public Utilities
+
+**T-Mobile US (TMUS)** shows a clear leadership effect on **Alliant Energy (LNT)**, forming a single directional pair.
+
+#### Transportation
+
+**United Airlines (UAL)** leads **CSX (CSX)**, indicating information transmission across different transportation subsectors.
+
+#### Takeaway
+
+Across sectors, leadership effects are rare, directional, and concentrated.
+A small number of firms consistently act as short-term influencers, while most stocks respond passively or show no detectable leadership dynamics.
