@@ -4,24 +4,46 @@ title: ""
 subtitle: ""
 
 ---
-<div class="hero">
-  <img
-    src="{{ '/assets/img/final_hands.png' | relative_url }}"
-    alt="Market forces shaping stock movements"
-    class="hero-image"
-  />
+<div class="hero-cinematic" id="hero">
+  <!-- Background layer (sticky) -->
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="{{ '/assets/img/final-hands.png' | relative_url }}"
+      alt=""
+      class="hero-bg-img"
+      loading="eager"
+    />
+    <div class="hero-bg-tint"></div>
+  </div>
 
-  <div class="hero-content">
-    <h1 class="hero-title">
-      The Pulse of the Market
-      <span>Who Sets the Rhythm?</span>
-    </h1>
+  <!-- Foreground content (scrolls over) -->
+  <div class="hero-steps" id="heroSteps">
+    <div class="hero-step">
+      <h1 class="hero-title">
+        The Pulse of the Market
+        <span>Who Sets the Rhythm?</span>
+      </h1>
+      <p class="hero-subtitle">
+        Exploring leadership, influence, and information diffusion across NASDAQ sectors
+      </p>
+    </div>
 
-    <p class="hero-subtitle">
-      Exploring leadership, influence, and information diffusion across NASDAQ sectors
-    </p>
+    <div class="hero-step">
+      <h2 class="intro-title">Who really moves the market?</h2>
+      <p class="intro-text">
+        Markets are not only driven by fundamentals, but by influence, leadership,
+        and the diffusion of information across dominant players.
+      </p>
+      <blockquote class="hero-quote">
+        “Prices are not only determined by information, but by the narratives that spread it.”
+        <span>— Robert Shiller</span>
+      </blockquote>
+    </div>
   </div>
 </div>
+
+<script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
+
 
 <section class="intro">
   <h2>Who really moves the market?</h2>

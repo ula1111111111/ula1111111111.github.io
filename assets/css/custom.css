@@ -329,3 +329,123 @@ blockquote span {
     transform: translateY(0);
   }
 }
+
+
+/* Cinematic hero wrapper */
+.hero-cinematic {
+  position: relative;
+  min-height: 120vh; /* enough room for scroll narrative */
+  background: #fff;
+  overflow: clip;
+}
+
+/* Sticky background */
+.hero-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Background image: crisp at top, centered */
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* keeps full drawing visible */
+  object-position: center top;
+  display: block;
+  transform: translateZ(0);  /* helps crisp rendering */
+}
+
+/* Soft tint + gradient so text stays readable */
+.hero-bg-tint {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 230, 240, 0.55) 0%, rgba(255,255,255,0.15) 55%, rgba(255,255,255,0.75) 100%),
+    linear-gradient(to bottom, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.95) 100%);
+  pointer-events: none;
+}
+
+/* Foreground steps (scroll over the bg) */
+.hero-steps {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: -100vh auto 0; /* start content at top while bg is sticky */
+  padding: 7rem 1.2rem 6rem;
+  text-align: center;
+}
+
+/* Each step gets viewport space to create "chapters" */
+.hero-step {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Typography */
+.hero-title {
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.1rem;
+}
+
+.hero-title span {
+  display: block;
+  font-weight: 650;
+  opacity: 0.86;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #4b4b4b;
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.intro-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 750;
+  margin: 0 0 1.2rem;
+}
+
+.intro-text {
+  font-size: 1.08rem;
+  color: #3f3f3f;
+  line-height: 1.75;
+  max-width: 780px;
+  margin: 0 auto 2.2rem;
+}
+
+.hero-quote {
+  font-style: italic;
+  color: #666;
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.hero-quote span {
+  display: block;
+  margin-top: 0.9rem;
+  font-weight: 650;
+  color: #2f2f2f;
+}
+
+/* This is the layer we will fade with JS */
+.hero-bg {
+  opacity: 1;
+  transition: opacity 0.12s linear; /* helps smoothness */
+}
+
+/* Mobile tweak: give image more breathing room */
+@media (max-width: 768px) {
+  .hero-steps { padding-top: 6rem; }
+  .hero-bg-img { object-fit: contain; }
+}
