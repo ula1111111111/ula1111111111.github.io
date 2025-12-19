@@ -1,3 +1,20 @@
+<section class="hero-analysis">
+
+  <h1>
+    Who really moves the market?
+  </h1>
+
+  <p class="hero-subtitle">
+    Exploring leadership, influence, and information diffusion across NASDAQ sectors
+  </p>
+
+</section>
+
+<blockquote class="hero-quote">
+  “Markets are moved by stories, not spreadsheets alone.”  
+  <span>— Robert Shiller</span>
+</blockquote>
+
 
 
 <div class="intro-section" markdown="1">
