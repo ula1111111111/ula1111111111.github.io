@@ -156,13 +156,147 @@ These networks reveal whether leadership is centralized around a few firms or di
   </div>
 </div>
 
+
+<style>
+  .math-story{max-width:900px;margin:24px 0;font-size:16px;line-height:1.6}
+  .math-card{
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.1);
+    border-radius:14px;
+    padding:18px 20px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
+    margin-bottom:16px;
+  }
+  .math-card h2{
+    margin:0 0 8px 0;
+    font-size:22px;
+  }
+  .math-card h3{
+    margin:14px 0 6px 0;
+    font-size:17px;
+  }
+  .math-card p{margin:6px 0;color:#222}
+  .math-highlight{
+    background:rgba(176,57,202,.08);
+    border-left:4px solid #b039ca;
+    padding:12px 14px;
+    border-radius:10px;
+    margin:14px 0;
+  }
+  .math-foot{
+    font-size:14px;
+    color:#444;
+    margin-top:8px;
+  }
+</style>
+
+<div class="math-story">
+
+  <div class="math-card">
+    <h2>Detecting Leadership in Stock Movements</h2>
+    <p>
+      Financial markets rarely move in isolation. Price changes in one firm are often
+      followed—sometimes within days—by reactions in others.
+      Our objective is to identify these short-term <b>leader–follower</b> relationships
+      within sectors and visualize how information flows across companies.
+    </p>
+    <p>
+      Rather than assuming leadership a priori, we let the data reveal which firms tend
+      to move first.
+    </p>
+  </div>
+
+  <div class="math-card">
+    <h3>Returns as the Basic Signal</h3>
+    <p>
+      All computations are performed on <b>logarithmic daily returns</b>,
+      which are additive over time and approximately stationary:
+    </p>
+
+    $$ 
+    r_{i,t} = \log\!\left(\frac{P_{i,t}}{P_{i,t-1}}\right)
+    $$
+
+    <p class="math-foot">
+      Working with returns (rather than prices) removes long-term trends and focuses
+      attention on short-horizon reactions.
+    </p>
+  </div>
+
+  <div class="math-card">
+    <h3>Searching for Lead–Lag Effects</h3>
+    <p>
+      For each pair of stocks \( (i,j) \) within a sector, we examine whether movements
+      in \( i \) tend to precede movements in \( j \).
+      This is done via cross-correlation at small positive delays:
+    </p>
+
+    $$
+    \rho_{ij}(k) = \mathrm{Corr}\!\big(r_{i,t},\, r_{j,t+k}\big),
+    \qquad k = 1,\dots,7
+    $$
+
+    <div class="math-highlight">
+      If the strongest correlation occurs at a positive lag \( k>0 \),
+      stock \( i \) is interpreted as a <b>candidate leader</b> of stock \( j \).
+    </div>
+  </div>
+
+  <div class="math-card">
+    <h3>From Correlation to Directionality</h3>
+    <p>
+      Correlation alone is not sufficient: two stocks may move together without
+      one leading the other.
+      To confirm directional influence, we apply a Granger causality test.
+    </p>
+
+    <p>
+      We compare a baseline model using only the follower’s past returns
+      to an augmented model that also includes the leader’s past returns:
+    </p>
+
+    $$
+    r_{j,t}
+    = \alpha + \sum_{\ell=1}^{p} \beta_\ell r_{j,t-\ell}
+    + \sum_{\ell=1}^{p} \gamma_\ell r_{i,t-\ell}
+    + \varepsilon_t,
+    \qquad p = 7
+    $$
+
+    <div class="math-highlight">
+      A link \( i \rightarrow j \) is retained only if the leader’s lagged returns
+      significantly improve prediction in this direction, but not in the reverse.
+    </div>
+  </div>
+
+  <div class="math-card">
+    <h3>What the Visualizations Represent</h3>
+    <p>
+      The final output is a directed, sector-specific network:
+    </p>
+    <ul>
+      <li><b>Nodes</b> are companies within a sector,</li>
+      <li><b>Arrows</b> point from leaders to followers,</li>
+      <li><b>Arrow thickness</b> reflects the strength of the detected relationship.</li>
+    </ul>
+
+    <p class="math-foot">
+      These structures reveal whether leadership is centralized around a few firms
+      or distributed across multiple influence channels.
+    </p>
+  </div>
+
+</div>
+
+
+
 <!-- Load Plotly from CDN -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <h2>Interactive Sector Leadership Heatmap</h2>
 <p>
   This heatmap shows, for each sector, how strongly each stock (rows) appears to <b>lead</b> others (columns)
-  based on our cross-correlation + Granger causality analysis.
+  based on our cross-correlation.
 </p>
 
 <label for="sectorSelect"><b>Select sector:</b></label>

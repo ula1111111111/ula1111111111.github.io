@@ -9,7 +9,7 @@ Our methodology combines time-series modeling and Granger causality testing to d
 Another component of the analysis compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates — from dominant firms or distributed behavior — this project offers insights into market power and the dynamics of information diffusion.
 
 ---
-
+<div class="research-questions-box" markdown="1">
 ## Research Questions
 
 1. **How do we define a “leader” and a “follower” in stock movements?**  
@@ -31,6 +31,7 @@ Another component of the analysis compares value-weighted ETFs with equally weig
    and what steps can be taken to reduce its effects?  
    Which time window should be analyzed?
 
+</div>
 ---
 
 ## Data Overview
