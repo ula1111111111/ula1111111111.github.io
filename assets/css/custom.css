@@ -225,3 +225,20 @@
   .bubble-panel{ position: relative; top: 0; max-height: none; }
   .bubble-chart{ height: 520px; }
 }
+
+
+.hero-overlay-graphic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 3rem auto 0;
+}
+
+
+.hero-overlay-graphic {
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  margin: 3rem auto 0;
+}
