@@ -55,6 +55,107 @@ Financial markets rarely move at random. Often, price changes in one company are
 Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
 
 Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
+
+Within each sector, we compare companies pairwise and ask a simple question:
+
+If company A moves today, does company B tend to move shortly afterward?
+
+To answer this, we shift one return series forward in time and measure how strongly it aligns with another.
+We test several short delays (up to a few trading days) and retain the lag that produces the strongest relationship.
+
+This step acts as a screening mechanism, identifying candidate leader–follower pairs.
+
+Correlation alone is not enough: two stocks may move together without one leading the other.
+To establish directionality, we apply Granger causality tests, which check whether past returns of one stock improve the prediction of another stock’s future returns beyond what the stock’s own history explains.
+
+Only pairs that pass this test in one direction—and not the reverse—are retained.
+This ensures that detected relationships reflect predictive precedence, not simple co-movement.
+We repeat this process sector by sector, restricting attention to a limited number of representative firms to maintain interpretability.
+
+The final output is a directed network:
+
+- nodes represent companies,
+
+- arrows point from leaders to followers,
+
+- arrow thickness reflects the strength of the detected relationship.
+
+These networks reveal whether leadership is centralized around a few firms or distributed across multiple channels.
+
+<style>
+  .story-wrap{max-width:900px;margin:18px 0 28px 0;font-size:16px;line-height:1.55}
+  .story-hero{
+    padding:16px 18px;border-radius:12px;
+    background:linear-gradient(90deg, rgba(255,77,136,.12), rgba(176,57,202,.10));
+    border:1px solid rgba(176,57,202,.25);
+  }
+  .story-hero h2{margin:0 0 6px 0;font-size:22px}
+  .story-hero p{margin:0;color:#222}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  @media (max-width:720px){.story-grid{grid-template-columns:1fr}}
+  .story-card{
+    padding:14px 16px;border-radius:12px;background:#fff;
+    border:1px solid rgba(0,0,0,.10);
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+  }
+  .story-card h3{margin:0 0 6px 0;font-size:16px}
+  .story-card p{margin:0;color:#333}
+  .pill{
+    display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;
+    background:rgba(255,77,136,.10);border:1px solid rgba(255,77,136,.25);
+    font-size:13px;color:#222
+  }
+  .quote{
+    margin-top:12px;padding:12px 14px;border-radius:12px;
+    border-left:4px solid #ff4d88;background:#ffe5ec;color:#222
+  }
+  .quote b{font-weight:700}
+  .micro{
+    margin-top:10px;color:#444;font-size:14px
+  }
+  .micro code{background:rgba(0,0,0,.05);padding:2px 6px;border-radius:6px}
+</style>
+
+<div class="story-wrap">
+  <div class="story-hero">
+    <h2>The Pulse of the Market: Who Sets the Rhythm?</h2>
+    <p>
+      Some stocks tend to move <b>first</b>, while others react a few days later.
+      Here we look for short-term <b>leader → follower</b> relationships within each sector,
+      using daily returns to track how market information appears to propagate across firms.
+    </p>
+    <div class="pill">What you’re seeing below: sparse, directional links — not general correlation</div>
+  </div>
+
+  <div class="story-grid">
+    <div class="story-card">
+      <h3>What “leadership” means here</h3>
+      <p>
+        An arrow <b>A → B</b> indicates that changes in <b>A</b> tend to be followed by changes in <b>B</b>
+        after a short delay. This is a statistical notion of <b>predictive precedence</b>, not a claim of
+        true economic causality.
+      </p>
+      <div class="micro">We work with log returns: <code>log(P_t / P_{t-1})</code>.</div>
+    </div>
+
+    <div class="story-card">
+      <h3>How a link earns its place</h3>
+      <p>
+        We first search for a clear <b>lead–lag alignment</b> (testing small delays), then keep only pairs
+        that also pass a <b>directional predictability</b> check (Granger causality) in one direction but not the reverse.
+        The result is a small set of “surviving” edges per sector.
+      </p>
+      <div class="micro">Delays tested: <code>k = 1…7</code> days · Granger lag order: <code>p = 7</code>.</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <b>How to read the visuals:</b>
+    Heatmaps show the strength of each validated leader–follower correlation, while the network graph highlights
+    the structure — hubs, chains, and isolated followers. Thicker arrows indicate stronger relationships.
+  </div>
+</div>
+
 <!-- Load Plotly from CDN -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -342,186 +443,6 @@ fetch(DATA_URL_NETWORK)
   • <b>Drag</b> nodes to explore the structure.
 </div>
 
-<!-- D3.js from CDN -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
-
-<h2>Leader–Follower Network Graph (per sector)</h2>
-<p>
-  Each node is a stock. Arrows point from <b>leader → follower</b>. 
-  Edge thickness reflects the strength of the relationship (correlation).
-</p>
-
-<label for="networkSectorSelect"><b>Select sector:</b></label>
-<select id="networkSectorSelect"></select>
-
-<div id="network-container" style="width:100%; max-width:900px; height:600px; border:1px solid #ccc; margin-top:10px;"></div>
-
-<script>
-const DATA_URL_NETWORK = "{{ '/assets/leadership_network.json' | relative_url }}";
-
-let networkData = null;
-let svg, linkGroup, nodeGroup, labelGroup, simulation;
-const width = 900;
-const height = 600;
-
-function initSvg() {
-  const container = document.getElementById('network-container');
-  container.innerHTML = ''; // clear previous svg if any
-
-  svg = d3.select('#network-container')
-    .append('svg')
-    .attr('width', '100%')
-    .attr('height', '100%')
-    .attr('viewBox', `0 0 ${width} ${height}`);
-
-  linkGroup = svg.append('g').attr('class', 'links');
-  nodeGroup = svg.append('g').attr('class', 'nodes');
-  labelGroup = svg.append('g').attr('class', 'labels');
-}
-
-function populateNetworkSectorSelect(sectors) {
-  const sel = document.getElementById('networkSectorSelect');
-  sel.innerHTML = '';
-  sectors.forEach(sec => {
-    const opt = document.createElement('option');
-    opt.value = sec;
-    opt.textContent = sec;
-    sel.appendChild(opt);
-  });
-}
-
-function plotNetworkSector(sector) {
-  if (!networkData || !networkData[sector]) return;
-
-  console.log("Plotting sector:", sector);
-
-  const data = networkData[sector];
-  const nodes = data.nodes.map(d => Object.assign({}, d)); // shallow copy
-  const links = data.links.map(d => Object.assign({}, d));
-
-  console.log("Nodes:", nodes.length, "Links:", links.length);
-
-  // Initialize SVG & groups
-  initSvg();
-
-  // Force simulation
-  simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(120).strength(0.5))
-    .force('charge', d3.forceManyBody().strength(-200))
-    .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(30));
-
-  // Edge thickness based on |corr|
-  const corrVals = links.map(d => Math.abs(d.corr));
-  const corrMin = d3.min(corrVals);
-  const corrMax = d3.max(corrVals);
-  const widthScale = d3.scaleLinear()
-    .domain([corrMin || 0, corrMax || 1])  // avoid undefined if no links
-    .range([1, 5]);
-
-  // Draw links (edges)
-  const link = linkGroup.selectAll('line')
-    .data(links)
-    .enter()
-    .append('line')
-    .attr('stroke', '#b039cadc')
-    .attr('stroke-opacity', 0.7)
-    .attr('stroke-width', d => widthScale(Math.abs(d.corr)));
-
-  // Draw nodes
-  const node = nodeGroup.selectAll('circle')
-    .data(nodes)
-    .enter()
-    .append('circle')
-    .attr('r', 8)
-    .attr('fill', '#e60b78ff')
-    .attr('stroke', '#333')
-    .attr('stroke-width', 1.0)
-    .call(d3.drag()
-      .on('start', dragStarted)
-      .on('drag', dragged)
-      .on('end', dragEnded));
-
-  // Tooltip via <title>
-  node.append('title')
-    .text(d => d.id);
-
-  // Labels
-  const labels = labelGroup.selectAll('text')
-    .data(nodes)
-    .enter()
-    .append('text')
-    .attr('font-size', 10)
-    .attr('dx', 10)
-    .attr('dy', 3)
-    .text(d => d.id);
-
-  simulation.on('tick', () => {
-    link
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
-
-    node
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y);
-
-    labels
-      .attr('x', d => d.x)
-      .attr('y', d => d.y);
-  });
-
-  function dragStarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragEnded(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
-}
-
-// Load JSON and initialize
-fetch(DATA_URL_NETWORK)
-  .then(resp => resp.json())
-  .then(json => {
-    console.log("Loaded network data:", json);
-    networkData = json;
-    const sectors = Object.keys(networkData).sort();
-    if (!sectors.length) {
-      console.warn('No sectors in leadership_network.json');
-      return;
-    }
-    populateNetworkSectorSelect(sectors);
-    plotNetworkSector(sectors[0]);
-
-    document.getElementById('networkSectorSelect').addEventListener('change', (e) => {
-      plotNetworkSector(e.target.value);
-    });
-  })
-  .catch(err => {
-    console.error('Failed to load network data:', err);
-  });
-</script>
-
-<div style="margin-top:15px; padding:10px; border-left:4px solid #ff4d88; background:#ffe5ec;">
-  <b>Legend:</b><br>
-  • <b>Nodes</b> represent companies in the selected sector.<br>
-  • <b>Arrows</b> point from the <b>Leader → Follower</b> stock.<br>
-  • <b>Thickness of arrows</b> represents the strength of the statistical link
-    (stronger cross-correlation at the optimal positive lag).<br>
-  • <b>Hover</b> over a node to see the company ticker.<br>
-  • <b>Drag</b> nodes to explore the structure of the sector.
-</div>
 
 ### Sector-by-Sector Leadership Insights
 
