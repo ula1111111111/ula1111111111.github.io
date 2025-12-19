@@ -275,63 +275,72 @@ fetch(DATA_URL_NETWORK)
 
 ### Sector-by-Sector Leadership Insights
 
-Our analysis reveals sparse but meaningful leader–follower relationships within sectors. Rather than dense interactions, leadership tends to concentrate around a small number of influential firms.
+The analysis identifies sparse but structured leader–follower relationships within sectors.
+Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
 
-#### Basic Industries
+### Basic Industries
 
-**Methanex (MEOH)** and **Royal Gold (RGLD)** emerge as upstream firms, with **Stericycle (SRCL)** acting as a downstream follower.
-Leadership effects include both reinforcing and opposing movements, suggesting a small but structured hierarchy within the sector.
+Leadership is distributed across Barrick Gold (GOLD), Methanex (MEOH), Royal Gold (RGLD), and WD-40 Company (WDFC).
+Firms such as Stericycle (SRCL) and Balchem (BCPC) act as downstream followers.
+The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.
 
-#### Capital Goods
+### Capital Goods
 
-**Garmin (GRMN)** clearly leads **Icahn Enterprises (IEP)**, forming a clean, one-directional relationship.
-This sector exhibits one of the strongest leadership signals detected in the analysis.
+Garmin (GRMN) and Tesla (TSLA) emerge as leaders, influencing Icahn Enterprises (IEP) and Nordson (NDSN), respectively.
+Leadership effects are clear and directional, though heterogeneous in sign.
 
-#### Consumer Services
+### Consumer Durables
 
-Leadership is split across two independent channels:
+Casey’s General Stores (CASY), Cronos Group (CRON), and Pool Corporation (POOL) act as leaders.
+Their influence propagates toward Helen of Troy (HELE), iRobot (IRBT), and Lumentum (LITE), with mixed positive and negative responses.
 
-- **Amazon (AMZN)** influences **Netflix (NFLX)** with an opposite-direction response.
+### Consumer Non-Durables
 
-- **Comcast (CMCSA)** leads **Starbucks (SBUX)** with a positive response.
+Cintas (CTAS) and Hasbro (HAS) lead firms such as Columbia Sportswear (COLM) and Pilgrim’s Pride (PPC).
+The sector displays asymmetric responses, indicating varied short-term adjustment mechanisms.
 
-No single firm dominates the sector.
+### Consumer Services
 
-#### Energy
+Amazon (AMZN) and Comcast (CMCSA) dominate leadership dynamics.
+Amazon’s influence on Netflix (NFLX) is negative, while Comcast exerts a positive leadership effect on Starbucks (SBUX).
+Leadership is split across independent channels rather than centralized in a single firm.
 
-**Patterson-UTI Energy (PTEN)** and **Viper Energy (VNOM)** both influence **Centennial Resource Development (CDEV)** in the same (negative) direction.
-Centennial behaves as a clear follower, responding consistently to upstream movements.
+### Energy
 
-#### Finance
+Gulfport Energy (GPOR), Patterson-UTI Energy (PTEN), and Viper Energy (VNOM) influence Centennial Resource Development (CDEV).
+Leadership effects are consistently negative, identifying Centennial as a clear follower.
 
-A single directional relationship is detected, with **Huntington Bancshares (HBANO)** influencing **TD Ameritrade (AMTD)**.
-Leadership effects in this sector are weak but non-random.
+### Finance
 
-#### Health Care
+Multiple firms, including Cincinnati Financial (CINF), Huntington Bancshares (HBAN/HBANO), Northern Trust (NTRS), and Principal Financial (PFG), act as leaders.
+Their influence extends toward Nasdaq (NDAQ), Fifth Third Bancorp (FITB), and T. Rowe Price (TROW), forming a sparse but non-trivial network.
 
-This sector displays the most structured leadership pattern:
+### Health Care
 
-- **Biogen (BIIB)** acts as a central leader,
+Health Care exhibits the richest internal structure.
+Biogen (BIIB), Intuitive Surgical (ISRG), Regeneron (REGN), and IDEXX Laboratories (IDXX) emerge as leaders, influencing Vertex Pharmaceuticals (VRTX), Walgreens Boots Alliance (WBA), and others.
+Both positive and negative leadership effects coexist.
 
-- **Intuitive Surgical (ISRG)** influences **Vertex Pharmaceuticals (VRTX)**,
+### Miscellaneous
 
-- **Amgen (AMGN)** exhibits mixed leadership effects toward **Walgreens Boots Alliance (WBA)**.
+Booking Holdings (BKNG) and eBay (EBAY) lead firms such as CDK Global (CDK) and Zillow Group (ZG).
+Leadership relationships are simple but directional.
 
-Both positive and negative influence patterns coexist.
+### Public Utilities
 
-#### Miscellaneous
+Leadership is distributed across firms including Alliant Energy (LNT), Otter Tail (OTTR), Shenandoah Telecommunications (SHEN), T-Mobile US (TMUS), and Xcel Energy (XEL).
+This sector displays one of the densest leadership structures.
 
-A simple and intuitive relationship appears, with **Booking Holdings (BKNG)** leading **eBay (EBAY)**.
+### Technology
 
-#### Public Utilities
+Broadcom (AVGO) exhibits a clear leadership effect on Apple (AAPL), indicating delayed information transmission rather than purely synchronous movement.
 
-**T-Mobile US (TMUS)** shows a clear leadership effect on **Alliant Energy (LNT)**, forming a single directional pair.
+### Transportation
 
-#### Transportation
+JetBlue (JBLU), Landstar (LSTR), Old Dominion Freight Line (ODFL), and United Airlines (UAL) influence firms such as CSX (CSX) and Expeditors (EXPD).
+Leadership relationships span multiple transportation subsectors.
 
-**United Airlines (UAL)** leads **CSX (CSX)**, indicating information transmission across different transportation subsectors.
+### Takeaway
 
-#### Takeaway
-
-Across sectors, leadership effects are rare, directional, and concentrated.
-A small number of firms consistently act as short-term influencers, while most stocks respond passively or show no detectable leadership dynamics.
+Across sectors, leadership effects are directional, heterogeneous, and concentrated.
+A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
