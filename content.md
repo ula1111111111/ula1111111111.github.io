@@ -1,45 +1,77 @@
-<div class="intro-section" markdown="1">
+## Motivations
 
-Here we do the whole storytelling and introduction about the project, nice graphics (story related, check how the best projwect from last years look like) and research questions. TASK#1
+Financial markets are often portrayed as dominated by a handful of giants, but do the biggest companies truly drive the movements of their entire industry?
 
-__Motivations:__
+This project investigates whether industry leaders systematically influence smaller peers within NASDAQ sectors. Using historical stock price data enriched with external metadata, we group companies by industry, develop objective criteria to rank them, and analyze how information and volatility propagate across the market.
 
-Financial markets are often portrayed as dominated by a handful of giants, but do the biggest companies truly drive the movements of their entire industry? This project investigates whether industry leaders systematically influence smaller peers within NASDAQ sectors. Using historical stock price data enriched with external metadata, we will group companies by industry, develop objective criteria to rank them, and analyze how information and volatility propagate across the market. Our methodology combines time-series modeling and Granger causality testing to detect leader-follower patterns in price dynamics. We will also assess how persistent these relationships are and how they evolve during major market events. Another component compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates, from dominant firms or distributed behavior, this project offers insights into market power and the dynamics of information diffusion.
+Our methodology combines time-series modeling and Granger causality testing to detect leader–follower patterns in price dynamics. We also assess how persistent these relationships are and how they evolve during major market events.
 
+Another component of the analysis compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates — from dominant firms or distributed behavior — this project offers insights into market power and the dynamics of information diffusion.
 
-<div class="research-questions-box" markdown="1">
+---
+
 ## Research Questions
 
-1. **How do we define a "leader" and a "follower" in stock movements?** How to sectorize and hierarchize company?
-2. **How can we detect directional influence between stocks within a sector?** (use daily return time series, detect this using lagged correlations or Granger causality)
-3. **Are leader-follower dynamics consistent across sectors?** Do some sectors have stronger leadership patterns than others?
-4. **How stable are these influence patterns over time,** and how do they evolve during major market events?
-5. **What does ETF analysis reveal about the performance of market leaders,** sector averages, and followers, and about overall market concentration?
-6. **How does survivorship bias impact the validity of our conclusions,** and what steps can be taken to reduce its effects? and Which time window should we analyze?
+1. **How do we define a “leader” and a “follower” in stock movements?**  
+   How should companies be sectorized and hierarchized?
 
-</div>
+2. **How can we detect directional influence between stocks within a sector?**  
+   Can daily return time series reveal influence through lagged correlations or Granger causality?
 
-</div>
+3. **Are leader–follower dynamics consistent across sectors?**  
+   Do some sectors exhibit stronger leadership patterns than others?
 
+4. **How stable are these influence patterns over time,**  
+   and how do they evolve during major market events?
 
-**Dataset 1: NASDAQ Company List**
-- Source: NASDAQ dataset (`companylist.csv`)
-- Contents: Company information only (no ETFs)
-- Key fields: Symbol, Name, MarketCap, Sector, Industry, IPO year
-- Purpose: Provides sector classification and market capitalization for companies
+5. **What does ETF analysis reveal about the performance of market leaders,**  
+   sector averages, and followers, and about overall market concentration?
 
-**Dataset 2: Stock Market Dataset**
-- Source: Kaggle Stock Market Dataset
-- Contains: Stocks, ETFs, and symbols metadata
-- Components:
-  - **`stocks/` folder**: Individual CSV files for each stock with daily price data (OHLCV + Adjusted Close)
-  - **`etfs/` folder**: Individual CSV files for each ETF with daily price data (OHLCV + Adjusted Close)
-  - **`symbols_valid_meta.csv`**: Metadata for all securities (stocks AND ETFs), including ETF flags, exchange listings, security names
-- Purpose: Provides historical price data and security type classification (stock vs ETF)
+6. **How does survivorship bias impact the validity of our conclusions,**  
+   and what steps can be taken to reduce its effects?  
+   Which time window should be analyzed?
 
+---
 
+## Data Overview
 
-<h2>Dataset overview</h2>
+### Provided Data: Stock Market Dataset
+
+- **Source:** Kaggle Stock Market Dataset  
+- **Scope:** Stocks, ETFs, and symbols metadata  
+
+**Components:**
+- **`stocks/` folder**  
+  Individual CSV files for each stock with daily price data (OHLCV + Adjusted Close)
+- **`etfs/` folder**  
+  Individual CSV files for each ETF with daily price data (OHLCV + Adjusted Close)
+- **`symbols_valid_meta.csv`**  
+  Metadata for all securities (stocks *and* ETFs), including ETF flags, exchange listings, and security names
+
+**Purpose:**  
+Provides historical price data and security-type classification (stock vs ETF)
+
+---
+
+### External Data: NASDAQ Company List
+
+- **Source:** NASDAQ dataset (`companylist.csv`)
+- **Coverage:** Companies only (no ETFs)
+
+**Key Fields:**
+- Symbol  
+- Name  
+- Market Capitalization  
+- Sector  
+- Industry  
+- IPO Year  
+
+**Purpose:**  
+Provides sector classification and market capitalization data for listed companies
+
+ 
+
+<h2>External Dataset overview</h2>
 <p style="max-width: 900px;">
   Click a sector bubble to reveal the full list of companies in that sector.
 </p>
