@@ -1,4 +1,60 @@
 
+---
+
+### Answering research Questions and Key Findings
+
+1. How do we define a “leader” and a “follower” in stock movements?
+
+A **leader** is defined as a stock whose past daily returns improve the prediction of another stock’s future returns.
+A **follower** is a stock whose returns respond with a short delay to movements in the leader.
+
+In practice, leadership is assigned only when both:
+
+- a lead–lag correlation is detected at a positive time shift, and
+
+- a Granger causality test confirms predictive precedence in one direction.
+
+2. How can we detect directional influence between stocks within a sector?
+
+Directional influence is detected using a two-step statistical pipeline:
+
+Cross-correlation analysis to identify potential lead–lag relationships.
+
+Granger causality testing to confirm directional predictability.
+
+Only relationships supported by both steps are retained.
+
+Can daily return time series reveal influence through lagged correlations or Granger causality?
+
+Yes.
+Daily return series are sufficiently granular to reveal short-term lead–lag effects at horizons of a few trading days.
+While these effects are generally moderate in magnitude, they are statistically meaningful and robust across sectors.
+
+3. Are leader–follower dynamics consistent across sectors?
+
+No.
+Leadership patterns are sector-dependent:
+
+Some sectors exhibit structured hierarchies with multiple leaders,
+
+Others show only one or two dominant leader–follower pairs,
+
+A few sectors display minimal detectable leadership.
+
+This heterogeneity highlights differences in information transmission across industries.
+
+Do some sectors exhibit stronger leadership patterns than others?
+
+Yes.
+Sectors such as Health Care, Finance, and Public Utilities show denser and more structured leadership networks, while others exhibit sparse or isolated relationships.
+
+This suggests that sector-specific characteristics influence how quickly information propagates among firms.
+---
+
+Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
+Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
+
+Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
 <!-- Load Plotly from CDN -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -91,6 +147,200 @@ fetch(DATA_URL)
 </script>
 
 
+<!-- D3.js from CDN -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<h2>Leader–Follower Network Graph (per sector)</h2>
+<p>
+  Each node is a stock. Arrows point from <b>leader → follower</b>. 
+  Edge thickness reflects the strength of the relationship (|correlation|).
+</p>
+
+<label for="networkSectorSelect"><b>Select sector:</b></label>
+<select id="networkSectorSelect"></select>
+
+<div id="network-container" style="width:100%; max-width:900px; height:600px; border:1px solid #ccc; margin-top:10px;"></div>
+
+<script>
+const DATA_URL_NETWORK = "{{ '/assets/leadership_network.json' | relative_url }}";
+
+let networkData = null;
+let svg, linkGroup, nodeGroup, labelGroup, simulation;
+const width = 900;
+const height = 600;
+
+function initSvg() {
+  const container = document.getElementById('network-container');
+  container.innerHTML = '';
+
+  svg = d3.select('#network-container')
+    .append('svg')
+    .attr('width', '100%')
+    .attr('height', '100%')
+    .attr('viewBox', `0 0 ${width} ${height}`);
+
+  // Arrowhead marker
+  const defs = svg.append("defs");
+  defs.append("marker")
+    .attr("id", "arrowhead")
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 18)          // distance from node center
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5")
+    .attr("fill", "#b039cadc");
+
+  linkGroup = svg.append('g').attr('class', 'links');
+  nodeGroup = svg.append('g').attr('class', 'nodes');
+  labelGroup = svg.append('g').attr('class', 'labels');
+}
+
+function populateNetworkSectorSelect(sectors) {
+  const sel = document.getElementById('networkSectorSelect');
+  sel.innerHTML = '';
+  sectors.forEach(sec => {
+    const opt = document.createElement('option');
+    opt.value = sec;
+    opt.textContent = sec;
+    sel.appendChild(opt);
+  });
+}
+
+function plotNetworkSector(sector) {
+  if (!networkData || !networkData[sector]) return;
+
+  const data = networkData[sector];
+  const nodes = data.nodes.map(d => Object.assign({}, d));
+  const links = data.links.map(d => Object.assign({}, d));
+
+  initSvg();
+
+  simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(120).strength(0.5))
+    .force('charge', d3.forceManyBody().strength(-200))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(30));
+
+  // Edge thickness based on |corr|
+  const corrVals = links.map(d => Math.abs(d.corr));
+  const corrMin = d3.min(corrVals);
+  const corrMax = d3.max(corrVals);
+  const widthScale = d3.scaleLinear()
+    .domain([corrMin || 0, corrMax || 1])
+    .range([1, 5]);
+
+  // Draw links with arrowheads
+  const link = linkGroup.selectAll('line')
+    .data(links)
+    .enter()
+    .append('line')
+    .attr('stroke', '#b039cadc')
+    .attr('stroke-opacity', 0.7)
+    .attr('stroke-width', d => widthScale(Math.abs(d.corr)))
+    .attr('marker-end', 'url(#arrowhead)');
+
+  // Draw nodes
+  const node = nodeGroup.selectAll('circle')
+    .data(nodes)
+    .enter()
+    .append('circle')
+    .attr('r', 8)
+    .attr('fill', '#e60b78ff')
+    .attr('stroke', '#333')
+    .attr('stroke-width', 1.0)
+    .call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded));
+
+  node.append('title').text(d => d.id);
+
+  // Labels
+  const labels = labelGroup.selectAll('text')
+    .data(nodes)
+    .enter()
+    .append('text')
+    .attr('font-size', 10)
+    .attr('dx', 10)
+    .attr('dy', 3)
+    .text(d => d.id);
+
+  // Offset arrow end so it doesn't sit inside the target node
+  const targetOffset = 10; // ~ node radius + margin
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => {
+        const dx = d.target.x - d.source.x;
+        const dy = d.target.y - d.source.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        return d.target.x - (dx / dist) * targetOffset;
+      })
+      .attr('y2', d => {
+        const dx = d.target.x - d.source.x;
+        const dy = d.target.y - d.source.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        return d.target.y - (dy / dist) * targetOffset;
+      });
+
+    node
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y);
+
+    labels
+      .attr('x', d => d.x)
+      .attr('y', d => d.y);
+  });
+
+  function dragStarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragEnded(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+}
+
+// Load JSON and initialize
+fetch(DATA_URL_NETWORK)
+  .then(resp => resp.json())
+  .then(json => {
+    networkData = json;
+    const sectors = Object.keys(networkData).sort();
+    if (!sectors.length) return;
+
+    populateNetworkSectorSelect(sectors);
+    plotNetworkSector(sectors[0]);
+
+    document.getElementById('networkSectorSelect').addEventListener('change', (e) => {
+      plotNetworkSector(e.target.value);
+    });
+  })
+  .catch(err => console.error('Failed to load network data:', err));
+</script>
+
+<div style="margin-top:15px; padding:10px; border-left:4px solid #ff4d88; background:#ffe5ec;">
+  <b>Legend:</b><br>
+  • <b>Nodes</b> represent companies in the selected sector.<br>
+  • <b>Arrows</b> point from the <b>Leader → Follower</b> stock.<br>
+  • <b>Thickness of arrows</b> represents the strength of the statistical link (|correlation|).<br>
+  • <b>Hover</b> over a node to see the ticker.<br>
+  • <b>Drag</b> nodes to explore the structure.
+</div>
 
 <!-- D3.js from CDN -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
