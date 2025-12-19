@@ -1,50 +1,13 @@
-function packBubbles(values) {
-  // Placement simple type “spirale” pour éviter les overlaps, sans dépendance D3.
-  // Ça marche très bien pour ~10-30 bulles.
-  const nodes = values
-    .map((v, i) => ({ v, i }))
-    .sort((a, b) => b.v - a.v);
+function spiralLayout(n) {
+  // Positions sur une spirale (lisible + stable)
+  const X = [];
+  const Y = [];
 
-  const radii = nodes.map(n => Math.sqrt(n.v) * 8); // scale visuel
-  const placed = [];
-
-  function overlaps(x, y, r) {
-    for (const p of placed) {
-      const dx = x - p.x, dy = y - p.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < r + p.r + 2) return true;
-    }
-    return false;
-  }
-
-  let angle = 0;
-  let step = 0.35;
-  let a = 6;
-
-  for (let k = 0; k < nodes.length; k++) {
-    const r = radii[k];
-    let t = 0;
-    let x = 0, y = 0;
-
-    while (t < 4000) {
-      const rad = a * angle;
-      x = rad * Math.cos(angle);
-      y = rad * Math.sin(angle);
-      if (!overlaps(x, y, r)) break;
-      angle += step;
-      t++;
-    }
-
-    placed.push({ x, y, r, origIndex: nodes[k].i });
-    angle += step;
-  }
-
-  // re-map en ordre original
-  const X = new Array(values.length);
-  const Y = new Array(values.length);
-  for (const p of placed) {
-    X[p.origIndex] = p.x;
-    Y[p.origIndex] = p.y;
+  for (let i = 0; i < n; i++) {
+    const t = i * 0.75;         // angle step
+    const r = 0.55 + i * 0.22;  // radius growth
+    X.push(r * Math.cos(t));
+    Y.push(r * Math.sin(t));
   }
   return { X, Y };
 }
@@ -61,46 +24,72 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sectorsData = await sectorsRes.json(); // [{sector,count},...]
   const companiesBySector = await compRes.json(); // { "Tech":[...], ... }
 
-  // Clean order by count desc
-  sectorsData.sort((a,b) => b.count - a.count);
+  // Sort by count desc (bigger = easier to click)
+  sectorsData.sort((a, b) => b.count - a.count);
 
   const sectors = sectorsData.map(d => d.sector);
-  const counts = sectorsData.map(d => d.count);
+  const counts  = sectorsData.map(d => d.count);
 
-  const { X, Y } = packBubbles(counts);
+  // Bubble sizes (controlled)
+  const maxC = Math.max(...counts);
+  const sizes = counts.map(c => 18 + 72 * Math.sqrt(c / maxC)); // ~18..90
+
+  // Positions
+  const { X, Y } = spiralLayout(sectors.length);
+
+  // Labels only for top sectors to reduce clutter
+  const topK = 5;
+  const texts = sectors.map((s, i) => (i < topK ? s : ""));
 
   const trace = {
     x: X,
     y: Y,
     mode: "markers+text",
-    text: sectors.map(s => s),
+    text: texts,
     textposition: "middle center",
-    textfont: { size: 12 },
+    textfont: { size: 12, color: "rgba(20,20,20,0.85)" },
     marker: {
-      size: counts.map(c => Math.sqrt(c) * 12),
+      size: sizes,
       sizemode: "diameter",
       opacity: 0.92,
-      line: { width: 2, color: "rgba(255,255,255,0.9)" }
+      color: counts,
+      colorscale: [
+        [0,   "#fde2e4"],
+        [0.3, "#f9a1b4"],
+        [0.6, "#f06595"],
+        [1,   "#8b0000"]
+      ],
+      showscale: false,
+      line: { width: 3, color: "rgba(255,255,255,0.95)" }
     },
     hovertemplate:
       "<b>%{customdata.sector}</b><br>" +
-      "%{customdata.count} companies" +
+      "%{customdata.count} companies<br>" +
+      "<span style='color:#666'>Click to open list →</span>" +
       "<extra></extra>",
-    customdata: sectors.map((s,i) => ({ sector: s, count: counts[i] })),
+    customdata: sectors.map((s, i) => ({ sector: s, count: counts[i] })),
   };
 
   const layout = {
     margin: { t: 10, l: 10, r: 10, b: 10 },
-    xaxis: { visible: false },
-    yaxis: { visible: false },
+    xaxis: { visible: false, fixedrange: false },
+    yaxis: { visible: false, fixedrange: false, scaleanchor: "x" },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     showlegend: false,
+    dragmode: "pan",
+    hovermode: "closest",
   };
 
-  Plotly.newPlot(chartEl, [trace], layout, { responsive: true, displayModeBar: false });
+  Plotly.newPlot(chartEl, [trace], layout, {
+    responsive: true,
+    displayModeBar: false,
+    scrollZoom: true
+  });
 
-  // Panel behavior
+  // ----------------------------
+  // Panel behavior (UNCHANGED)
+  // ----------------------------
   const panel = document.getElementById("sector-panel");
   const panelTitle = document.getElementById("panel-title");
   const panelSub = document.getElementById("panel-sub");
@@ -145,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     panelSearch.value = "";
     renderList(sector);
 
-    // Sur mobile, scroll vers panel
+    // Mobile: scroll to panel
     panel.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
@@ -162,4 +151,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     panelList.innerHTML = "";
   });
 });
-
