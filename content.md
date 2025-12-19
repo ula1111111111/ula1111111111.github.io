@@ -70,8 +70,8 @@ Provides historical price data and security-type classification (stock vs ETF)
 Provides sector classification and market capitalization data for listed companies
 
  
-
-<h2>External Dataset overview</h2>
+**External Dataset overview:**  
+<h2></h2>
 <p style="max-width: 900px;">
   Click a sector bubble to reveal the full list of companies in that sector.
 </p>
