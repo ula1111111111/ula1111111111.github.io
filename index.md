@@ -45,20 +45,6 @@ subtitle: ""
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
 
 
-<section class="intro">
-  <h2>Who really moves the market?</h2>
-
-  <p class="intro-text">
-    Markets are not only driven by fundamentals, but by influence, leadership,
-    and the diffusion of information across dominant players.
-  </p>
-
-  <blockquote>
-    “Prices are not only determined by information, but by the narratives that spread it.”
-    <span>— Robert Shiller</span>
-  </blockquote>
-</section>
-
 
 {% include_relative content.md %}
 

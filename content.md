@@ -1,22 +1,3 @@
-<section class="hero-analysis">
-
-  <h1>
-    Who really moves the market?
-  </h1>
-
-  <p class="hero-subtitle">
-    Exploring leadership, influence, and information diffusion across NASDAQ sectors
-  </p>
-
-</section>
-
-<blockquote class="hero-quote">
-  “blablabla”  
-  <span>— Robert Shiller</span>
-</blockquote>
-
-
-
 <div class="intro-section" markdown="1">
 
 Here we do the whole storytelling and introduction about the project, nice graphics (story related, check how the best projwect from last years look like) and research questions. TASK#1
