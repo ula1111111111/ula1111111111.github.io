@@ -157,7 +157,7 @@ These networks reveal whether leadership is centralized around a few firms or di
     + \sum_{\ell=1}^{p} \beta_\ell r_{j,t-\ell}
     + \sum_{\ell=1}^{p} \gamma_\ell r_{i,t-\ell}
     + \varepsilon_t,
-    \qquad p = 7
+    \qquad p = 3
     \]
 
     <div class="math-highlight">
