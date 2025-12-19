@@ -24,11 +24,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sectorsData = await sectorsRes.json(); // [{sector,count},...]
   const companiesBySector = await compRes.json(); // { "Tech":[...], ... }
 
-  // Sort by count desc (bigger = easier to click)
-  sectorsData.sort((a, b) => b.count - a.count);
+  // 1) Remove "n/a" (and similar junk labels)
+  const badSectors = new Set(["n/a", "na", "unknown", ""]);
+  const cleaned = sectorsData.filter(d => {
+    const s = String(d.sector || "").trim().toLowerCase();
+    return !badSectors.has(s);
+  });
 
-  const sectors = sectorsData.map(d => d.sector);
-  const counts  = sectorsData.map(d => d.count);
+  // 2) Sort by count desc (bigger = easier to click)
+  cleaned.sort((a, b) => b.count - a.count);
+
+  const sectors = cleaned.map(d => d.sector);
+  const counts  = cleaned.map(d => d.count);
 
   // Bubble sizes (controlled)
   const maxC = Math.max(...counts);
@@ -37,9 +44,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Positions
   const { X, Y } = spiralLayout(sectors.length);
 
-  // Labels only for top sectors to reduce clutter
-  const topK = 5;
-  const texts = sectors.map((s, i) => (i < topK ? s : ""));
+  // 3) Show ALL sector names (no more topK restriction)
+  const texts = sectors;
 
   const trace = {
     x: X,
@@ -47,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     mode: "markers+text",
     text: texts,
     textposition: "middle center",
-    textfont: { size: 12, color: "rgba(20,20,20,0.85)" },
+    textfont: { size: 12, color: "rgba(20,20,20,0.90)" },
     marker: {
       size: sizes,
       sizemode: "diameter",
@@ -128,6 +134,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   chartEl.on("plotly_click", (ev) => {
     const sector = ev.points?.[0]?.customdata?.sector;
     if (!sector) return;
+
+    // extra safety: never open n/a
+    if (String(sector).trim().toLowerCase() === "n/a") return;
+
     currentSector = sector;
 
     panelTitle.textContent = sector;
