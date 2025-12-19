@@ -49,9 +49,10 @@ Yes.
 Sectors such as Health Care, Finance, and Public Utilities show denser and more structured leadership networks, while others exhibit sparse or isolated relationships.
 
 This suggests that sector-specific characteristics influence how quickly information propagates among firms.
+
 ---
 
-Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
+<!-- Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
 Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
 
 Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
@@ -80,7 +81,7 @@ The final output is a directed network:
 
 - arrow thickness reflects the strength of the detected relationship.
 
-These networks reveal whether leadership is centralized around a few firms or distributed across multiple channels.
+These networks reveal whether leadership is centralized around a few firms or distributed across multiple channels. -->
 
 
 
@@ -119,10 +120,6 @@ These networks reveal whether leadership is centralized around a few firms or di
   </div>
 </div>
 
-
-<script>
-console.log("MathJax present?", typeof MathJax !== "undefined");
-</script>
 
 <details class="math-collapse">
   <summary>Mathematical details</summary>
@@ -531,3 +528,18 @@ Leadership relationships span multiple transportation subsectors.
 
 Across sectors, leadership effects are directional, heterogeneous, and concentrated.
 A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
+
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  async>
+</script>
