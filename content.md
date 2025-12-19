@@ -38,3 +38,21 @@ Financial markets are often portrayed as dominated by a handful of giants, but d
   - **`etfs/` folder**: Individual CSV files for each ETF with daily price data (OHLCV + Adjusted Close)
   - **`symbols_valid_meta.csv`**: Metadata for all securities (stocks AND ETFs), including ETF flags, exchange listings, security names
 - Purpose: Provides historical price data and security type classification (stock vs ETF)
+
+
+
+<h2>Dataset overview</h2>
+<p style="max-width: 900px;">
+  Before analyzing influence and leadership, we first look at how NASDAQ companies are distributed across sectors.
+  Each bubble represents a sector, and its size reflects the number of companies in our dataset.
+</p>
+
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+<div id="sector-bubbles" style="width:100%; height:520px;"></div>
+
+<script>
+  window.SECTORS_JSON_URL = "{{ '/assets/data/sectors.json' | relative_url }}";
+</script>
+<script src="{{ '/assets/js/sector-bubbles.js' | relative_url }}"></script>
+
