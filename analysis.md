@@ -1,32 +1,4 @@
 
-.math-collapse {
-  margin: 20px 0;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,.1);
-  background: #fff;
-  box-shadow: 0 8px 22px rgba(0,0,0,.06);
-}
-
-.math-collapse summary {
-  cursor: pointer;
-  padding: 14px 18px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #b039ca;
-}
-
-.math-card {
-  padding: 18px 22px;
-}
-
-.math-highlight {
-  background: rgba(176,57,202,.08);
-  border-left: 4px solid #b039ca;
-  padding: 12px 14px;
-  border-radius: 10px;
-  margin: 14px 0;
-}
-
 ---
 
 ### Answering research Questions and Key Findings
@@ -114,141 +86,43 @@ These networks reveal whether leadership is centralized around a few firms or di
 
 
 
-<style>
-  .math-story{max-width:900px;margin:24px 0;font-size:16px;line-height:1.6}
-  .math-card{
-    background:#ffffff;
-    border:1px solid rgba(0,0,0,.1);
-    border-radius:14px;
-    padding:18px 20px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06);
-    margin-bottom:16px;
-  }
-  .math-card h2{
-    margin:0 0 8px 0;
-    font-size:22px;
-  }
-  .math-card h3{
-    margin:14px 0 6px 0;
-    font-size:17px;
-  }
-  .math-card p{margin:6px 0;color:#222}
-  .math-highlight{
-    background:rgba(176,57,202,.08);
-    border-left:4px solid #b039ca;
-    padding:12px 14px;
-    border-radius:10px;
-    margin:14px 0;
-  }
-  .math-foot{
-    font-size:14px;
-    color:#444;
-    margin-top:8px;
-  }
-</style>
-new
-<div class="math-story">
-
-  <div class="math-card">
-    <h2>Detecting Leadership in Stock Movements</h2>
-    <p>
-      Financial markets rarely move in isolation. Price changes in one firm are often
-      followed—sometimes within days—by reactions in others.
-      Our objective is to identify these short-term <b>leader–follower</b> relationships
-      within sectors and visualize how information flows across companies.
-    </p>
-    <p>
-      Rather than assuming leadership a priori, we let the data reveal which firms tend
-      to move first.
+<div style="max-width:900px;margin:24px 0;line-height:1.6;font-size:16px;">
+  <div style="padding:16px 18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,77,136,.12), rgba(176,57,202,.10));border:1px solid rgba(176,57,202,.25);">
+    <h2 style="margin:0 0 6px 0;">Detecting Leadership in Stock Movements</h2>
+    <p style="margin:0;color:#222;">
+      Financial markets rarely move in isolation. Price changes in one firm are often followed—sometimes within days—by reactions in others.
+      We search for short-term <b>leader → follower</b> relationships within sectors and visualize how information appears to flow across companies.
     </p>
   </div>
 
-  <div class="math-card">
-    <h3>Returns as the Basic Signal</h3>
-    <p>
-      All computations are performed on <b>logarithmic daily returns</b>,
-      which are additive over time and approximately stationary:
-    </p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="padding:14px 16px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.10);box-shadow:0 6px 18px rgba(0,0,0,.05);">
+      <h3 style="margin:0 0 6px 0;font-size:16px;">What “leadership” means here</h3>
+      <p style="margin:0;color:#333;">
+        An arrow from <b>A</b> to <b>B</b> means that <b>A tends to move first</b> and <b>B tends to react afterward</b> over a short delay.
+        This is a statistical notion of predictive precedence, not a claim of true economic causality.
+      </p>
+    </div>
 
-    \[ 
-    r_{i,t} = \log\!\left(\frac{P_{i,t}}{P_{i,t-1}}\right)
-    \]
-
-    <p class="math-foot">
-      Working with returns (rather than prices) removes long-term trends and focuses
-      attention on short-horizon reactions.
-    </p>
-  </div>
-
-  <div class="math-card">
-    <h3>Searching for Lead–Lag Effects</h3>
-    <p>
-      For each pair of stocks \( (i,j) \) within a sector, we examine whether movements
-      in \( i \) tend to precede movements in \( j \).
-      This is done via cross-correlation at small positive delays:
-    </p>
-
-    \[
-    \rho_{ij}(k) = \mathrm{Corr}\!\big(r_{i,t},\, r_{j,t+k}\big),
-    \qquad k = 1,\dots,7
-    \]
-
-    <div class="math-highlight">
-      If the strongest correlation occurs at a positive lag \( k>0 \),
-      stock \( i \) is interpreted as a <b>candidate leader</b> of stock \( j \).
+    <div style="padding:14px 16px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.10);box-shadow:0 6px 18px rgba(0,0,0,.05);">
+      <h3 style="margin:0 0 6px 0;font-size:16px;">How a link is selected</h3>
+      <p style="margin:0;color:#333;">
+        We first screen for short lead–lag alignments between two return series across small delays (up to 7 trading days).
+        Then we keep only pairs that pass a directional predictability test (Granger causality) in one direction but not the reverse.
+      </p>
     </div>
   </div>
 
-  <div class="math-card">
-    <h3>From Correlation to Directionality</h3>
-    <p>
-      Correlation alone is not sufficient: two stocks may move together without
-      one leading the other.
-      To confirm directional influence, we apply a Granger causality test.
-    </p>
-
-    <p>
-      We compare a baseline model using only the follower’s past returns
-      to an augmented model that also includes the leader’s past returns:
-    </p>
-
-    \[
-    r_{j,t}
-    = \alpha + \sum_{\ell=1}^{p} \beta_\ell r_{j,t-\ell}
-    + \sum_{\ell=1}^{p} \gamma_\ell r_{i,t-\ell}
-    + \varepsilon_t,
-    \qquad p = 7
-    \]
-
-    <div class="math-highlight">
-      A link \( i \rightarrow j \) is retained only if the leader’s lagged returns
-      significantly improve prediction in this direction, but not in the reverse.
-    </div>
-  </div>
-
-  <div class="math-card">
-    <h3>What the Visualizations Represent</h3>
-    <p>
-      The final output is a directed, sector-specific network:
-    </p>
-    <ul>
-      <li><b>Nodes</b> are companies within a sector,</li>
-      <li><b>Arrows</b> point from leaders to followers,</li>
-      <li><b>Arrow thickness</b> reflects the strength of the detected relationship.</li>
-    </ul>
-
-    <p class="math-foot">
-      These structures reveal whether leadership is centralized around a few firms
-      or distributed across multiple influence channels.
-    </p>
-  </div>
-
-   <div class="quote">
-    <b>How to read the visuals:</b>
-    Heatmaps show the strength of each validated leader–follower correlation, while the network graph highlights
-    the structure — hubs, chains, and isolated followers. Thicker arrows indicate stronger relationships.
+  <div style="margin-top:12px;padding:12px 14px;border-radius:12px;border-left:4px solid #ff4d88;background:#ffe5ec;color:#222;">
+    <b>How to read the plots:</b> Heatmaps show the strength of validated leader–follower correlations. Network graphs show the structure:
+    hubs, chains, and isolated followers. Thicker arrows indicate stronger relationships.
   </div>
 </div>
+
+
+<script>
+console.log("MathJax present?", typeof MathJax !== "undefined");
+</script>
 
 <details class="math-collapse">
   <summary>Mathematical details</summary>

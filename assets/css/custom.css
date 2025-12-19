@@ -449,3 +449,31 @@ blockquote span {
   .hero-steps { padding-top: 6rem; }
   .hero-bg-img { object-fit: contain; }
 }
+
+.math-collapse {
+  margin: 20px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+}
+
+.math-collapse summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #b039ca;
+}
+
+.math-card {
+  padding: 18px 22px;
+}
+
+.math-highlight {
+  background: rgba(176,57,202,.08);
+  border-left: 4px solid #b039ca;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 14px 0;
+}
