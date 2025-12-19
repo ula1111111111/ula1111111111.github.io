@@ -8,7 +8,7 @@ subtitle: ""
   <!-- Background layer (sticky) -->
   <div class="hero-bg" aria-hidden="true">
     <img
-      src="{{'/assets/img/final_hands.png' | relative_url }}"
+      src="{{ '/assets/img/blue_hands.png' | relative_url }}"
       alt=""
       class="hero-bg-img"
       loading="eager"
