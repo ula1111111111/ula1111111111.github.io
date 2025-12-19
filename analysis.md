@@ -1,4 +1,32 @@
 
+.math-collapse {
+  margin: 20px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+}
+
+.math-collapse summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #b039ca;
+}
+
+.math-card {
+  padding: 18px 22px;
+}
+
+.math-highlight {
+  background: rgba(176,57,202,.08);
+  border-left: 4px solid #b039ca;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 14px 0;
+}
+
 ---
 
 ### Answering research Questions and Key Findings
@@ -82,79 +110,8 @@ The final output is a directed network:
 
 These networks reveal whether leadership is centralized around a few firms or distributed across multiple channels.
 
-<style>
-  .story-wrap{max-width:900px;margin:18px 0 28px 0;font-size:16px;line-height:1.55}
-  .story-hero{
-    padding:16px 18px;border-radius:12px;
-    background:linear-gradient(90deg, rgba(255,77,136,.12), rgba(176,57,202,.10));
-    border:1px solid rgba(176,57,202,.25);
-  }
-  .story-hero h2{margin:0 0 6px 0;font-size:22px}
-  .story-hero p{margin:0;color:#222}
-  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-  @media (max-width:720px){.story-grid{grid-template-columns:1fr}}
-  .story-card{
-    padding:14px 16px;border-radius:12px;background:#fff;
-    border:1px solid rgba(0,0,0,.10);
-    box-shadow:0 6px 18px rgba(0,0,0,.05);
-  }
-  .story-card h3{margin:0 0 6px 0;font-size:16px}
-  .story-card p{margin:0;color:#333}
-  .pill{
-    display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;
-    background:rgba(255,77,136,.10);border:1px solid rgba(255,77,136,.25);
-    font-size:13px;color:#222
-  }
-  .quote{
-    margin-top:12px;padding:12px 14px;border-radius:12px;
-    border-left:4px solid #ff4d88;background:#ffe5ec;color:#222
-  }
-  .quote b{font-weight:700}
-  .micro{
-    margin-top:10px;color:#444;font-size:14px
-  }
-  .micro code{background:rgba(0,0,0,.05);padding:2px 6px;border-radius:6px}
-</style>
 
-<div class="story-wrap">
-  <div class="story-hero">
-    <h2>The Pulse of the Market: Who Sets the Rhythm?</h2>
-    <p>
-      Some stocks tend to move <b>first</b>, while others react a few days later.
-      Here we look for short-term <b>leader → follower</b> relationships within each sector,
-      using daily returns to track how market information appears to propagate across firms.
-    </p>
-    <div class="pill">What you’re seeing below: sparse, directional links — not general correlation</div>
-  </div>
 
-  <div class="story-grid">
-    <div class="story-card">
-      <h3>What “leadership” means here</h3>
-      <p>
-        An arrow <b>A → B</b> indicates that changes in <b>A</b> tend to be followed by changes in <b>B</b>
-        after a short delay. This is a statistical notion of <b>predictive precedence</b>, not a claim of
-        true economic causality.
-      </p>
-      <div class="micro">We work with log returns: <code>log(P_t / P_{t-1})</code>.</div>
-    </div>
-
-    <div class="story-card">
-      <h3>How a link earns its place</h3>
-      <p>
-        We first search for a clear <b>lead–lag alignment</b> (testing small delays), then keep only pairs
-        that also pass a <b>directional predictability</b> check (Granger causality) in one direction but not the reverse.
-        The result is a small set of “surviving” edges per sector.
-      </p>
-      <div class="micro">Delays tested: <code>k = 1…7</code> days · Granger lag order: <code>p = 7</code>.</div>
-    </div>
-  </div>
-
-  <div class="quote">
-    <b>How to read the visuals:</b>
-    Heatmaps show the strength of each validated leader–follower correlation, while the network graph highlights
-    the structure — hubs, chains, and isolated followers. Thicker arrows indicate stronger relationships.
-  </div>
-</div>
 
 
 <style>
@@ -189,7 +146,7 @@ These networks reveal whether leadership is centralized around a few firms or di
     margin-top:8px;
   }
 </style>
-
+new
 <div class="math-story">
 
   <div class="math-card">
@@ -213,9 +170,9 @@ These networks reveal whether leadership is centralized around a few firms or di
       which are additive over time and approximately stationary:
     </p>
 
-    $$ 
+    \[ 
     r_{i,t} = \log\!\left(\frac{P_{i,t}}{P_{i,t-1}}\right)
-    $$
+    \]
 
     <p class="math-foot">
       Working with returns (rather than prices) removes long-term trends and focuses
@@ -231,10 +188,10 @@ These networks reveal whether leadership is centralized around a few firms or di
       This is done via cross-correlation at small positive delays:
     </p>
 
-    $$
+    \[
     \rho_{ij}(k) = \mathrm{Corr}\!\big(r_{i,t},\, r_{j,t+k}\big),
     \qquad k = 1,\dots,7
-    $$
+    \]
 
     <div class="math-highlight">
       If the strongest correlation occurs at a positive lag \( k>0 \),
@@ -255,13 +212,13 @@ These networks reveal whether leadership is centralized around a few firms or di
       to an augmented model that also includes the leader’s past returns:
     </p>
 
-    $$
+    \[
     r_{j,t}
     = \alpha + \sum_{\ell=1}^{p} \beta_\ell r_{j,t-\ell}
     + \sum_{\ell=1}^{p} \gamma_\ell r_{i,t-\ell}
     + \varepsilon_t,
     \qquad p = 7
-    $$
+    \]
 
     <div class="math-highlight">
       A link \( i \rightarrow j \) is retained only if the leader’s lagged returns
@@ -286,8 +243,59 @@ These networks reveal whether leadership is centralized around a few firms or di
     </p>
   </div>
 
+   <div class="quote">
+    <b>How to read the visuals:</b>
+    Heatmaps show the strength of each validated leader–follower correlation, while the network graph highlights
+    the structure — hubs, chains, and isolated followers. Thicker arrows indicate stronger relationships.
+  </div>
 </div>
 
+<details class="math-collapse">
+  <summary>Mathematical details</summary>
+
+  <div class="math-card">
+
+    <h3>Lead–Lag Cross-Correlation</h3>
+
+    <p>
+      For each ordered pair of stocks \( (i,j) \) within a sector, we test whether
+      movements in \( i \) tend to precede movements in \( j \) by computing:
+    </p>
+
+    \[
+    \rho_{ij}(k)
+    = \mathrm{Corr}\!\big(r_{i,t},\, r_{j,t+k}\big),
+    \qquad k = 1,\dots,7
+    \]
+
+    <div class="math-highlight">
+      If the strongest correlation occurs at a positive lag \( k>0 \),
+      stock \( i \) is treated as a candidate leader of stock \( j \).
+    </div>
+
+    <h3>Granger Causality Test</h3>
+
+    <p>
+      To establish directionality, we compare a baseline autoregressive model
+      to an augmented model that includes lagged returns of the leader:
+    </p>
+
+    \[
+    r_{j,t}
+    = \alpha
+    + \sum_{\ell=1}^{p} \beta_\ell r_{j,t-\ell}
+    + \sum_{\ell=1}^{p} \gamma_\ell r_{i,t-\ell}
+    + \varepsilon_t,
+    \qquad p = 7
+    \]
+
+    <div class="math-highlight">
+      A directed link \( i \rightarrow j \) is retained only if the coefficients
+      \( \gamma_\ell \) are jointly significant, and no reverse causality is detected.
+    </div>
+
+  </div>
+</details>
 
 
 <!-- Load Plotly from CDN -->
