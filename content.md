@@ -11,7 +11,7 @@
 </section>
 
 <blockquote class="hero-quote">
-  “Markets are moved by stories, not spreadsheets alone.”  
+  “blablabla”  
   <span>— Robert Shiller</span>
 </blockquote>
 
@@ -60,16 +60,31 @@ Financial markets are often portrayed as dominated by a handful of giants, but d
 
 <h2>Dataset overview</h2>
 <p style="max-width: 900px;">
-  Before analyzing influence and leadership, we first look at how NASDAQ companies are distributed across sectors.
-  Each bubble represents a sector, and its size reflects the number of companies in our dataset.
+  Click a sector bubble to reveal the full list of companies in that sector.
 </p>
 
+<div class="bubble-layout">
+  <div id="sector-bubbles" class="bubble-chart"></div>
+
+  <aside class="bubble-panel" id="sector-panel">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title" id="panel-title">Select a sector</div>
+        <div class="panel-sub" id="panel-sub">Click a bubble to load companies</div>
+      </div>
+      <button class="panel-close" id="panel-close" type="button">×</button>
+    </div>
+
+    <input class="panel-search" id="panel-search" placeholder="Search company..." />
+
+    <div class="panel-list" id="panel-list"></div>
+  </aside>
+</div>
+
 <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-
-<div id="sector-bubbles" style="width:100%; height:520px;"></div>
-
 <script>
   window.SECTORS_JSON_URL = "{{ '/assets/data/sectors.json' | relative_url }}";
+  window.COMPANIES_BY_SECTOR_URL = "{{ '/assets/data/companies_by_sector.json' | relative_url }}";
 </script>
 <script src="{{ '/assets/js/sector-bubbles.js' | relative_url }}"></script>
 
