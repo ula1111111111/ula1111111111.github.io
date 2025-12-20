@@ -1021,6 +1021,121 @@ p:has(+ .visualization-grid) {
   animation-play-state: paused;
 }
 
+/* Logo Carousel Section */
+.logo-carousel-section {
+  margin: 4rem 0;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #ff4d88, #ff6ba3, #ff4d88);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo-carousel-track {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  animation: logoScroll 40s linear infinite;
+  width: fit-content;
+}
+
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-item::after {
+  content: '';
+  position: absolute;
+  right: -2rem;
+  width: 1px;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.logo-text {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.logo-item:hover .logo-text {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Pause on hover */
+.logo-carousel-section:hover .logo-carousel-track {
+  animation-play-state: paused;
+}
+
+/* Logo images support (if you add actual logo images later) */
+.logo-item img {
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-carousel-section {
+    padding: 2rem 0;
+    margin: 3rem 0;
+  }
+  
+  .logo-carousel-track {
+    gap: 3rem;
+    animation-duration: 30s;
+  }
+  
+  .logo-item {
+    padding: 0 1.5rem;
+  }
+  
+  .logo-text {
+    font-size: 1.4rem;
+  }
+  
+  .logo-item img {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .comparison-cards-interactive {
