@@ -87,71 +87,93 @@ subtitle: ""
   <div class="logo-carousel-container">
     <div class="logo-carousel-track">
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img">
+        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">NASDAQ</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img">
+        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">BlackRock</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img">
+        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Microsoft</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img">
+        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Apple</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img">
+        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Fidelity</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img">
+        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Vanguard</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img">
+        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Goldman Sachs</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img">
+        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">JPMorgan</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img">
+        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Amazon</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img">
+        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">Google</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img">
+        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="logo-text-white" style="display:none;">PayPal</div>
       </div>
       <!-- Duplicate for seamless loop -->
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img">
+        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">NASDAQ</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img">
+        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">BlackRock</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img">
+        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Microsoft</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img">
+        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Apple</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img">
+        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Fidelity</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img">
+        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Vanguard</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img">
+        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Goldman Sachs</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img">
+        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">JPMorgan</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img">
+        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Amazon</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img">
+        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">Google</div>
       </div>
       <div class="logo-item">
-        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img">
+        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="display:none;">
+        <div class="logo-text-white">PayPal</div>
       </div>
     </div>
   </div>
