@@ -1,11 +1,4 @@
----
-layout: post
-title: "ETF vs Equally-Weighted Portfolios: A Comprehensive Sector Analysis"
-date: 2025-01-27
-tags: [finance, portfolio-analysis, etf, equally-weighted, market-research]
-image: /assets/img/sector_summary_dashboard.png
-description: "An in-depth analysis comparing value-weighted ETFs with equally-weighted portfolios across four major sectors (Health Care, Finance, Technology, Consumer Services) from 2005-2020, revealing surprising insights about market leadership and diversification benefits."
-social-share: true
+
 
 ---
 
