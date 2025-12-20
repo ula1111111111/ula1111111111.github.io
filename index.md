@@ -29,10 +29,8 @@ subtitle: ""
     </div>
 
     <div class="hero-step">
-      <h2 class="intro-title">Who really moves the market?</h2>
       <p class="intro-text">
-        Markets are not only driven by fundamentals, but by influence, leadership,
-        and the diffusion of information across dominant players.
+        See below our common guess about Nasdaq, that lead and motivated our analysis :
       </p>
 
       <!-- NASDAQ acronym -->
