@@ -140,7 +140,7 @@ $$
 <div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
 
 <!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
-<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/YOUR_BAR_RACE_ID" data-height="700">
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/visualisation/26919257" data-height="700">
   <script src="https://public.flourish.studio/resources/embed.js"></script>
 </div>
 
