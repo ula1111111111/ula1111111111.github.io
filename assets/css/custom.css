@@ -804,6 +804,344 @@ p:has(+ .visualization-grid) {
   margin-bottom: 8px;
 }
 
+/* Interactive Introduction Section */
+.intro-animated {
+  margin: 2rem 0;
+}
+
+.intro-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Comparison Cards */
+.comparison-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 2.5rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparison-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 2px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-color: rgba(176,57,202,0.3);
+}
+
+.leaders-card {
+  border-left: 4px solid #ff4d88;
+}
+
+.leaders-card:hover {
+  border-left-color: #ff4d88;
+  background: linear-gradient(135deg, rgba(255,77,136,.03), #fff);
+}
+
+.followers-card {
+  border-left: 4px solid #b039ca;
+}
+
+.followers-card:hover {
+  border-left-color: #b039ca;
+  background: linear-gradient(135deg, rgba(176,57,202,.03), #fff);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.comparison-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.4rem;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+.comparison-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.card-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.comparison-card:hover .card-highlight,
+.comparison-card.active .card-highlight {
+  opacity: 0.3;
+}
+
+.comparison-card.active {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  border-color: rgba(176,57,202,0.5);
+}
+
+.leaders-card.active {
+  background: linear-gradient(135deg, rgba(255,77,136,.08), #fff);
+}
+
+.followers-card.active {
+  background: linear-gradient(135deg, rgba(176,57,202,.08), #fff);
+}
+
+.leaders-card .card-highlight {
+  color: #ff4d88;
+}
+
+.followers-card .card-highlight {
+  color: #b039ca;
+}
+
+/* Horizontal Scroll Container */
+.horizontal-scroll-container {
+  margin: 3rem 0;
+  position: relative;
+}
+
+.horizontal-scroll-wrapper {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0 2rem 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(176,57,202,0.3) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(176,57,202,0.4);
+  border-radius: 10px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(176,57,202,0.6);
+}
+
+.scroll-item {
+  flex: 0 0 calc(50% - 12px);
+  min-width: 400px;
+}
+
+.scroll-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95));
+  border: 2px solid rgba(176,57,202,0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff4d88, #b039ca);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  border-color: rgba(176,57,202,0.3);
+}
+
+.scroll-card:hover::before {
+  opacity: 1;
+}
+
+.scroll-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(176,57,202,0.2);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.scroll-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin: 0 0 1rem 0;
+}
+
+.scroll-card p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.scroll-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  padding: 0.75rem 1.25rem;
+  background: rgba(176,57,202,0.1);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.stat-item strong {
+  color: #b039ca;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.scroll-sectors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.sector-tag {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(255,77,136,0.15), rgba(176,57,202,0.15));
+  border: 1px solid rgba(176,57,202,0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b039ca;
+}
+
+.scroll-indicator {
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+.scroll-hint {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Key Question */
+.key-question {
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255,77,136,0.08), rgba(176,57,202,0.06));
+  border-left: 4px solid #b039ca;
+  border-radius: 16px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.question-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.key-question p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+.key-question strong {
+  color: #b039ca;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comparison-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .scroll-item {
+    flex: 0 0 85%;
+    min-width: 300px;
+  }
+  
+  .scroll-card {
+    padding: 1.75rem;
+  }
+  
+  .scroll-number {
+    font-size: 2.5rem;
+  }
+  
+  .scroll-card h3 {
+    font-size: 1.4rem;
+  }
+  
+  .key-question {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .scroll-hint {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .visualization-grid {
     grid-template-columns: 1fr;
