@@ -1,10 +1,45 @@
 ## Motivations
 
-Financial markets are often portrayed as dominated by a handful of giants, but do the biggest companies truly drive the movements of their entire industry?
+### Who really moves the market?
 
-This project investigates whether industry leaders systematically influence smaller peers within NASDAQ sectors. Using historical stock price data enriched with external metadata, we group companies by industry, develop objective criteria to rank them, and analyze how information and volatility propagate across the market.
+Financial markets are often portrayed as being ruled by a handful of giants.  
+But when an entire sector shifts, is it truly the leaders pulling the strings —  
+or is that impression simply a byproduct of size?
 
-Another component of the analysis compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates — from dominant firms or distributed behavior — this project offers insights into market power and the dynamics of information diffusion.
+This project treats the Nasdaq not as a single voice, but as a collection of industries, each composed of firms with very different weights and roles.
+
+---
+
+### From intuition to evidence
+
+Rather than assuming that large-cap companies dominate their sectors, we test this idea directly.
+
+Using historical stock price data enriched with industry and company metadata, we group firms by sector, rank them using objective criteria, and observe how price movements and volatility spread across companies over time.
+
+The charts that follow visualize this process:  
+they reveal **who moves first**, **who reacts**, and **whether leadership is consistent or contextual**.
+
+---
+
+### Concentration or collective behavior?
+
+Market indices often hide internal dynamics behind a single performance line.  
+To uncover what lies beneath, we compare:
+
+- **Value-weighted ETFs**, where the largest firms carry the most influence  
+- **Equally weighted portfolios**, where every company counts the same
+
+By placing these performances side by side, the visuals highlight whether returns are driven by a few dominant players — or emerge from broader, distributed behavior.
+
+---
+
+### Reading the market differently
+
+Together, these visualizations aim to locate the true source of price discovery.  
+Do signals originate from industry leaders and cascade downward?  
+Or do they form collectively, across companies of all sizes?
+
+By following the data — and letting the charts speak — this project offers a clearer view of market power, sector dynamics, and how information actually diffuses through the Nasdaq.
 
 
 ## Data Overview
