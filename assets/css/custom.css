@@ -755,3 +755,47 @@ blockquote span {
     min-height: 300px;
   }
 }
+
+/* Visualization grid for Discrete Period Analysis */
+.visualization-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visualization-grid-item {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  background: #fff;
+}
+
+.visualization-grid-item iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+/* Graphy iframe styling */
+.graphy-embed {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .visualization-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .graphy-embed {
+    min-height: 400px;
+  }
+}

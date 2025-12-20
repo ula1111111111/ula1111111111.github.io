@@ -163,9 +163,39 @@ function updateGlobalAnalysis(periodKey) {
 To understand exactly *when* and *why* market leadership changed, we combined a discrete time-period breakdown with a rolling window analysis. Both methods point to a structural pivot in the middle of the last decade.
 
 #### 1. Discrete Period Analysis
-We first broke down returns into four distinct market phases. The chart and table below highlight the dramatic reversal in fortune:
+We first broke down returns into four distinct market phases. The interactive visualizations below highlight the dramatic reversal in fortune across different time periods:
 
-![Time Period Comparison](/assets/img/time_period_comparison.png)
+<div class="visualization-grid">
+  <div class="visualization-grid-item">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26918460">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/26918460/thumbnail" width="100%" alt="chart visualization" /></noscript>
+    </div>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26919316">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/26919316/thumbnail" width="100%" alt="chart visualization" /></noscript>
+    </div>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <iframe 
+      class="graphy-embed"
+      src="https://visualize.graphy.app/view/9c67262d-33df-4dc6-b2e1-1f97980a408e" 
+      allow="fullscreen">
+    </iframe>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <iframe 
+      class="graphy-embed"
+      src="https://visualize.graphy.app/view/0a4ce090-6615-401b-8ab5-a982da2fc730" 
+      allow="fullscreen">
+    </iframe>
+  </div>
+</div>
 
 | Period | ETF Return | EW Return | Difference | Market Context |
 |--------|-----------|-----------|------------|----------------|
