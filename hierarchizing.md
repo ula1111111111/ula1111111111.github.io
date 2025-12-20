@@ -141,11 +141,15 @@ $$
 
 <!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
 <!-- Flourish hierarchy embed -->
-<div class="flourish-embed flourish-hierarchy"
-     data-src="visualisation/26919257"
-     data-height="700">
-</div>
-<script src="https://public.flourish.studio/resources/embed.js"></script>
+<!-- Flourish hierarchy iframe embed -->
+<iframe
+  src="https://public.flourish.studio/visualisation/26919257/embed"
+  width="100%"
+  height="800"
+  frameborder="0"
+  scrolling="no"
+  style="border-radius:18px;">
+</iframe>
 
 
 
