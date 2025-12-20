@@ -72,3 +72,14 @@ subtitle: ""
 <h2 id="etfsvsequallyweighted">ETFs vs Equal Weighted Portfolios</h2>
 
 {% include_relative etfsvsequallyweighted.md %}
+
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$']]
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
