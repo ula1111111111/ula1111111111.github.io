@@ -143,7 +143,8 @@ $$
 <!-- Flourish hierarchy embed -->
 <div class="flourish-embed flourish-hierarchy"
      data-src="visualisation/26919257"
-     data-height="700">
+     data-height="800"
+     style="min-height:800px;">
 </div>
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 
