@@ -6,8 +6,7 @@ tags: [finance, portfolio-analysis, etf, equally-weighted, market-research]
 image: /assets/img/sector_summary_dashboard.png
 description: "An in-depth analysis comparing value-weighted ETFs with equally-weighted portfolios across four major sectors (Health Care, Finance, Technology, Consumer Services) from 2005-2020, revealing surprising insights about market leadership and diversification benefits."
 social-share: true
-gh-repo: ula1111111111/ula1111111111.github.io
-gh-badge: [star, fork]
+
 ---
 
 *What does ETF analysis reveal about the performance of market leaders,sector averages, and followers, and about overall market concentration?*
