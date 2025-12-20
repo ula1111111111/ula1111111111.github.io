@@ -69,53 +69,42 @@ We construct a **Power Score** that integrates five key financial indicators. Ea
 
 ## How We Weight Each Factor
 
-Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor's importance in determining market power:
+Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor's importance in determining market power. **Hover over the chart to see detailed breakdowns:**
 
-<div style="max-width:900px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
 
-<!-- Flourish Visualization Placeholder - Replace with actual Flourish embed -->
-<div style="background:linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);border-radius:12px;padding:40px;text-align:center;border:2px dashed #b039ca;margin-bottom:24px;">
-  <div style="font-size:3rem;margin-bottom:12px;">📊</div>
-  <h3 style="margin:0 0 8px 0;color:#b039ca;">Power Score Weight Breakdown</h3>
-  <p style="margin:0;color:#666;font-size:0.95rem;">
-    <strong>Flourish Visualization:</strong> Interactive donut chart or stacked bar showing weight distribution<br>
-    <em>Replace this placeholder with your Flourish embed code</em>
-  </p>
-  <div style="margin-top:20px;padding:16px;background:#fff;border-radius:8px;display:inline-block;">
-    <code style="font-size:0.85rem;color:#666;">&lt;div class="flourish-embed" data-src="visualisation/YOUR_ID"&gt;&lt;/div&gt;</code>
-  </div>
+<!-- Interactive Flourish Visualization 1: Weight Breakdown -->
+<div class="flourish-embed flourish-chart" data-src="visualisation/YOUR_WEIGHT_CHART_ID" data-height="500">
+  <script src="https://public.flourish.studio/resources/embed.js"></script>
 </div>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin-top:24px;">
-  <div style="padding:16px;border-radius:12px;background:linear-gradient(135deg, rgba(255,77,136,.12), rgba(255,77,136,.06));border-left:4px solid #ff4d88;">
-    <div style="font-size:2rem;font-weight:800;color:#ff4d88;margin-bottom:4px;">40%</div>
-    <div style="font-weight:600;color:#333;margin-bottom:4px;">Market Cap</div>
-    <div style="font-size:0.85rem;color:#666;">Highest weight - size matters most</div>
-  </div>
-  
-  <div style="padding:16px;border-radius:12px;background:linear-gradient(135deg, rgba(176,57,202,.12), rgba(176,57,202,.06));border-left:4px solid #b039ca;">
-    <div style="font-size:2rem;font-weight:800;color:#b039ca;margin-bottom:4px;">25%</div>
-    <div style="font-weight:600;color:#333;margin-bottom:4px;">Trading Volume</div>
-    <div style="font-size:0.85rem;color:#666;">Liquidity & visibility</div>
-  </div>
-  
-  <div style="padding:16px;border-radius:12px;background:linear-gradient(135deg, rgba(100,149,237,.12), rgba(100,149,237,.06));border-left:4px solid #6495ed;">
-    <div style="font-size:2rem;font-weight:800;color:#6495ed;margin-bottom:4px;">15%</div>
-    <div style="font-weight:600;color:#333;margin-bottom:4px;">Mean Return</div>
-    <div style="font-size:0.85rem;color:#666;">Historical performance</div>
-  </div>
-  
-  <div style="padding:16px;border-radius:12px;background:linear-gradient(135deg, rgba(255,165,0,.12), rgba(255,165,0,.06));border-left:4px solid #ffa500;">
-    <div style="font-size:2rem;font-weight:800;color:#ffa500;margin-bottom:4px;">10%</div>
-    <div style="font-weight:600;color:#333;margin-bottom:4px;">Volatility</div>
-    <div style="font-size:0.85rem;color:#666;">Stability (inverse)</div>
-  </div>
-  
-  <div style="padding:16px;border-radius:12px;background:linear-gradient(135deg, rgba(46,125,50,.12), rgba(46,125,50,.06));border-left:4px solid #2e7d32;">
-    <div style="font-size:2rem;font-weight:800;color:#2e7d32;margin-bottom:4px;">10%</div>
-    <div style="font-weight:600;color:#333;margin-bottom:4px;">IPO Age</div>
-    <div style="font-size:0.85rem;color:#666;">Maturity factor</div>
-  </div>
+<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
+  <p style="margin:0;font-size:0.9rem;color:#666;">
+    <strong>📝 Data Format Needed:</strong> Create a CSV with columns: <code>Metric, Weight, Color</code><br>
+    Example: Market Cap, 0.40, #ff4d88 | Trading Volume, 0.25, #b039ca | etc.
+  </p>
+</div>
+
+</div>
+
+---
+
+## Interactive Power Score Calculator
+
+See how different companies compare across the five metrics. **Select companies below to compare their Power Score components:**
+
+<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+
+<!-- Interactive Flourish Visualization 2: Comparison Tool -->
+<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_COMPARISON_ID" data-height="600">
+  <script src="https://public.flourish.studio/resources/embed.js"></script>
+</div>
+
+<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
+  <p style="margin:0;font-size:0.9rem;color:#666;">
+    <strong>📝 Data Format Needed:</strong> CSV with columns: <code>Company, Sector, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age, Power_Score</code><br>
+    Use Flourish's "Scatter plot" or "Connected dot plot" template with filter enabled.
+  </p>
 </div>
 
 </div>
@@ -146,20 +135,42 @@ $$
 
 ## Visualizing the Power Hierarchy
 
-<div style="max-width:900px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+**Explore the top companies by Power Score across different sectors. Use the filters to dive deeper:**
 
-<!-- Flourish Visualization Placeholder - Top Companies by Power Score -->
-<div style="background:linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);border-radius:12px;padding:40px;text-align:center;border:2px dashed #b039ca;margin-bottom:24px;">
-  <div style="font-size:3rem;margin-bottom:12px;">📊</div>
-  <h3 style="margin:0 0 8px 0;color:#b039ca;">Top Companies by Power Score (by Sector)</h3>
-  <p style="margin:0;color:#666;font-size:0.95rem;">
-    <strong>Flourish Visualization:</strong> Interactive bar chart race or grouped bar chart<br>
-    <em>Shows top 10-15 companies per sector ranked by Power Score</em><br>
-    <em>Replace this placeholder with your Flourish embed code</em>
+<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+
+<!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/YOUR_BAR_RACE_ID" data-height="700">
+  <script src="https://public.flourish.studio/resources/embed.js"></script>
+</div>
+
+<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
+  <p style="margin:0;font-size:0.9rem;color:#666;">
+    <strong>📝 Data Format Needed:</strong> CSV with columns: <code>Company, Sector, Power_Score, Year</code> (if using bar chart race) or <code>Company, Sector, Power_Score</code> for grouped bar chart.<br>
+    <strong>Recommended Templates:</strong> "Bar chart race" (animated) or "Grouped column chart" (with sector filter)
   </p>
-  <div style="margin-top:20px;padding:16px;background:#fff;border-radius:8px;display:inline-block;">
-    <code style="font-size:0.85rem;color:#666;">&lt;div class="flourish-embed" data-src="visualisation/YOUR_ID"&gt;&lt;/div&gt;</code>
-  </div>
+</div>
+
+</div>
+
+---
+
+## Metric Relationships: Interactive Exploration
+
+**How do these metrics relate to each other?** Explore the correlations and patterns:
+
+<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+
+<!-- Interactive Flourish Visualization 4: Correlation Matrix or Scatter Grid -->
+<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_CORRELATION_ID" data-height="600">
+  <script src="https://public.flourish.studio/resources/embed.js"></script>
+</div>
+
+<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
+  <p style="margin:0;font-size:0.9rem;color:#666;">
+    <strong>📝 Data Format Needed:</strong> CSV with all five metrics as columns: <code>Company, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age</code><br>
+    <strong>Recommended Templates:</strong> "Grid scatter" or "Scatter with filter" to show relationships between metrics
+  </p>
 </div>
 
 </div>

@@ -725,3 +725,33 @@ blockquote span {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Flourish embed styling */
+.flourish-embed {
+  width: 100%;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flourish-embed iframe {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Ensure Flourish containers are responsive */
+.flourish-chart,
+.flourish-scatter,
+.flourish-bar-chart-race {
+  width: 100%;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .flourish-chart,
+  .flourish-scatter,
+  .flourish-bar-chart-race {
+    min-height: 300px;
+  }
+}
