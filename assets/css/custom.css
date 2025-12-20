@@ -1093,38 +1093,20 @@ p:has(+ .visualization-grid) {
   background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
-.logo-text-white {
-  color: #ffffff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0.85;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  filter: drop-shadow(0 2px 4px rgba(255,255,255,0.2));
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-item:hover .logo-text-white {
+.logo-item:hover .logo-img {
   opacity: 1;
   transform: scale(1.15);
-  text-shadow: 0 4px 16px rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0 4px 12px rgba(255,255,255,0.4));
-}
-
-.logo-svg {
-  width: 50px;
-  height: 50px;
-  opacity: 0.85;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  filter: drop-shadow(0 2px 4px rgba(255,255,255,0.2));
-}
-
-.logo-item:hover .logo-svg {
-  opacity: 1;
-  transform: scale(1.2) rotate(5deg);
-  filter: drop-shadow(0 4px 12px rgba(255,255,255,0.4));
+  filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(255,255,255,0.3));
 }
 
 /* Glow effect on hover */
@@ -1195,13 +1177,9 @@ p:has(+ .visualization-grid) {
     height: 60px;
   }
   
-  .logo-text-white {
-    font-size: 1.3rem;
-  }
-  
-  .logo-svg {
-    width: 40px;
+  .logo-img {
     height: 40px;
+    max-width: 140px;
   }
   
   .logo-item::after {

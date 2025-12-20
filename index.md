@@ -87,77 +87,71 @@ subtitle: ""
   <div class="logo-carousel-container">
     <div class="logo-carousel-track">
       <div class="logo-item">
-        <div class="logo-text-white">NASDAQ</div>
+        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">BlackRock</div>
+        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Microsoft</div>
+        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Apple</div>
+        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Fidelity</div>
+        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Vanguard</div>
+        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Goldman Sachs</div>
+        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">JPMorgan</div>
+        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Amazon</div>
+        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Google</div>
+        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Tesla</div>
-      </div>
-      <div class="logo-item">
-        <div class="logo-text-white">Meta</div>
+        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img">
       </div>
       <!-- Duplicate for seamless loop -->
       <div class="logo-item">
-        <div class="logo-text-white">NASDAQ</div>
+        <img src="{{ '/assets/img/logos/nasdaq.png' | relative_url }}" alt="NASDAQ" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">BlackRock</div>
+        <img src="{{ '/assets/img/logos/blackrock.png' | relative_url }}" alt="BlackRock" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Microsoft</div>
+        <img src="{{ '/assets/img/logos/microsoft.png' | relative_url }}" alt="Microsoft" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Apple</div>
+        <img src="{{ '/assets/img/logos/apple.png' | relative_url }}" alt="Apple" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Fidelity</div>
+        <img src="{{ '/assets/img/logos/fidelity.png' | relative_url }}" alt="Fidelity" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Vanguard</div>
+        <img src="{{ '/assets/img/logos/vanguard.png' | relative_url }}" alt="Vanguard" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Goldman Sachs</div>
+        <img src="{{ '/assets/img/logos/goldman-sachs.png' | relative_url }}" alt="Goldman Sachs" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">JPMorgan</div>
+        <img src="{{ '/assets/img/logos/jpmorgan.png' | relative_url }}" alt="JPMorgan" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Amazon</div>
+        <img src="{{ '/assets/img/logos/amazon.png' | relative_url }}" alt="Amazon" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Google</div>
+        <img src="{{ '/assets/img/logos/google.png' | relative_url }}" alt="Google" class="logo-img">
       </div>
       <div class="logo-item">
-        <div class="logo-text-white">Tesla</div>
-      </div>
-      <div class="logo-item">
-        <div class="logo-text-white">Meta</div>
+        <img src="{{ '/assets/img/logos/paypal.png' | relative_url }}" alt="PayPal" class="logo-img">
       </div>
     </div>
   </div>
