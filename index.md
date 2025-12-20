@@ -82,7 +82,74 @@ subtitle: ""
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/nasdaq-reveal.js' | relative_url }}"></script>
 
-
+<!-- Logo Carousel Section -->
+<div class="logo-carousel-section">
+  <div class="logo-carousel-container">
+    <div class="logo-carousel-track">
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_logo.svg" alt="NASDAQ" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BlackRock_logo.svg" alt="BlackRock" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Fidelity_Investments_logo.svg" alt="Fidelity" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Vanguard_logo.svg" alt="Vanguard" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg" alt="Goldman Sachs" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/JPMorgan_Chase_%26_Co._logo.svg" alt="JPMorgan" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="logo-img">
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_logo.svg" alt="NASDAQ" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BlackRock_logo.svg" alt="BlackRock" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Fidelity_Investments_logo.svg" alt="Fidelity" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Vanguard_logo.svg" alt="Vanguard" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg" alt="Goldman Sachs" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/JPMorgan_Chase_%26_Co._logo.svg" alt="JPMorgan" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="logo-img">
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="logo-img">
+      </div>
+    </div>
+  </div>
+</div>
 
 {% include_relative content.md %}
 

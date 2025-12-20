@@ -1023,70 +1023,71 @@ p:has(+ .visualization-grid) {
 
 /* Logo Carousel Section */
 .logo-carousel-section {
-  margin: 4rem 0;
-  padding: 3rem 0;
-  background: linear-gradient(135deg, #ff4d88, #ff6ba3, #ff4d88);
+  margin: 0;
+  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #ff4d88, #ff6ba3, #ff88b8);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-carousel-container {
+  max-width: 100%;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
 
-.logo-carousel-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-}
-
 .logo-carousel-track {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
-  animation: logoScroll 40s linear infinite;
+  animation: logoScrollRight 35s linear infinite;
   width: fit-content;
 }
 
-@keyframes logoScroll {
+@keyframes logoScrollRight {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
 
 .logo-item {
   flex-shrink: 0;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  height: 60px;
 }
 
 .logo-item::after {
   content: '';
   position: absolute;
-  right: -2rem;
+  right: -2.5rem;
   width: 1px;
-  height: 60%;
-  background: rgba(255, 255, 255, 0.3);
+  height: 70%;
+  background: rgba(255, 255, 255, 0.25);
 }
 
-.logo-text {
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0.95;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-item:hover .logo-text {
+.logo-item:hover .logo-img {
   opacity: 1;
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transform: scale(1.15);
+  filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 /* Pause on hover */
@@ -1094,45 +1095,29 @@ p:has(+ .visualization-grid) {
   animation-play-state: paused;
 }
 
-/* Logo images support (if you add actual logo images later) */
-.logo-item img {
-  height: 50px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
-  transition: all 0.3s ease;
-}
-
-.logo-item:hover img {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .logo-carousel-section {
     padding: 2rem 0;
-    margin: 3rem 0;
   }
   
   .logo-carousel-track {
-    gap: 3rem;
-    animation-duration: 30s;
+    gap: 4rem;
+    animation-duration: 25s;
   }
   
   .logo-item {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
+    height: 50px;
   }
   
-  .logo-text {
-    font-size: 1.4rem;
-  }
-  
-  .logo-item img {
+  .logo-img {
     height: 40px;
-    max-width: 150px;
+    max-width: 140px;
+  }
+  
+  .logo-item::after {
+    right: -2rem;
   }
 }
 
