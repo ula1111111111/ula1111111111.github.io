@@ -140,16 +140,10 @@ $$
 <div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
 
 <!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
-<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/visualisation/26919257" data-height="700">
+<div class="flourish-embed flourish-hierarchy" data-src="visualisation/visualisation/26919257" data-height="700">
   <script src="https://public.flourish.studio/resources/embed.js"></script>
 </div>
 
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> CSV with columns: <code>Company, Sector, Power_Score, Year</code> (if using bar chart race) or <code>Company, Sector, Power_Score</code> for grouped bar chart.<br>
-    <strong>Recommended Templates:</strong> "Bar chart race" (animated) or "Grouped column chart" (with sector filter)
-  </p>
-</div>
 
 </div>
 
