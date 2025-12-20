@@ -16,9 +16,9 @@ For each company in the merged dataset, and over a defined observation window, w
 - **Historical volatility**, measuring risk and price stability  
 - **Average annualized return**, representing long-term performance  
 - **Liquidity measure**, defined as the mean of  
-  \[
+  $$
   \text{Volume} \times \text{Price}
-  \]
+  $$
 
 ---
 
@@ -26,11 +26,11 @@ For each company in the merged dataset, and over a defined observation window, w
 
 All quantitative variables are standardized using a z-score normalization:
 
-\[
+$$
 x_i' = \frac{x_i - \mu_x}{\sigma_x}
-\]
+$$
 
-where \(\mu_x\) and \(\sigma_x\) denote respectively the mean and standard deviation of the variable across all companies.
+where $\mu_x$ and $\sigma_x$ denote respectively the mean and standard deviation of the variable across all companies.
 
 This normalization rescales each metric to a comparable scale (mean 0, standard deviation 1), preventing variables with larger numerical ranges (e.g. Market Capitalization versus Returns) from dominating the composite score.
 
@@ -43,24 +43,24 @@ The indicators retained to construct the company hierarchy are:
 - **Market capitalization** — size and financial solidity  
 - **Average trading volume** — liquidity and visibility  
 - **Mean return** — historical performance  
-- **Volatility** — stability, incorporated inversely as \(1 - \text{Volatility}'\)  
+- **Volatility** — stability, incorporated inversely as $1 - \text{Volatility}'$  
 - **Age since IPO** — maturity and resilience  
 
 ---
 
 ### Definition of the Power Score
 
-The overall **Power Score** for each company \(i\) is defined as:
+The overall **Power Score** for each company $i$ is defined as:
 
-\[
+$$
 S_i = w_1 \cdot Cap_i + w_2 \cdot Vol_i + w_3 \cdot Ret_i + w_4 \cdot (1 - Volat_i) + w_5 \cdot Age_i
-\]
+$$
 
 subject to the constraints:
 
-\[
+$$
 w_k \ge 0, \quad \sum_k w_k = 1
-\]
+$$
 
 ---
 
@@ -85,9 +85,9 @@ Based on financial reasoning and existing research, we assign the following weig
 
 Numerically, the weights are:
 
-\[
+$$
 w_1 = 0.40,\quad w_2 = 0.25,\quad w_3 = 0.15,\quad w_4 = 0.10,\quad w_5 = 0.10
-\]
+$$
 
 ---
 
