@@ -1,13 +1,5 @@
----
-layout: post
-title: "ETF vs Equally-Weighted Portfolios: A Comprehensive Sector Analysis"
-date: 2025-01-27
-tags: [finance, portfolio-analysis, etf, equally-weighted, market-research]
-image: /assets/img/sector_summary_dashboard.png
-description: "An in-depth analysis comparing value-weighted ETFs with equally-weighted portfolios across four major sectors (Health Care, Finance, Technology, Consumer Services) from 2005-2020, revealing surprising insights about market leadership and diversification benefits."
-social-share: true
-gh-repo: ula1111111111/ula1111111111.github.io
-gh-badge: [star, fork]
+
+
 ---
 
 *What does ETF analysis reveal about the performance of market leaders,sector averages, and followers, and about overall market concentration?*
@@ -69,9 +61,6 @@ A general limitation that affects all analyses in this project is the presence o
 
 This exclusion primarily affects small and mid-cap firms, which are more likely to disappear over time, and may lead to an overestimation of their average performance or an underestimation of market volatility.
 
-**Mitigation Strategies Considered:**
-* Shortening the analysis window to recent years (e.g., 2015–2020) where firm disappearance is less frequent.
-* Weighting companies according to their lifespan (using IPO year) to assign higher stability to long-standing firms.
 
 ### 5. Global & Sector Benchmarks
 The analysis starts with a global market view before diving into specific sectors:
