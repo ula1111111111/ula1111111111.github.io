@@ -71,7 +71,7 @@ subtitle: ""
   <div class="nasdaq-full" aria-live="polite">
     <span class="label">Decoded:</span>
     <span class="sentence" id="nasdaqSentence">
-      Hover or tap each letter to reveal the phrase.
+      Hover or tap each letter to reveal.
     </span>
   </div>
 

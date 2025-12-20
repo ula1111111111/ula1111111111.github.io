@@ -4,8 +4,6 @@ Financial markets are often portrayed as dominated by a handful of giants, but d
 
 This project investigates whether industry leaders systematically influence smaller peers within NASDAQ sectors. Using historical stock price data enriched with external metadata, we group companies by industry, develop objective criteria to rank them, and analyze how information and volatility propagate across the market.
 
-Our methodology combines time-series modeling and Granger causality testing to detect leader–follower patterns in price dynamics. We also assess how persistent these relationships are and how they evolve during major market events.
-
 Another component of the analysis compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates — from dominant firms or distributed behavior — this project offers insights into market power and the dynamics of information diffusion.
 
 ---
@@ -36,40 +34,22 @@ Another component of the analysis compares value-weighted ETFs with equally weig
 
 ## Data Overview
 
-### Provided Data: Stock Market Dataset
+### Provided Data: Stock Market (NASDAQ) Dataset
 
 - **Source:** Kaggle Stock Market Dataset  
-- **Scope:** Stocks, ETFs, and symbols metadata  
-
-**Components:**
-- **`stocks/` folder**  
-  Individual CSV files for each stock with daily price data (OHLCV + Adjusted Close)
-- **`etfs/` folder**  
-  Individual CSV files for each ETF with daily price data (OHLCV + Adjusted Close)
-- **`symbols_valid_meta.csv`**  
-  Metadata for all securities (stocks *and* ETFs), including ETF flags, exchange listings, and security names
-
-**Purpose:**  
-Provides historical price data and security-type classification (stock vs ETF)
+- **Components:** 
+- Daily OHLCV price data for individual stocks and ETFs  
+- Unified metadata file (`symbols_valid_meta.csv`) identifying security type, exchange, and name  
 
 ---
-
 ### External Data: NASDAQ Company List
 
-- **Source:** NASDAQ dataset (`companylist.csv`)
-- **Coverage:** Companies only (no ETFs)
-
-**Key Fields:**
-- Symbol  
-- Name  
-- Market Capitalization  
-- Sector  
-- Industry  
-- IPO Year  
-
-**Purpose:**  
+- **Source:** Kaggle (`companylist.csv`)
+- **Components:** 
+- Companies only (no ETFs)
+- Symbol, Name, Market Capitalization, Sector, Industry, IPO Year  
+- **Purpose:**  
 Provides sector classification and market capitalization data for listed companies
-
  
 **External Dataset overview:**  
 <h2></h2>
