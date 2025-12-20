@@ -8,70 +8,84 @@
 
 ## Introduction
 
-<div class="intro-animated">
-  <p class="intro-text-reveal">This analysis explores the long-term performance dynamics between two distinct investment approaches within the NASDAQ market: <strong>Value-Weighted (ETFs)</strong> and <strong>Equally-Weighted Portfolios</strong>.</p>
+This analysis explores the long-term performance dynamics between two distinct investment approaches within the NASDAQ market: **Value-Weighted (ETFs)** and **Equally-Weighted Portfolios**.
 
-  <p class="intro-text-reveal" style="animation-delay: 0.2s;">Beyond a simple performance comparison, this study serves as a proxy for understanding market structure:</p>
-</div>
+Beyond a simple performance comparison, this study serves as a proxy for understanding market structure:
 
-<div class="comparison-cards">
-  <div class="comparison-card leaders-card" data-card="leaders">
-    <div class="card-icon">👑</div>
+<div class="comparison-cards-interactive">
+  <div class="comparison-card-interactive leaders-card-interactive">
+    <div class="card-icon-interactive">👑</div>
     <h3>Market Leaders (ETFs)</h3>
     <p>Value-weighted indices give more importance to large firms, representing the dominance of market giants.</p>
-    <div class="card-highlight"></div>
   </div>
   
-  <div class="comparison-card followers-card" data-card="followers">
-    <div class="card-icon">🌐</div>
+  <div class="comparison-card-interactive followers-card-interactive">
+    <div class="card-icon-interactive">🌐</div>
     <h3>Market Followers (Equally-Weighted)</h3>
     <p>By treating every company the same regardless of size, these portfolios capture the collective behavior of the broader market, including small and mid-sized firms.</p>
-    <div class="card-highlight"></div>
   </div>
 </div>
 
-<div class="intro-animated" style="margin-top: 2rem;">
-  <p class="intro-text-reveal" style="animation-delay: 0.4s;">We apply this comparative framework at two levels:</p>
-</div>
+We apply this comparative framework at two levels:
 
-<div class="horizontal-scroll-container">
-  <div class="horizontal-scroll-wrapper">
-    <div class="scroll-item">
-      <div class="scroll-card">
-        <div class="scroll-number">01</div>
+<div class="auto-scroll-container">
+  <div class="auto-scroll-wrapper">
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">01</div>
         <h3>Global Analysis</h3>
         <p>Comparing a general value-weighted benchmark against a comprehensive <strong>Equally-Weighted portfolio</strong> of all eligible NASDAQ stocks to assess overall market drivers.</p>
-        <div class="scroll-stats">
-          <span class="stat-item"><strong>2,074</strong> stocks</span>
-          <span class="stat-item"><strong>15</strong> years</span>
+        <div class="scroll-stats-big">
+          <span class="stat-big"><strong>2,074</strong> stocks</span>
+          <span class="stat-big"><strong>15</strong> years</span>
         </div>
       </div>
     </div>
     
-    <div class="scroll-item">
-      <div class="scroll-card">
-        <div class="scroll-number">02</div>
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">02</div>
         <h3>Sector Analysis</h3>
-        <p>Focusing on four major sectors to see if these patterns hold true across different industries.</p>
-        <div class="scroll-sectors">
-          <span class="sector-tag">Health Care</span>
-          <span class="sector-tag">Finance</span>
-          <span class="sector-tag">Technology</span>
-          <span class="sector-tag">Consumer Services</span>
+        <p>Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.</p>
+        <div class="scroll-sectors-big">
+          <span class="sector-tag-big">Health Care</span>
+          <span class="sector-tag-big">Finance</span>
+          <span class="sector-tag-big">Technology</span>
+          <span class="sector-tag-big">Consumer Services</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Duplicate items for seamless loop -->
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">01</div>
+        <h3>Global Analysis</h3>
+        <p>Comparing a general value-weighted benchmark against a comprehensive <strong>Equally-Weighted portfolio</strong> of all eligible NASDAQ stocks to assess overall market drivers.</p>
+        <div class="scroll-stats-big">
+          <span class="stat-big"><strong>2,074</strong> stocks</span>
+          <span class="stat-big"><strong>15</strong> years</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">02</div>
+        <h3>Sector Analysis</h3>
+        <p>Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.</p>
+        <div class="scroll-sectors-big">
+          <span class="sector-tag-big">Health Care</span>
+          <span class="sector-tag-big">Finance</span>
+          <span class="sector-tag-big">Technology</span>
+          <span class="sector-tag-big">Consumer Services</span>
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="scroll-indicator">
-    <span class="scroll-hint">← Scroll horizontally to explore →</span>
-  </div>
 </div>
 
-<div class="key-question">
-  <div class="question-icon">❓</div>
-  <p><strong>Key Question:</strong> Is market performance primarily driven by the concentrated power of a few "Leaders", or does the diversified strength of the "Followers" provide a superior edge?</p>
-</div>
+**Key Question:** Is market performance primarily driven by the concentrated power of a few "Leaders", or does the diversified strength of the "Followers" provide a superior edge?
 
 
 ---
@@ -400,84 +414,18 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 ---
 
 <script>
-// Interactive Introduction Section JavaScript
+// Simple interactive cards
 document.addEventListener('DOMContentLoaded', function() {
-  // Animate comparison cards on scroll
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const cardObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-        entry.target.style.opacity = '0';
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-        }, 100);
-      }
-    });
-  }, observerOptions);
-
-  // Observe comparison cards
-  document.querySelectorAll('.comparison-card').forEach(card => {
-    cardObserver.observe(card);
-  });
-
-  // Add click interaction to cards
-  document.querySelectorAll('.comparison-card').forEach(card => {
+  // Add click interaction to comparison cards
+  document.querySelectorAll('.comparison-card-interactive').forEach(card => {
     card.addEventListener('click', function() {
       // Remove active class from all cards
-      document.querySelectorAll('.comparison-card').forEach(c => {
+      document.querySelectorAll('.comparison-card-interactive').forEach(c => {
         c.classList.remove('active');
       });
       // Add active class to clicked card
       this.classList.add('active');
     });
-  });
-
-  // Smooth horizontal scroll with mouse wheel
-  const scrollContainer = document.querySelector('.horizontal-scroll-wrapper');
-  if (scrollContainer) {
-    let isScrolling = false;
-    
-    scrollContainer.addEventListener('wheel', function(e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        scrollContainer.scrollLeft += e.deltaY;
-      }
-    }, { passive: false });
-
-    // Hide scroll hint after user starts scrolling
-    const scrollHint = document.querySelector('.scroll-hint');
-    if (scrollHint) {
-      scrollContainer.addEventListener('scroll', function() {
-        if (scrollContainer.scrollLeft > 10 && scrollHint.style.opacity !== '0') {
-          scrollHint.style.transition = 'opacity 0.5s ease';
-          scrollHint.style.opacity = '0';
-        }
-      });
-    }
-  }
-
-  // Animate scroll cards on scroll into view
-  const scrollCardObserver = new IntersectionObserver(function(entries) {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, index * 200);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.scroll-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    scrollCardObserver.observe(card);
   });
 });
 </script>
