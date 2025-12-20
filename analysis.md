@@ -452,75 +452,59 @@ fetch(DATA_URL_NETWORK)
 
 ### Sector-by-Sector Leadership Insights
 
-The analysis identifies sparse but structured leader–follower relationships within sectors.
-Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
+The analysis identifies sparse but structured leader–follower relationships within sectors. Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
 
-### Basic Industries
+#### Basic Industries
 
-Leadership is distributed across Barrick Gold (GOLD), Methanex (MEOH), Royal Gold (RGLD), and WD-40 Company (WDFC).
-Firms such as Stericycle (SRCL) and Balchem (BCPC) act as downstream followers.
-The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.
+Leadership is distributed across **Barrick Gold (GOLD)**, **Methanex (MEOH)**, **Royal Gold (RGLD)**, and **WD-40 Company (WDFC)**. Firms such as **Stericycle (SRCL)** and **Balchem (BCPC)** act as downstream followers. The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.
 
-### Capital Goods
+#### Capital Goods
 
-Garmin (GRMN) and Tesla (TSLA) emerge as leaders, influencing Icahn Enterprises (IEP) and Nordson (NDSN), respectively.
-Leadership effects are clear and directional, though heterogeneous in sign.
+**Garmin (GRMN)** and **Tesla (TSLA)** emerge as leaders, influencing **Icahn Enterprises (IEP)** and **Nordson (NDSN)**, respectively. Leadership effects are clear and directional, though heterogeneous in sign.
 
-### Consumer Durables
+#### Consumer Durables
 
-Casey’s General Stores (CASY), Cronos Group (CRON), and Pool Corporation (POOL) act as leaders.
-Their influence propagates toward Helen of Troy (HELE), iRobot (IRBT), and Lumentum (LITE), with mixed positive and negative responses.
+**Casey's General Stores (CASY)**, **Cronos Group (CRON)**, and **Pool Corporation (POOL)** act as leaders. Their influence propagates toward **Helen of Troy (HELE)**, **iRobot (IRBT)**, and **Lumentum (LITE)**, with mixed positive and negative responses.
 
-### Consumer Non-Durables
+#### Consumer Non-Durables
 
-Cintas (CTAS) and Hasbro (HAS) lead firms such as Columbia Sportswear (COLM) and Pilgrim’s Pride (PPC).
-The sector displays asymmetric responses, indicating varied short-term adjustment mechanisms.
+**Cintas (CTAS)** and **Hasbro (HAS)** lead firms such as **Columbia Sportswear (COLM)** and **Pilgrim's Pride (PPC)**. The sector displays asymmetric responses, indicating varied short-term adjustment mechanisms.
 
-### Consumer Services
+#### Consumer Services
 
-Amazon (AMZN) and Comcast (CMCSA) dominate leadership dynamics.
-Amazon’s influence on Netflix (NFLX) is negative, while Comcast exerts a positive leadership effect on Starbucks (SBUX).
-Leadership is split across independent channels rather than centralized in a single firm.
+**Amazon (AMZN)** and **Comcast (CMCSA)** dominate leadership dynamics. Amazon's influence on **Netflix (NFLX)** is negative, while Comcast exerts a positive leadership effect on **Starbucks (SBUX)**. Leadership is split across independent channels rather than centralized in a single firm.
 
-### Energy
+#### Energy
 
-Gulfport Energy (GPOR), Patterson-UTI Energy (PTEN), and Viper Energy (VNOM) influence Centennial Resource Development (CDEV).
-Leadership effects are consistently negative, identifying Centennial as a clear follower.
+**Gulfport Energy (GPOR)**, **Patterson-UTI Energy (PTEN)**, and **Viper Energy (VNOM)** influence **Centennial Resource Development (CDEV)**. Leadership effects are consistently negative, identifying Centennial as a clear follower.
 
-### Finance
+#### Finance
 
-Multiple firms, including Cincinnati Financial (CINF), Huntington Bancshares (HBAN/HBANO), Northern Trust (NTRS), and Principal Financial (PFG), act as leaders.
-Their influence extends toward Nasdaq (NDAQ), Fifth Third Bancorp (FITB), and T. Rowe Price (TROW), forming a sparse but non-trivial network.
+Multiple firms, including **Cincinnati Financial (CINF)**, **Huntington Bancshares (HBAN/HBANO)**, **Northern Trust (NTRS)**, and **Principal Financial (PFG)**, act as leaders. Their influence extends toward **Nasdaq (NDAQ)**, **Fifth Third Bancorp (FITB)**, and **T. Rowe Price (TROW)**, forming a sparse but non-trivial network.
 
-### Health Care
+#### Health Care
 
-Health Care exhibits the richest internal structure.
-Biogen (BIIB), Intuitive Surgical (ISRG), Regeneron (REGN), and IDEXX Laboratories (IDXX) emerge as leaders, influencing Vertex Pharmaceuticals (VRTX), Walgreens Boots Alliance (WBA), and others.
-Both positive and negative leadership effects coexist.
+Health Care exhibits the richest internal structure. **Biogen (BIIB)**, **Intuitive Surgical (ISRG)**, **Regeneron (REGN)**, and **IDEXX Laboratories (IDXX)** emerge as leaders, influencing **Vertex Pharmaceuticals (VRTX)**, **Walgreens Boots Alliance (WBA)**, and others. Both positive and negative leadership effects coexist.
 
-### Miscellaneous
+#### Miscellaneous
 
-Booking Holdings (BKNG) and eBay (EBAY) lead firms such as CDK Global (CDK) and Zillow Group (ZG).
-Leadership relationships are simple but directional.
+**Booking Holdings (BKNG)** and **eBay (EBAY)** lead firms such as **CDK Global (CDK)** and **Zillow Group (ZG)**. Leadership relationships are simple but directional.
 
-### Public Utilities
+#### Public Utilities
 
-Leadership is distributed across firms including Alliant Energy (LNT), Otter Tail (OTTR), Shenandoah Telecommunications (SHEN), T-Mobile US (TMUS), and Xcel Energy (XEL).
-This sector displays one of the densest leadership structures.
+Leadership is distributed across firms including **Alliant Energy (LNT)**, **Otter Tail (OTTR)**, **Shenandoah Telecommunications (SHEN)**, **T-Mobile US (TMUS)**, and **Xcel Energy (XEL)**. This sector displays one of the densest leadership structures.
 
-### Technology
+#### Technology
 
-Broadcom (AVGO) exhibits a clear leadership effect on Apple (AAPL), indicating delayed information transmission rather than purely synchronous movement.
+**Broadcom (AVGO)** exhibits a clear leadership effect on **Apple (AAPL)**, indicating delayed information transmission rather than purely synchronous movement.
 
-### Transportation
+#### Transportation
 
-JetBlue (JBLU), Landstar (LSTR), Old Dominion Freight Line (ODFL), and United Airlines (UAL) influence firms such as CSX (CSX) and Expeditors (EXPD).
-Leadership relationships span multiple transportation subsectors.
+**JetBlue (JBLU)**, **Landstar (LSTR)**, **Old Dominion Freight Line (ODFL)**, and **United Airlines (UAL)** influence firms such as **CSX (CSX)** and **Expeditors (EXPD)**. Leadership relationships span multiple transportation subsectors.
 
 ### Takeaway
 
-Across sectors, leadership effects are directional, heterogeneous, and concentrated.
-A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
+Across sectors, leadership effects are directional, heterogeneous, and concentrated. A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
 
 
 

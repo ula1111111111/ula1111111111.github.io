@@ -11,15 +11,81 @@
 This analysis explores the long-term performance dynamics between two distinct investment approaches within the NASDAQ market: **Value-Weighted (ETFs)** and **Equally-Weighted Portfolios**.
 
 Beyond a simple performance comparison, this study serves as a proxy for understanding market structure:
-* **Market Leaders (ETFs):** Value-weighted indices give more importance to large firms, representing the dominance of market giants.
-* **Market Followers (Equally-Weighted):** By treating every company the same regardless of size, these portfolios capture the collective behavior of the broader market, including small and mid-sized firms.
+
+<div class="comparison-cards-interactive">
+  <div class="comparison-card-interactive leaders-card-interactive">
+    <div class="card-icon-interactive">👑</div>
+    <h3>Market Leaders (ETFs)</h3>
+    <p>Value-weighted indices give more importance to large firms, representing the dominance of market giants.</p>
+  </div>
+  
+  <div class="comparison-card-interactive followers-card-interactive">
+    <div class="card-icon-interactive">🌐</div>
+    <h3>Market Followers (Equally-Weighted)</h3>
+    <p>By treating every company the same regardless of size, these portfolios capture the collective behavior of the broader market, including small and mid-sized firms.</p>
+  </div>
+</div>
 
 We apply this comparative framework at two levels:
-1.  **Global Analysis:** Comparing a general value-weighted benchmark against a comprehensive **Equally-Weighted portfolio** of all eligible NASDAQ stocks to assess overall market drivers.
-2.  **Sector Analysis:** Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.
+
+<div class="auto-scroll-container">
+  <div class="auto-scroll-wrapper">
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">01</div>
+        <h3>Global Analysis</h3>
+        <p>Comparing a general value-weighted benchmark against a comprehensive <strong>Equally-Weighted portfolio</strong> of all eligible NASDAQ stocks to assess overall market drivers.</p>
+        <div class="scroll-stats-big">
+          <span class="stat-big"><strong>2,074</strong> stocks</span>
+          <span class="stat-big"><strong>15</strong> years</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">02</div>
+        <h3>Sector Analysis</h3>
+        <p>Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.</p>
+        <div class="scroll-sectors-big">
+          <span class="sector-tag-big">Health Care</span>
+          <span class="sector-tag-big">Finance</span>
+          <span class="sector-tag-big">Technology</span>
+          <span class="sector-tag-big">Consumer Services</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Duplicate items for seamless loop -->
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">01</div>
+        <h3>Global Analysis</h3>
+        <p>Comparing a general value-weighted benchmark against a comprehensive <strong>Equally-Weighted portfolio</strong> of all eligible NASDAQ stocks to assess overall market drivers.</p>
+        <div class="scroll-stats-big">
+          <span class="stat-big"><strong>2,074</strong> stocks</span>
+          <span class="stat-big"><strong>15</strong> years</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="auto-scroll-item">
+      <div class="auto-scroll-card">
+        <div class="scroll-number-big">02</div>
+        <h3>Sector Analysis</h3>
+        <p>Focusing on four major sectors (Health Care, Finance, Technology, Consumer Services) to see if these patterns hold true across different industries.</p>
+        <div class="scroll-sectors-big">
+          <span class="sector-tag-big">Health Care</span>
+          <span class="sector-tag-big">Finance</span>
+          <span class="sector-tag-big">Technology</span>
+          <span class="sector-tag-big">Consumer Services</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 **Key Question:** Is market performance primarily driven by the concentrated power of a few "Leaders", or does the diversified strength of the "Followers" provide a superior edge?
-
 
 ---
 
@@ -152,9 +218,39 @@ function updateGlobalAnalysis(periodKey) {
 To understand exactly *when* and *why* market leadership changed, we combined a discrete time-period breakdown with a rolling window analysis. Both methods point to a structural pivot in the middle of the last decade.
 
 #### 1. Discrete Period Analysis
-We first broke down returns into four distinct market phases. The chart and table below highlight the dramatic reversal in fortune:
+We first broke down returns into four distinct market phases. The interactive visualizations below highlight the dramatic reversal in fortune across different time periods:
 
-![Time Period Comparison](/assets/img/time_period_comparison.png)
+<div class="visualization-grid" style="margin-top: 8px;">
+  <div class="visualization-grid-item">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26918460">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/26918460/thumbnail" width="100%" alt="chart visualization" /></noscript>
+    </div>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26919316">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/26919316/thumbnail" width="100%" alt="chart visualization" /></noscript>
+    </div>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <iframe 
+      class="graphy-embed"
+      src="https://visualize.graphy.app/view/9c67262d-33df-4dc6-b2e1-1f97980a408e" 
+      allow="fullscreen">
+    </iframe>
+  </div>
+  
+  <div class="visualization-grid-item">
+    <iframe 
+      class="graphy-embed"
+      src="https://visualize.graphy.app/view/0a4ce090-6615-401b-8ab5-a982da2fc730" 
+      allow="fullscreen">
+    </iframe>
+  </div>
+</div>
 
 | Period | ETF Return | EW Return | Difference | Market Context |
 |--------|-----------|-----------|------------|----------------|
@@ -315,6 +411,23 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 
 
 ---
+
+<script>
+// Simple interactive cards
+document.addEventListener('DOMContentLoaded', function() {
+  // Add click interaction to comparison cards
+  document.querySelectorAll('.comparison-card-interactive').forEach(card => {
+    card.addEventListener('click', function() {
+      // Remove active class from all cards
+      document.querySelectorAll('.comparison-card-interactive').forEach(c => {
+        c.classList.remove('active');
+      });
+      // Add active class to clicked card
+      this.classList.add('active');
+    });
+  });
+});
+</script>
 
 
 
