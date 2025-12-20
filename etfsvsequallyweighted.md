@@ -324,13 +324,6 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 
 5. **Market leadership isn't everything:** Large market cap doesn't always translate to superior returns
 
-### Practical Implications
-
-For investors and portfolio managers:
-- Consider equally-weighted sector exposure as an alternative to sector ETFs
-- Sector selection matters - some sectors favor EW, others favor value-weighting
-- Diversification provides both return and risk benefits
-- Market conditions and sector dynamics significantly impact relative performance
 
 ---
 
