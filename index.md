@@ -34,21 +34,35 @@ subtitle: ""
         Markets are not only driven by fundamentals, but by influence, leadership,
         and the diffusion of information across dominant players.
       </p>
-      <blockquote class="hero-quote">
-        “Prices are not only determined by information, but by the narratives that spread it.”
-        <span>— Robert Shiller</span>
-      </blockquote>
+
+      <!-- NASDAQ acronym (replaces quote only) -->
+      <div class="nasdaq-acronym" role="button" tabindex="0" aria-label="Toggle NASDAQ acronym">
+        <div class="nasdaq-line">
+          <span class="nasdaq-word">NASDAQ</span>
+          <span class="nasdaq-badge">decoded</span>
+        </div>
+
+        <div class="nasdaq-expand" id="nasdaqExpand">
+          <span class="nasdaq-expansion">
+            <span class="k">N</span>ot <span class="k">A</span>lways <span class="k">D</span>riven by
+            <span class="k">A</span>pparent <span class="k">Q</span>uantities
+          </span>
+        </div>
+
+        <div class="nasdaq-hint">Hover or tap to reveal</div>
+      </div>
+      <!-- end NASDAQ acronym -->
+
     </div>
   </div>
 </div>
 
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
 
-
-
 {% include_relative content.md %}
 
 ---
+
 
 <h2 id="exploring">Exploring The Market</h2>
 

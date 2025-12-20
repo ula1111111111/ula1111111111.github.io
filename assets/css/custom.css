@@ -477,3 +477,107 @@ blockquote span {
   border-radius: 10px;
   margin: 14px 0;
 }
+
+
+.nasdaq-acronym{
+  max-width: 860px;
+  margin: 2.2rem auto 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transform: translateZ(0);
+}
+
+.nasdaq-line{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.nasdaq-word{
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  position: relative;
+}
+
+.nasdaq-word::after{
+  content:"";
+  position:absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -10px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.12;
+  transform: scaleX(0.6);
+  transition: transform 350ms ease, opacity 350ms ease;
+}
+
+.nasdaq-badge{
+  font-size: 0.85rem;
+  font-weight: 650;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255, 240, 246, 0.9);
+}
+
+.nasdaq-expand{
+  margin-top: 0.85rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: max-height 450ms ease, opacity 350ms ease, transform 450ms ease;
+}
+
+.nasdaq-expansion{
+  display: inline-block;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.nasdaq-expansion .k{
+  font-weight: 850;
+  display: inline-block;
+  padding: 0 0.1rem;
+  border-radius: 6px;
+  background: rgba(255, 77, 136, 0.10);
+}
+
+.nasdaq-hint{
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: rgba(0,0,0,0.55);
+}
+
+/* Hover reveal */
+.nasdaq-acronym:hover .nasdaq-expand,
+.nasdaq-acronym.is-open .nasdaq-expand{
+  max-height: 140px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nasdaq-acronym:hover .nasdaq-word::after,
+.nasdaq-acronym.is-open .nasdaq-word::after{
+  opacity: 0.28;
+  transform: scaleX(1);
+}
+
+/* Keyboard focus */
+.nasdaq-acronym:focus-visible{
+  box-shadow: 0 0 0 4px rgba(255, 77, 136, 0.18), 0 14px 40px rgba(0,0,0,0.08);
+}
