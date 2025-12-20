@@ -760,8 +760,8 @@ blockquote span {
 .visualization-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin: 32px 0;
+  gap: 16px;
+  margin: 20px 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -781,6 +781,11 @@ blockquote span {
   display: block;
 }
 
+/* Remove extra margins from Flourish embeds inside grid */
+.visualization-grid-item .flourish-embed {
+  margin: 0;
+}
+
 /* Graphy iframe styling */
 .graphy-embed {
   width: 100%;
@@ -792,7 +797,8 @@ blockquote span {
 @media (max-width: 768px) {
   .visualization-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
+    margin: 16px 0;
   }
   
   .graphy-embed {
