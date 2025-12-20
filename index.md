@@ -58,6 +58,9 @@ subtitle: ""
 </div>
 
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/nasdaq-acronym.js' | relative_url }}"></script>
+
 
 {% include_relative content.md %}
 
