@@ -61,9 +61,6 @@ A general limitation that affects all analyses in this project is the presence o
 
 This exclusion primarily affects small and mid-cap firms, which are more likely to disappear over time, and may lead to an overestimation of their average performance or an underestimation of market volatility.
 
-**Mitigation Strategies Considered:**
-* Shortening the analysis window to recent years (e.g., 2015–2020) where firm disappearance is less frequent.
-* Weighting companies according to their lifespan (using IPO year) to assign higher stability to long-standing firms.
 
 ### 5. Global & Sector Benchmarks
 The analysis starts with a global market view before diving into specific sectors:
