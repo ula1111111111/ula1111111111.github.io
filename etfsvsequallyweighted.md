@@ -10,6 +10,10 @@ gh-repo: ula1111111111/ula1111111111.github.io
 gh-badge: [star, fork]
 ---
 
+*What does ETF analysis reveal about the performance of market leaders,sector averages, and followers, and about overall market concentration?*
+*How does survivorship bias impact the validity of our conclusions, and what steps can be taken to reduce its effects?* 
+*Which time window should be analyzed?*
+
 ## Introduction
 
 This analysis explores the long-term performance dynamics between two distinct investment approaches within the NASDAQ market: **Value-Weighted (ETFs)** and **Equally-Weighted Portfolios**.

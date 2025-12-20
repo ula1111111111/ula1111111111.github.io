@@ -6,50 +6,24 @@ This project investigates whether industry leaders systematically influence smal
 
 Another component of the analysis compares value-weighted ETFs with equally weighted portfolios to quantify whether performance is concentrated among large-cap leaders or broadly distributed. By highlighting where price discovery originates — from dominant firms or distributed behavior — this project offers insights into market power and the dynamics of information diffusion.
 
----
-<div class="research-questions-box" markdown="1">
-## Research Questions
-
-1. **How do we define a “leader” and a “follower” in stock movements?**  
-   How should companies be sectorized and hierarchized?
-
-2. **How can we detect directional influence between stocks within a sector?**  
-   Can daily return time series reveal influence through lagged correlations or Granger causality?
-
-3. **Are leader–follower dynamics consistent across sectors?**  
-   Do some sectors exhibit stronger leadership patterns than others?
-
-4. **How stable are these influence patterns over time,**  
-   and how do they evolve during major market events?
-
-5. **What does ETF analysis reveal about the performance of market leaders,**  
-   sector averages, and followers, and about overall market concentration?
-
-6. **How does survivorship bias impact the validity of our conclusions,**  
-   and what steps can be taken to reduce its effects?  
-   Which time window should be analyzed?
-
-</div>
----
 
 ## Data Overview
 
-### Provided Data: Stock Market (NASDAQ) Dataset
+### Provided Data: NASDAQ Stock Market Dataset
 
-- **Source:** Kaggle Stock Market Dataset  
-- **Components:** 
+**Source:** Kaggle Stock Market Dataset  
+**Components:** 
 - Daily OHLCV price data for individual stocks and ETFs  
 - Unified metadata file (`symbols_valid_meta.csv`) identifying security type, exchange, and name  
 
 ---
 ### External Data: NASDAQ Company List
 
-- **Source:** Kaggle (`companylist.csv`)
-- **Components:** 
+**Source:** Kaggle (`companylist.csv`)
+**Components:** 
 - Companies only (no ETFs)
 - Symbol, Name, Market Capitalization, Sector, Industry, IPO Year  
-- **Purpose:**  
-Provides sector classification and market capitalization data for listed companies
+**Purpose:** Provides sector classification and market capitalization data for listed companies
  
 **External Dataset overview:**  
 <h2></h2>

@@ -1,3 +1,5 @@
+*How should companies be sectorized and hierarchized?*
+
 ## • Hierarchizing the Companies Within Their Sector
 
 To address our central research question — whether the most powerful firms are also the most influential within their respective sectors on the NASDAQ — it is essential to establish a rigorous and interpretable method to rank companies.

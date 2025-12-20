@@ -3,7 +3,7 @@
 
 ### Answering research Questions and Key Findings
 
-1. How do we define a “leader” and a “follower” in stock movements?
+1. *How do we define a “leader” and a “follower” in stock movements?*
 
 A **leader** is defined as a stock whose past daily returns improve the prediction of another stock’s future returns.
 A **follower** is a stock whose returns respond with a short delay to movements in the leader.
@@ -14,7 +14,7 @@ In practice, leadership is assigned only when both:
 
 - a Granger causality test confirms predictive precedence in one direction.
 
-2. How can we detect directional influence between stocks within a sector?
+2. *How can we detect directional influence between stocks within a sector?*
 
 Directional influence is detected using a two-step statistical pipeline:
 
@@ -30,7 +30,7 @@ Yes.
 Daily return series are sufficiently granular to reveal short-term lead–lag effects at horizons of a few trading days.
 While these effects are generally moderate in magnitude, they are statistically meaningful and robust across sectors.
 
-3. Are leader–follower dynamics consistent across sectors?
+3. *Are leader–follower dynamics consistent across sectors?*
 
 No.
 Leadership patterns are sector-dependent:
