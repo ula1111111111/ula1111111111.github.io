@@ -605,12 +605,21 @@ blockquote span {
 
 .nasdaq-letters{
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
   align-items: start;
+  justify-items: center;
   margin: 0 auto 1.4rem;
-  max-width: 980px;
+  max-width: 900px;
 }
+
+@media (max-width: 720px){
+  .nasdaq-letters{
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.2rem;
+  }
+}
+
 
 .nasdaq-letter{
   appearance: none;
