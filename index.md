@@ -35,21 +35,48 @@ subtitle: ""
         and the diffusion of information across dominant players.
       </p>
 
-      <!-- NASDAQ acronym (replaces quote only) -->
-      <div class="nasdaq-acronym" role="button" tabindex="0" aria-label="Toggle NASDAQ acronym">
-        <div class="nasdaq-line">
-          <span class="nasdaq-word">NASDAQ</span>
-          <span class="nasdaq-badge">decoded</span>
+      <!-- NASDAQ acronym -->
+      <div class="nasdaq-reveal" id="nasdaqReveal" aria-label="NASDAQ acronym reveal">
+        <div class="nasdaq-title">NASDAQ</div>
+
+        <div class="nasdaq-letters" role="list" aria-label="Reveal each letter">
+          <button class="nasdaq-letter" type="button" data-word="Not" aria-label="N - Not">
+            <span class="L">N</span>
+            <span class="word">Not</span>
+          </button>
+
+          <button class="nasdaq-letter" type="button" data-word="Always" aria-label="A - Always">
+            <span class="L">A</span>
+            <span class="word">Always</span>
+          </button>
+
+          <button class="nasdaq-letter" type="button" data-word="Size" aria-label="S - Size">
+            <span class="L">S</span>
+            <span class="word">Size</span>
+          </button>
+
+          <button class="nasdaq-letter" type="button" data-word="Driven" aria-label="D - Driven">
+            <span class="L">D</span>
+            <span class="word">Driven</span>
+          </button>
+
+          <button class="nasdaq-letter" type="button" data-word="Across" aria-label="A - Across">
+            <span class="L">A</span>
+            <span class="word">Across</span>
+          </button>
+
+          <button class="nasdaq-letter" type="button" data-word="Quotes" aria-label="Q - Quotes">
+            <span class="L">Q</span>
+            <span class="word">Quotes</span>
+          </button>
         </div>
 
-        <div class="nasdaq-expand" id="nasdaqExpand">
-          <span class="nasdaq-expansion">
-            <span class="k">N</span>ot <span class="k">A</span>lways <span class="k">D</span>riven by
-            <span class="k">A</span>pparent <span class="k">Q</span>uantities
+        <div class="nasdaq-full" aria-live="polite">
+          <span class="label">Decoded:</span>
+          <span class="sentence" id="nasdaqSentence">
+            Hover or tap each letter to reveal the phrase.
           </span>
         </div>
-
-        <div class="nasdaq-hint">Hover or tap to reveal</div>
       </div>
       <!-- end NASDAQ acronym -->
 
@@ -58,8 +85,8 @@ subtitle: ""
 </div>
 
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/nasdaq-acronym.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/nasdaq-reveal.js' | relative_url }}"></script>
+
 
 
 {% include_relative content.md %}

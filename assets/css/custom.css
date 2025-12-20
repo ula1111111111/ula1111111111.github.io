@@ -581,3 +581,125 @@ blockquote span {
 .nasdaq-acronym:focus-visible{
   box-shadow: 0 0 0 4px rgba(255, 77, 136, 0.18), 0 14px 40px rgba(0,0,0,0.08);
 }
+
+
+.nasdaq-reveal{
+  max-width: 1100px;
+  margin: 2.6rem auto 1rem;
+  padding: 2.2rem 1.6rem 1.8rem;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+.nasdaq-title{
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1.4rem;
+}
+
+.nasdaq-letters{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: start;
+  margin: 0 auto 1.4rem;
+  max-width: 980px;
+}
+
+.nasdaq-letter{
+  appearance: none;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  padding: 1rem 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  position: relative;
+  outline: none;
+}
+
+.nasdaq-letter:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.10);
+  border-color: rgba(0,0,0,0.12);
+}
+
+.nasdaq-letter:focus-visible{
+  box-shadow: 0 0 0 4px rgba(255, 77, 136, 0.20), 0 18px 44px rgba(0,0,0,0.10);
+}
+
+.nasdaq-letter .L{
+  display: block;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.nasdaq-letter .word{
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.nasdaq-letter:hover .word,
+.nasdaq-letter.is-open .word{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nasdaq-letter::after{
+  content:"";
+  position:absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.08;
+  transform: scaleX(0.7);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.nasdaq-letter:hover::after,
+.nasdaq-letter.is-open::after{
+  opacity: 0.18;
+  transform: scaleX(1);
+}
+
+.nasdaq-full{
+  font-size: 1.05rem;
+  color: rgba(0,0,0,0.7);
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nasdaq-full .label{
+  font-weight: 800;
+  opacity: 0.75;
+}
+
+.nasdaq-full .sentence{
+  font-weight: 650;
+}
+
+@media (max-width: 860px){
+  .nasdaq-letters{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

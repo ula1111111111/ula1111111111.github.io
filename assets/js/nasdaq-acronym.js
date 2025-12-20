@@ -1,14 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const box = document.querySelector(".nasdaq-acronym");
-  if (!box) return;
+  const root = document.getElementById("nasdaqReveal");
+  const sentenceEl = document.getElementById("nasdaqSentence");
+  if (!root || !sentenceEl) return;
 
-  const toggle = () => box.classList.toggle("is-open");
+  const letters = Array.from(root.querySelectorAll(".nasdaq-letter"));
 
-  box.addEventListener("click", toggle);
-  box.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      toggle();
-    }
+  const buildSentence = () => {
+    const chosen = letters
+      .filter(btn => btn.classList.contains("is-open"))
+      .map(btn => btn.dataset.word);
+
+    sentenceEl.textContent = chosen.length
+      ? chosen.join(" ")
+      : "Hover or tap each letter to reveal the phrase.";
+  };
+
+  letters.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("is-open");
+      buildSentence();
+    });
   });
+
+  buildSentence();
 });
+
