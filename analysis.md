@@ -121,36 +121,30 @@ These networks reveal whether leadership is centralized around a few firms or di
 </div>
 
 
+
 <details class="math-collapse">
   <summary>Mathematical details</summary>
 
   <div class="math-card">
-
     <h3>Lead–Lag Cross-Correlation</h3>
-
     <p>
       For each ordered pair of stocks \( (i,j) \) within a sector, we test whether
       movements in \( i \) tend to precede movements in \( j \) by computing:
     </p>
-
     \[
     \rho_{ij}(k)
     = \mathrm{Corr}\!\big(r_{i,t},\, r_{j,t+k}\big),
     \qquad k = 1,\dots,7
     \]
-
     <div class="math-highlight">
       If the strongest correlation occurs at a positive lag \( k>0 \),
       stock \( i \) is treated as a candidate leader of stock \( j \).
     </div>
-
     <h3>Granger Causality Test</h3>
-
     <p>
       To establish directionality, we compare a baseline autoregressive model
       to an augmented model that includes lagged returns of the leader:
     </p>
-
     \[
     r_{j,t}
     = \alpha
@@ -159,7 +153,6 @@ These networks reveal whether leadership is centralized around a few firms or di
     + \varepsilon_t,
     \qquad p = 3
     \]
-
     <div class="math-highlight">
       A directed link \( i \rightarrow j \) is retained only if the coefficients
       \( \gamma_\ell \) are jointly significant, and no reverse causality is detected.
@@ -530,16 +523,4 @@ Across sectors, leadership effects are directional, heterogeneous, and concentra
 A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
 
 
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['\\(', '\\)']],
-      displayMath: [['\\[', '\\]']]
-    }
-  };
-</script>
 
-<script
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  async>
-</script>

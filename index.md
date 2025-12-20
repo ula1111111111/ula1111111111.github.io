@@ -117,7 +117,7 @@ subtitle: ""
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$']]
+      displayMath: [['$$', '$$']], [['\\[', '\\]']]
     }
   };
 </script>
