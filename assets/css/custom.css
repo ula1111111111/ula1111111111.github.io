@@ -760,8 +760,8 @@ blockquote span {
 .visualization-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 20px 0;
+  gap: 12px;
+  margin: 12px 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -794,11 +794,21 @@ blockquote span {
   border-radius: 12px;
 }
 
+/* Reduce spacing around Discrete Period Analysis section */
+h4:has(+ p + .visualization-grid),
+h4:has(+ .visualization-grid) {
+  margin-bottom: 8px;
+}
+
+p:has(+ .visualization-grid) {
+  margin-bottom: 8px;
+}
+
 @media (max-width: 768px) {
   .visualization-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 16px 0;
+    gap: 12px;
+    margin: 12px 0;
   }
   
   .graphy-embed {

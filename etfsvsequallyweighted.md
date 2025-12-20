@@ -154,7 +154,7 @@ To understand exactly *when* and *why* market leadership changed, we combined a 
 #### 1. Discrete Period Analysis
 We first broke down returns into four distinct market phases. The interactive visualizations below highlight the dramatic reversal in fortune across different time periods:
 
-<div class="visualization-grid">
+<div class="visualization-grid" style="margin-top: 8px;">
   <div class="visualization-grid-item">
     <div class="flourish-embed flourish-chart" data-src="visualisation/26918460">
       <script src="https://public.flourish.studio/resources/embed.js"></script>
