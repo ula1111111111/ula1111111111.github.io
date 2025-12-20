@@ -122,3 +122,6 @@ subtitle: ""
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+<!-- Flourish embed script for visualizations -->
+<script src="https://public.flourish.studio/resources/embed.js"></script>

@@ -712,3 +712,16 @@ blockquote span {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Hierarchizing section styles */
+@media (max-width: 768px) {
+  /* Make metric cards stack on mobile */
+  div[style*="grid-template-columns:repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Adjust weight cards for mobile */
+  div[style*="grid-template-columns:repeat(auto-fit, minmax(200px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
