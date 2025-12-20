@@ -82,9 +82,10 @@ subtitle: ""
 <script src="{{ '/assets/js/hero-fade.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/nasdaq-reveal.js' | relative_url }}"></script>
 
-<!-- Logo Carousel Section -->
+<!-- Logo Carousel Section with Christmas/New Year Effects -->
 <div class="logo-carousel-section" id="logoCarousel">
   <canvas id="particleCanvas" class="particle-canvas"></canvas>
+  <div class="snowflakes"></div>
   <div class="logo-carousel-container">
     <div class="logo-carousel-track" id="logoTrack">
       <div class="logo-item" data-company="NASDAQ">
@@ -97,9 +98,7 @@ subtitle: ""
         <div class="logo-text-white">Microsoft</div>
       </div>
       <div class="logo-item" data-company="Apple">
-        <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="white"/>
-        </svg>
+        <div class="logo-text-white">Apple</div>
       </div>
       <div class="logo-item" data-company="Fidelity">
         <div class="logo-text-white">Fidelity</div>
@@ -136,9 +135,7 @@ subtitle: ""
         <div class="logo-text-white">Microsoft</div>
       </div>
       <div class="logo-item" data-company="Apple">
-        <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="white"/>
-        </svg>
+        <div class="logo-text-white">Apple</div>
       </div>
       <div class="logo-item" data-company="Fidelity">
         <div class="logo-text-white">Fidelity</div>
@@ -169,21 +166,22 @@ subtitle: ""
 </div>
 
 <script>
-// Interactive Logo Carousel with Particles
+// Interactive Logo Carousel with Christmas/New Year Effects
 (function() {
   const carousel = document.getElementById('logoCarousel');
   const canvas = document.getElementById('particleCanvas');
   const track = document.getElementById('logoTrack');
   
-  if (!canvas || !track) return;
+  if (!canvas || !track || !carousel) return;
   
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = carousel.offsetHeight;
   
-  // Particles system
+  // Christmas/New Year particles (snowflakes and stars)
   const particles = [];
-  const particleCount = 30;
+  const particleCount = 40;
+  const colors = ['#ffffff', '#ffd700', '#ff6b9d', '#c9f0ff'];
   
   class Particle {
     constructor() {
@@ -193,25 +191,62 @@ subtitle: ""
     reset() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 3 + 1;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-      this.opacity = Math.random() * 0.5 + 0.2;
+      this.size = Math.random() * 4 + 2;
+      this.speedX = (Math.random() - 0.5) * 0.8;
+      this.speedY = Math.random() * 1 + 0.5;
+      this.opacity = Math.random() * 0.6 + 0.4;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.type = Math.random() > 0.7 ? 'star' : 'snow';
+      this.rotation = Math.random() * Math.PI * 2;
+      this.rotationSpeed = (Math.random() - 0.5) * 0.1;
     }
     
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
+      this.rotation += this.rotationSpeed;
       
-      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      if (this.x < 0) this.x = canvas.width;
+      if (this.x > canvas.width) this.x = 0;
+      if (this.y > canvas.height) {
+        this.y = 0;
+        this.x = Math.random() * canvas.width;
+      }
     }
     
     draw() {
-      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rotation);
+      ctx.globalAlpha = this.opacity;
+      
+      if (this.type === 'star') {
+        // Draw star
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        for (let i = 0; i < 5; i++) {
+          const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+          const x = Math.cos(angle) * this.size;
+          const y = Math.sin(angle) * this.size;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fill();
+      } else {
+        // Draw snowflake
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 1;
+        for (let i = 0; i < 6; i++) {
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(0, this.size);
+          ctx.stroke();
+          ctx.rotate(Math.PI / 3);
+        }
+      }
+      
+      ctx.restore();
     }
   }
   
@@ -234,34 +269,36 @@ subtitle: ""
   
   animate();
   
-  // Interactive hover effects
+  // Interactive hover effects with sparkles
   const logoItems = document.querySelectorAll('.logo-item');
   logoItems.forEach(item => {
     item.addEventListener('mouseenter', function() {
-      this.style.transform = 'scale(1.2) translateY(-5px)';
-      this.style.filter = 'drop-shadow(0 8px 16px rgba(255,255,255,0.4))';
+      this.style.transform = 'scale(1.25) translateY(-8px)';
+      this.style.filter = 'drop-shadow(0 10px 20px rgba(255,215,0,0.6))';
       
-      // Create burst effect
+      // Create sparkle burst effect
       const rect = this.getBoundingClientRect();
       const carouselRect = carousel.getBoundingClientRect();
       const x = rect.left + rect.width / 2 - carouselRect.left;
       const y = rect.top + rect.height / 2 - carouselRect.top;
       
-      // Add temporary particles
-      for (let i = 0; i < 5; i++) {
+      // Add temporary sparkle particles
+      for (let i = 0; i < 8; i++) {
         const p = new Particle();
         p.x = x;
         p.y = y;
-        p.speedX = (Math.random() - 0.5) * 2;
-        p.speedY = (Math.random() - 0.5) * 2;
-        p.size = Math.random() * 2 + 1;
-        p.opacity = 0.8;
+        p.speedX = (Math.random() - 0.5) * 3;
+        p.speedY = (Math.random() - 0.5) * 3;
+        p.size = Math.random() * 3 + 2;
+        p.opacity = 1;
+        p.color = '#ffd700';
+        p.type = 'star';
         particles.push(p);
         
         setTimeout(() => {
           const index = particles.indexOf(p);
           if (index > -1) particles.splice(index, 1);
-        }, 1000);
+        }, 1500);
       }
     });
     

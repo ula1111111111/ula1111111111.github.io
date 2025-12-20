@@ -452,75 +452,349 @@ fetch(DATA_URL_NETWORK)
 
 ### Sector-by-Sector Leadership Insights
 
-The analysis identifies sparse but structured leader–follower relationships within sectors.
-Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
+<div class="sector-intro-box">
+  <p>The analysis identifies sparse but structured leader–follower relationships within sectors. Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.</p>
+</div>
 
-### Basic Industries
+<div class="sectors-interactive-container">
+  
+  <div class="sector-card" data-sector="basic-industries">
+    <div class="sector-header">
+      <h3>Basic Industries</h3>
+      <span class="sector-badge">Multi-level</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">GOLD</span>
+        <span class="leader-tag">MEOH</span>
+        <span class="leader-tag">RGLD</span>
+        <span class="leader-tag">WDFC</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">SRCL</span>
+        <span class="follower-tag">BCPC</span>
+      </div>
+    </div>
+    <p class="sector-description">Leadership is distributed across multiple firms. The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.</p>
+  </div>
 
-Leadership is distributed across Barrick Gold (GOLD), Methanex (MEOH), Royal Gold (RGLD), and WD-40 Company (WDFC).
-Firms such as Stericycle (SRCL) and Balchem (BCPC) act as downstream followers.
-The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.
+  <div class="sector-card" data-sector="capital-goods">
+    <div class="sector-header">
+      <h3>Capital Goods</h3>
+      <span class="sector-badge">Clear Direction</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">GRMN</span>
+        <span class="leader-tag">TSLA</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">IEP</span>
+        <span class="follower-tag">NDSN</span>
+      </div>
+    </div>
+    <p class="sector-description">Garmin and Tesla emerge as leaders, influencing Icahn Enterprises and Nordson respectively. Leadership effects are clear and directional.</p>
+  </div>
 
-### Capital Goods
+  <div class="sector-card" data-sector="consumer-durables">
+    <div class="sector-header">
+      <h3>Consumer Durables</h3>
+      <span class="sector-badge">Mixed Responses</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">CASY</span>
+        <span class="leader-tag">CRON</span>
+        <span class="leader-tag">POOL</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">HELE</span>
+        <span class="follower-tag">IRBT</span>
+        <span class="follower-tag">LITE</span>
+      </div>
+    </div>
+    <p class="sector-description">Casey's General Stores, Cronos Group, and Pool Corporation act as leaders. Their influence propagates with mixed positive and negative responses.</p>
+  </div>
 
-Garmin (GRMN) and Tesla (TSLA) emerge as leaders, influencing Icahn Enterprises (IEP) and Nordson (NDSN), respectively.
-Leadership effects are clear and directional, though heterogeneous in sign.
+  <div class="sector-card" data-sector="consumer-non-durables">
+    <div class="sector-header">
+      <h3>Consumer Non-Durables</h3>
+      <span class="sector-badge">Asymmetric</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">CTAS</span>
+        <span class="leader-tag">HAS</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">COLM</span>
+        <span class="follower-tag">PPC</span>
+      </div>
+    </div>
+    <p class="sector-description">Cintas and Hasbro lead firms such as Columbia Sportswear and Pilgrim's Pride. The sector displays asymmetric responses.</p>
+  </div>
 
-### Consumer Durables
+  <div class="sector-card" data-sector="consumer-services">
+    <div class="sector-header">
+      <h3>Consumer Services</h3>
+      <span class="sector-badge highlight">Dominant</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag highlight">AMZN</span>
+        <span class="leader-tag highlight">CMCSA</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag negative">NFLX</span>
+        <span class="follower-tag positive">SBUX</span>
+      </div>
+    </div>
+    <p class="sector-description">Amazon and Comcast dominate leadership dynamics. Amazon's influence on Netflix is negative, while Comcast exerts a positive effect on Starbucks.</p>
+  </div>
 
-Casey’s General Stores (CASY), Cronos Group (CRON), and Pool Corporation (POOL) act as leaders.
-Their influence propagates toward Helen of Troy (HELE), iRobot (IRBT), and Lumentum (LITE), with mixed positive and negative responses.
+  <div class="sector-card" data-sector="energy">
+    <div class="sector-header">
+      <h3>Energy</h3>
+      <span class="sector-badge negative">Negative Effects</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">GPOR</span>
+        <span class="leader-tag">PTEN</span>
+        <span class="leader-tag">VNOM</span>
+      </div>
+      <div class="flow-arrow negative">→</div>
+      <div class="followers-group">
+        <span class="follower-tag negative">CDEV</span>
+      </div>
+    </div>
+    <p class="sector-description">Gulfport Energy, Patterson-UTI Energy, and Viper Energy influence Centennial Resource Development. Leadership effects are consistently negative.</p>
+  </div>
 
-### Consumer Non-Durables
+  <div class="sector-card" data-sector="finance">
+    <div class="sector-header">
+      <h3>Finance</h3>
+      <span class="sector-badge">Network</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">CINF</span>
+        <span class="leader-tag">HBAN</span>
+        <span class="leader-tag">NTRS</span>
+        <span class="leader-tag">PFG</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">NDAQ</span>
+        <span class="follower-tag">FITB</span>
+        <span class="follower-tag">TROW</span>
+      </div>
+    </div>
+    <p class="sector-description">Multiple firms act as leaders, extending influence toward Nasdaq, Fifth Third Bancorp, and T. Rowe Price, forming a sparse but non-trivial network.</p>
+  </div>
 
-Cintas (CTAS) and Hasbro (HAS) lead firms such as Columbia Sportswear (COLM) and Pilgrim’s Pride (PPC).
-The sector displays asymmetric responses, indicating varied short-term adjustment mechanisms.
+  <div class="sector-card" data-sector="health-care">
+    <div class="sector-header">
+      <h3>Health Care</h3>
+      <span class="sector-badge highlight">Richest Structure</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag highlight">BIIB</span>
+        <span class="leader-tag highlight">ISRG</span>
+        <span class="leader-tag highlight">REGN</span>
+        <span class="leader-tag highlight">IDXX</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">VRTX</span>
+        <span class="follower-tag">WBA</span>
+        <span class="follower-tag">+ others</span>
+      </div>
+    </div>
+    <p class="sector-description">Health Care exhibits the richest internal structure. Biogen, Intuitive Surgical, Regeneron, and IDEXX Laboratories emerge as leaders. Both positive and negative effects coexist.</p>
+  </div>
 
-### Consumer Services
+  <div class="sector-card" data-sector="miscellaneous">
+    <div class="sector-header">
+      <h3>Miscellaneous</h3>
+      <span class="sector-badge">Simple</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">BKNG</span>
+        <span class="leader-tag">EBAY</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">CDK</span>
+        <span class="follower-tag">ZG</span>
+      </div>
+    </div>
+    <p class="sector-description">Booking Holdings and eBay lead firms such as CDK Global and Zillow Group. Leadership relationships are simple but directional.</p>
+  </div>
 
-Amazon (AMZN) and Comcast (CMCSA) dominate leadership dynamics.
-Amazon’s influence on Netflix (NFLX) is negative, while Comcast exerts a positive leadership effect on Starbucks (SBUX).
-Leadership is split across independent channels rather than centralized in a single firm.
+  <div class="sector-card" data-sector="public-utilities">
+    <div class="sector-header">
+      <h3>Public Utilities</h3>
+      <span class="sector-badge highlight">Dense</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">LNT</span>
+        <span class="leader-tag">OTTR</span>
+        <span class="leader-tag">SHEN</span>
+        <span class="leader-tag">TMUS</span>
+        <span class="leader-tag">XEL</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">Multiple</span>
+      </div>
+    </div>
+    <p class="sector-description">Leadership is distributed across multiple firms. This sector displays one of the densest leadership structures.</p>
+  </div>
 
-### Energy
+  <div class="sector-card" data-sector="technology">
+    <div class="sector-header">
+      <h3>Technology</h3>
+      <span class="sector-badge">Clear Link</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">AVGO</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">AAPL</span>
+      </div>
+    </div>
+    <p class="sector-description">Broadcom exhibits a clear leadership effect on Apple, indicating delayed information transmission rather than purely synchronous movement.</p>
+  </div>
 
-Gulfport Energy (GPOR), Patterson-UTI Energy (PTEN), and Viper Energy (VNOM) influence Centennial Resource Development (CDEV).
-Leadership effects are consistently negative, identifying Centennial as a clear follower.
+  <div class="sector-card" data-sector="transportation">
+    <div class="sector-header">
+      <h3>Transportation</h3>
+      <span class="sector-badge">Multi-subsector</span>
+    </div>
+    <div class="leadership-flow">
+      <div class="leaders-group">
+        <span class="leader-tag">JBLU</span>
+        <span class="leader-tag">LSTR</span>
+        <span class="leader-tag">ODFL</span>
+        <span class="leader-tag">UAL</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="followers-group">
+        <span class="follower-tag">CSX</span>
+        <span class="follower-tag">EXPD</span>
+      </div>
+    </div>
+    <p class="sector-description">JetBlue, Landstar, Old Dominion Freight Line, and United Airlines influence firms such as CSX and Expeditors. Leadership relationships span multiple transportation subsectors.</p>
+  </div>
 
-### Finance
+</div>
 
-Multiple firms, including Cincinnati Financial (CINF), Huntington Bancshares (HBAN/HBANO), Northern Trust (NTRS), and Principal Financial (PFG), act as leaders.
-Their influence extends toward Nasdaq (NDAQ), Fifth Third Bancorp (FITB), and T. Rowe Price (TROW), forming a sparse but non-trivial network.
+<div class="takeaway-box">
+  <div class="takeaway-icon">💡</div>
+  <div class="takeaway-content">
+    <h3>Takeaway</h3>
+    <p>Across sectors, leadership effects are directional, heterogeneous, and concentrated. A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.</p>
+  </div>
+</div>
 
-### Health Care
-
-Health Care exhibits the richest internal structure.
-Biogen (BIIB), Intuitive Surgical (ISRG), Regeneron (REGN), and IDEXX Laboratories (IDXX) emerge as leaders, influencing Vertex Pharmaceuticals (VRTX), Walgreens Boots Alliance (WBA), and others.
-Both positive and negative leadership effects coexist.
-
-### Miscellaneous
-
-Booking Holdings (BKNG) and eBay (EBAY) lead firms such as CDK Global (CDK) and Zillow Group (ZG).
-Leadership relationships are simple but directional.
-
-### Public Utilities
-
-Leadership is distributed across firms including Alliant Energy (LNT), Otter Tail (OTTR), Shenandoah Telecommunications (SHEN), T-Mobile US (TMUS), and Xcel Energy (XEL).
-This sector displays one of the densest leadership structures.
-
-### Technology
-
-Broadcom (AVGO) exhibits a clear leadership effect on Apple (AAPL), indicating delayed information transmission rather than purely synchronous movement.
-
-### Transportation
-
-JetBlue (JBLU), Landstar (LSTR), Old Dominion Freight Line (ODFL), and United Airlines (UAL) influence firms such as CSX (CSX) and Expeditors (EXPD).
-Leadership relationships span multiple transportation subsectors.
-
-### Takeaway
-
-Across sectors, leadership effects are directional, heterogeneous, and concentrated.
-A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
+<script>
+// Interactive Sector Cards with Animations
+(function() {
+  const sectorCards = document.querySelectorAll('.sector-card');
+  
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const cardObserver = new IntersectionObserver(function(entries) {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          
+          // Animate leadership flow
+          const flowArrow = entry.target.querySelector('.flow-arrow');
+          const leaders = entry.target.querySelectorAll('.leader-tag');
+          const followers = entry.target.querySelectorAll('.follower-tag');
+          
+          if (flowArrow) {
+            flowArrow.style.opacity = '1';
+            flowArrow.style.transform = 'scale(1)';
+            flowArrow.style.animation = 'flowPulse 2s ease-in-out';
+          }
+          
+          leaders.forEach((leader, i) => {
+            setTimeout(() => {
+              leader.style.animation = 'fadeInScale 0.5s ease-out forwards';
+            }, i * 100);
+          });
+          
+          followers.forEach((follower, i) => {
+            setTimeout(() => {
+              follower.style.animation = 'fadeInScale 0.5s ease-out forwards';
+            }, leaders.length * 100 + i * 100);
+          });
+        }, index * 100);
+      }
+    });
+  }, observerOptions);
+  
+  sectorCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    cardObserver.observe(card);
+  });
+  
+  // Interactive hover effects
+  sectorCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+      this.style.boxShadow = '0 20px 40px rgba(176,57,202,0.2)';
+      
+      // Animate flow arrow
+      const arrow = this.querySelector('.flow-arrow');
+      if (arrow) {
+        arrow.style.transform = 'scale(1.3)';
+        arrow.style.animation = 'flowPulse 1s ease-in-out infinite';
+      }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+      this.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)';
+      
+      const arrow = this.querySelector('.flow-arrow');
+      if (arrow) {
+        arrow.style.transform = 'scale(1)';
+        arrow.style.animation = 'none';
+      }
+    });
+  });
+  
+  // Click to highlight connections
+  sectorCards.forEach(card => {
+    card.addEventListener('click', function() {
+      sectorCards.forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+})();
+</script>
 
 
 
