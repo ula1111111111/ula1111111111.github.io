@@ -29,10 +29,6 @@ subtitle: ""
     </div>
 
     <div class="hero-step">
-      <p class="intro-text">
-        See below our common guess about Nasdaq, that lead and motivated our analysis :
-      </p>
-
       <!-- NASDAQ acronym -->
       <div class="nasdaq-reveal" id="nasdaqReveal" aria-label="NASDAQ acronym reveal">
 
@@ -71,7 +67,7 @@ subtitle: ""
   <div class="nasdaq-full" aria-live="polite">
     <span class="label">Decoded:</span>
     <span class="sentence" id="nasdaqSentence">
-      Hover or tap each letter to reveal.
+      Hover or tap each letter to discover our first intuition.
     </span>
   </div>
 
