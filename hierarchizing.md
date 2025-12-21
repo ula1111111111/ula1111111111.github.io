@@ -73,13 +73,7 @@ Not all metrics are created equal. Based on financial research and market dynami
 
 The Power Score is constructed as a weighted combination of five standardized indicators:
 
-- **Market Capitalization (40%)** – captures firm size and systemic importance  
-- **Trading Volume (25%)** – reflects liquidity and investor attention  
-- **Mean Return (15%)** – measures historical performance  
-- **Inverse Volatility (10%)** – rewards price stability  
-- **Age Since IPO (10%)** – proxies maturity and institutional trust  
 
-Weights sum to one and ensure that no single dimension dominates the ranking.
 
 
 | Metric              | Weight | Interpretation                         |
@@ -91,6 +85,7 @@ Weights sum to one and ensure that no single dimension dominates the ranking.
 | Age Since IPO        | 0.10   | Firm maturity and credibility            |
 
 
+Weights sum to one and ensure that no single dimension dominates the ranking.
 ---
 
 ## Interactive Power Score Calculator
