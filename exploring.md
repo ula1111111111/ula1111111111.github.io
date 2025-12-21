@@ -23,6 +23,7 @@ This section sets the stage for the next steps:
 
 
 indeed, there are handful of giant, but do they have the control ?
+on voit que ca varie avec le domaine, let's dig into this
 
 
 
@@ -30,4 +31,11 @@ indeed, there are handful of giant, but do they have the control ?
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 <noscript>
   <img src="https://public.flourish.studio/visualisation/26923902/thumbnail" width="100%" alt="chart visualization" />
+</noscript>
+
+
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/26924472"></div>
+<noscript>
+  <img src="https://public.flourish.studio/visualisation/26924472/thumbnail" width="100%" alt="chart visualization" />
 </noscript>
