@@ -69,23 +69,27 @@ We construct a **Power Score** that integrates five key financial indicators. Ea
 
 ## How We Weight Each Factor
 
-Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor's importance in determining market power. **Hover over the chart to see detailed breakdowns:**
+Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor’s importance in determining market power.
 
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+The Power Score is constructed as a weighted combination of five standardized indicators:
 
-<!-- Interactive Flourish Visualization 1: Weight Breakdown -->
-<div class="flourish-embed flourish-chart" data-src="visualisation/YOUR_WEIGHT_CHART_ID" data-height="500">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
+- **Market Capitalization (40%)** – captures firm size and systemic importance  
+- **Trading Volume (25%)** – reflects liquidity and investor attention  
+- **Mean Return (15%)** – measures historical performance  
+- **Inverse Volatility (10%)** – rewards price stability  
+- **Age Since IPO (10%)** – proxies maturity and institutional trust  
 
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> Create a CSV with columns: <code>Metric, Weight, Color</code><br>
-    Example: Market Cap, 0.40, #ff4d88 | Trading Volume, 0.25, #b039ca | etc.
-  </p>
-</div>
+Weights sum to one and ensure that no single dimension dominates the ranking.
 
-</div>
+
+| Metric              | Weight | Interpretation                         |
+|---------------------|--------|-----------------------------------------|
+| Market Capitalization | 0.40   | Size and financial solidity              |
+| Trading Volume       | 0.25   | Liquidity and visibility                 |
+| Mean Return          | 0.15   | Performance over time                    |
+| Inverse Volatility   | 0.10   | Price stability                          |
+| Age Since IPO        | 0.10   | Firm maturity and credibility            |
+
 
 ---
 
