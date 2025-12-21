@@ -1,6 +1,6 @@
 Let's dive into our data !
-We start by stripping the dataset down to what matters for our question:,single firms.  
-For the first part of the project, we therefore exclude ETFs (we only use some of them in the last section of the project), and focus on individual NASDAQ-listed companies.
+We start by stripping the dataset down to what matters for our question: single firms.  
+For the first part of the project, we therefore exclude ETFs (we only use some of them in the last section) and focus on individual NASDAQ-listed companies.
  
 To enrich the metadata dataset, we merge it with the external company list, adding key descriptors for the 2,074 remaining stocks (market cap, IPO year, sector). With the universe cleaned and mapped, we can finally “see” what the NASDAQ looks like once split into sectors:
 
