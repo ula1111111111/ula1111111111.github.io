@@ -1,5 +1,9 @@
 
 ---
+Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
+Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
+
+Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
 
 <section style="max-width:900px; line-height:1.65; font-size:16px;">
 
@@ -65,7 +69,7 @@
   </p>
 
   <p>
-    Sectors such as Health Care, Finance, and Public Utilities tend to form denser
+    Sectors such as Health Care, Energy, and Transportation tend to form denser
     and more structured leadership networks, suggesting faster or more coordinated
     information transmission within these industries.
   </p>
