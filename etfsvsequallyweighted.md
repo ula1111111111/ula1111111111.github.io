@@ -222,9 +222,9 @@ We first broke down returns into four distinct market phases. The interactive vi
 
 <div class="visualization-grid" style="margin-top: 8px;">
   <div class="visualization-grid-item">
-    <div class="flourish-embed flourish-chart" data-src="visualisation/26918460">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26927050">
       <script src="https://public.flourish.studio/resources/embed.js"></script>
-      <noscript><img src="https://public.flourish.studio/visualisation/26918460/thumbnail" width="100%" alt="chart visualization" /></noscript>
+      <noscript><img src="https://public.flourish.studio/visualisation/26927050/thumbnail" width="100%" alt="chart visualization" /></noscript>
     </div>
   </div>
   
