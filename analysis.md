@@ -3,8 +3,6 @@
 
 <section style="max-width:900px; line-height:1.65; font-size:16px;">
 
-  <h2 style="margin-top:0;">Answering Research Questions and Key Findings</h2>
-
   <p>
     We conclude by revisiting our main research questions and summarizing the
     empirical insights provided by the leader–follower analysis.
@@ -12,7 +10,7 @@
 
   <hr style="margin:22px 0;">
 
-  <h3>How do we define a “leader” and a “follower” in stock movements?</h3>
+  <p><em>How do we define a “leader” and a “follower” in stock movements?</em></p>
 
   <p>
     A <strong>leader</strong> is a stock whose past daily returns improve the prediction
@@ -31,7 +29,7 @@
 
   <hr style="margin:22px 0;">
 
-  <h3>How can directional influence be detected within sectors?</h3>
+  <p><em>How can directional influence be detected within sectors?</em></p>
 
   <p>
     Directional influence is detected through a two-step statistical pipeline.
@@ -47,7 +45,7 @@
 
   <hr style="margin:22px 0;">
 
-  <h3>Can daily return time series reveal short-term influence?</h3>
+  <p><em>Can daily return time series reveal short-term influence?</em></p>
 
   <p>
     Yes. Daily return series are sufficiently granular to reveal lead–lag effects
@@ -58,7 +56,7 @@
 
   <hr style="margin:22px 0;">
 
-  <h3>Are leader–follower dynamics consistent across sectors?</h3>
+  <p><em>Are leader–follower dynamics consistent across sectors?</em></p>
 
   <p>
     No. Leadership patterns are strongly sector-dependent. Some sectors exhibit
@@ -73,6 +71,7 @@
   </p>
 
 </section>
+
 
 ---
 
