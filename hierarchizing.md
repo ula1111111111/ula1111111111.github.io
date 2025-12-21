@@ -208,7 +208,7 @@ This Power Score becomes the foundation for our leadership analysis. Once we've 
     x_i' = \frac{x_i - \mu_x}{\sigma_x}
     $$
     <p>
-      where $$\mu_x and \sigma_x$$ are the mean and standard deviation across all companies.
+      where $$\mu_x ,  - \sigma_x$$ are the mean and standard deviation across all companies.
     </p>
     
     <h3>Weight Constraints</h3>
@@ -226,8 +226,9 @@ This Power Score becomes the foundation for our leadership analysis. Once we've 
     $$
     S_i = w_1 \cdot Cap_i + w_2 \cdot Vol_i + w_3 \cdot Ret_i + w_4 \cdot (1 - Vol_i) + w_5 \cdot Age_i
     $$
-    <p>
-      with $w_1 = 0.40$, $w_2 = 0.25$, $w_3 = 0.15$, $w_4 = 0.10$, $w_5 = 0.10$.
-    </p>
+    with
+    $$
+       $w_1 = 0.40$, $w_2 = 0.25$, $w_3 = 0.15$, $w_4 = 0.10$, $w_5 = 0.10$.
+    $$
   </div>
 </details>
