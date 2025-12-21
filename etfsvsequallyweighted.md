@@ -585,6 +585,72 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 
 ---
 
+## Global Conclusions: The Complete Market Picture
+
+<div style="max-width:1000px;margin:40px auto;">
+
+<div style="background:linear-gradient(135deg, rgba(176,57,202,.12), rgba(255,77,136,.10));border:1px solid rgba(176,57,202,.3);border-radius:16px;padding:28px;margin-bottom:24px;">
+  <h3 style="margin:0 0 18px 0;font-size:1.25rem;color:#b039ca;text-align:center;">The Complete Story of Market Leadership (2005–2020)</h3>
+  
+  <p style="margin:0 0 20px 0;color:#333;line-height:1.7;font-size:0.98rem;">
+    Our comprehensive analysis across three integrated studies reveals a fundamental tension in modern markets: <strong>size doesn't always equal strength</strong>. Here's what the data tells us.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+    
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #ff4d88;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#ff4d88;font-weight:700;">📊 Portfolio Performance</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Equally-weighted portfolios outperformed in <strong>75% of sectors</strong>, challenging the assumption that market-cap concentration drives returns.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #b039ca;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#b039ca;font-weight:700;">👑 Power Score Hierarchy</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Market leaders (highest Power Scores) control significant resources, but influence is <strong>distributed differently by sector</strong>.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #ff4d88;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#ff4d88;font-weight:700;">📈 Leadership Dynamics</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Stock leadership networks show that <strong>influence flows through unexpected pathways</strong>, not always from the largest firms.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #b039ca;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#b039ca;font-weight:700;">🌐 Market Structure</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        The market operates as a <strong>network of interconnected sectors</strong>, where diversification provides both returns and resilience.
+      </p>
+    </div>
+
+  </div>
+
+  <div style="background:#f8f9fa;border-radius:10px;padding:16px;margin-bottom:16px;">
+    <h4 style="margin:0 0 12px 0;font-size:0.95rem;color:#2b2b2b;">🎯 Key Insights Across All Analyses:</h4>
+    <ul style="margin:0;padding-left:20px;color:#555;font-size:0.9rem;line-height:1.8;">
+      <li><strong>Crisis resilience matters:</strong> During downturns (2008, 2020), diversification outperformed concentration</li>
+      <li><strong>Regime shifts are real:</strong> 2015 marked a turning point where Big Tech dominance changed market dynamics</li>
+      <li><strong>Sector heterogeneity is crucial:</strong> Leaders dominate Consumer Services; Followers excel in Health Care & Finance</li>
+      <li><strong>Power doesn't guarantee returns:</strong> Large market cap correlates with stability but not always with growth</li>
+      <li><strong>Breadth beats concentration:</strong> Over 15 years, the average stock (EW) outperformed the weighted index (ETF)</li>
+    </ul>
+  </div>
+
+  <div style="border-top:2px solid rgba(176,57,202,.2);padding-top:16px;">
+    <p style="margin:0;color:#333;font-style:italic;line-height:1.7;text-align:center;font-size:0.95rem;">
+      <strong>The Bottom Line:</strong> Market leadership is multidimensional. Size matters, but so does diversity, liquidity, stability, and maturity. The firms that matter most aren't always the largest—they're the ones that are resilient, well-connected, and adaptable to changing market conditions.
+    </p>
+  </div>
+
+</div>
+
+</div>
+
+---
+
 <script>
 // Simple interactive cards
 document.addEventListener('DOMContentLoaded', function() {
