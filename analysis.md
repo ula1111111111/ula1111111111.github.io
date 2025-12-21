@@ -1,116 +1,78 @@
 
 ---
 
-<style>
-  .rq-wrap{max-width:900px;margin:26px 0;font-size:16px;line-height:1.6}
-  .rq-hero{
-    padding:16px 18px;border-radius:14px;
-    background:linear-gradient(90deg, rgba(255,77,136,.12), rgba(176,57,202,.10));
-    border:1px solid rgba(176,57,202,.25);
-    margin-bottom:14px;
-  }
-  .rq-hero h2{margin:0 0 6px 0;font-size:22px}
-  .rq-hero p{margin:0;color:#222}
-  .rq-grid{display:grid;grid-template-columns:1fr;gap:12px}
-  .rq-card{
-    background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:14px;
-    padding:14px 16px;box-shadow:0 8px 22px rgba(0,0,0,.06);
-  }
-  .rq-q{
-    font-weight:700;margin:0 0 8px 0;font-size:16px;
-    color:#222;
-  }
-  .rq-a{
-    margin:0;color:#333;
-  }
-  .rq-bullets{margin:10px 0 0 18px;color:#333}
-  .rq-pill{
-    display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;
-    background:rgba(255,77,136,.10);border:1px solid rgba(255,77,136,.25);
-    font-size:13px;color:#222
-  }
-  .rq-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-  @media (max-width:720px){.rq-split{grid-template-columns:1fr}}
-  .rq-mini{
-    background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.08);
-    border-radius:12px;padding:10px 12px;
-  }
-  .rq-mini b{color:#222}
-</style>
+<section style="max-width:900px; line-height:1.65; font-size:16px;">
 
-<div class="rq-wrap">
+  <h2 style="margin-top:0;">Answering Research Questions and Key Findings</h2>
 
-  <div class="rq-hero">
-    <h2>Answering Research Questions</h2>
-    <p>
-      Below we summarize the key research questions and the corresponding takeaways from our
-      leader–follower detection pipeline.
-    </p>
-  </div>
+  <p>
+    We conclude by revisiting our main research questions and summarizing the
+    empirical insights provided by the leader–follower analysis.
+  </p>
 
-  <div class="rq-grid">
+  <hr style="margin:22px 0;">
 
-    <div class="rq-card">
-      <p class="rq-q">1) How do we define a “leader” and a “follower” in stock movements?</p>
-      <p class="rq-a">
-        A <b>leader</b> is a stock whose past daily returns improve prediction of another stock’s future returns.
-        A <b>follower</b> is a stock that reacts with a short delay to leader movements.
-      </p>
-      <ul class="rq-bullets">
-        <li>We require a lead–lag correlation at a positive shift.</li>
-        <li>We confirm direction using a one-way Granger causality test.</li>
-      </ul>
-      <div class="rq-pill">Interpretation: predictive precedence (not true causality)</div>
-    </div>
+  <h3>How do we define a “leader” and a “follower” in stock movements?</h3>
 
-    <div class="rq-card">
-      <p class="rq-q">2) How can we detect directional influence within a sector?</p>
-      <p class="rq-a">
-        Directional influence is detected using a two-stage filter: a lagged correlation screen followed by
-        Granger causality confirmation. Only pairs supported by both are retained.
-      </p>
-      <div class="rq-split">
-        <div class="rq-mini">
-          <b>Screening</b><br>
-          Lagged cross-correlation identifies candidate links.
-        </div>
-        <div class="rq-mini">
-          <b>Confirmation</b><br>
-          Granger causality validates directionality.
-        </div>
-      </div>
-      <div class="rq-pill">Outcome: sparse, sector-specific directed networks</div>
-    </div>
+  <p>
+    A <strong>leader</strong> is a stock whose past daily returns improve the prediction
+    of another stock’s future returns. A <strong>follower</strong> is a stock that reacts
+    with a short delay to movements in the leader.
+  </p>
 
-    <div class="rq-card">
-      <p class="rq-q">3) Can daily returns reveal influence via lead–lag correlation or Granger causality?</p>
-      <p class="rq-a">
-        Yes. Daily return series can expose short-horizon lead–lag effects over a few trading days.
-        Effects are typically moderate in magnitude but statistically meaningful for selected pairs.
-      </p>
-      <div class="rq-pill">Signal: short-term propagation (days, not weeks)</div>
-    </div>
+  <p>
+    In practice, leadership is assigned only when two conditions are met:
+  </p>
 
-    <div class="rq-card">
-      <p class="rq-q">4) Are leader–follower dynamics consistent across sectors?</p>
-      <p class="rq-a">
-        No. Leadership patterns are strongly sector-dependent: some sectors exhibit multi-leader structures,
-        others show only a few isolated links, and a few remain nearly empty under our thresholds.
-      </p>
-      <div class="rq-pill">Key insight: information transmission is industry-specific</div>
-    </div>
+  <ul>
+    <li>a statistically significant lead–lag correlation at a positive time shift, and</li>
+    <li>a Granger causality test confirming predictive precedence in one direction.</li>
+  </ul>
 
-    <div class="rq-card">
-      <p class="rq-q">5) Do some sectors exhibit stronger leadership patterns than others?</p>
-      <p class="rq-a">
-        Yes. Sectors such as <b>Health Care</b>, <b>Finance</b>, and <b>Public Utilities</b> tend to form denser and more
-        structured networks, while several other sectors remain sparse or fragmented.
-      </p>
-      <div class="rq-pill">Implication: leadership is concentrated, not universal</div>
-    </div>
+  <hr style="margin:22px 0;">
 
-  </div>
-</div>
+  <h3>How can directional influence be detected within sectors?</h3>
+
+  <p>
+    Directional influence is detected through a two-step statistical pipeline.
+    First, cross-correlation analysis identifies candidate lead–lag relationships.
+    Second, Granger causality tests verify whether past returns of one stock
+    improve prediction of another beyond its own history.
+  </p>
+
+  <p>
+    Only relationships supported by both steps are retained, ensuring that
+    detected links reflect directional predictability rather than simple co-movement.
+  </p>
+
+  <hr style="margin:22px 0;">
+
+  <h3>Can daily return time series reveal short-term influence?</h3>
+
+  <p>
+    Yes. Daily return series are sufficiently granular to reveal lead–lag effects
+    over horizons of a few trading days. While these effects are moderate in
+    magnitude, they are statistically meaningful and consistently detected
+    across multiple sectors.
+  </p>
+
+  <hr style="margin:22px 0;">
+
+  <h3>Are leader–follower dynamics consistent across sectors?</h3>
+
+  <p>
+    No. Leadership patterns are strongly sector-dependent. Some sectors exhibit
+    structured hierarchies with multiple leaders, others display only a few isolated
+    leader–follower pairs, and several sectors show minimal detectable leadership.
+  </p>
+
+  <p>
+    Sectors such as Health Care, Finance, and Public Utilities tend to form denser
+    and more structured leadership networks, suggesting faster or more coordinated
+    information transmission within these industries.
+  </p>
+
+</section>
 
 ---
 
