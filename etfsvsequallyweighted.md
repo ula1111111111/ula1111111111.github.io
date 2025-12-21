@@ -277,74 +277,42 @@ The reversal is even more apparent when viewed dynamically. The chart below show
 
 ![Health Care Analysis](/assets/img/sector_health_care.png)
 
-## Methodology
+**Performance Highlights:**
+- **Equally-Weighted Return:** 15.99% annually
+- **ETF Return:** 9.95% annually
+- **Outperformance:** +6.04% in favor of EW portfolio
+- **Sharpe Ratio:** EW (0.78) vs ETF (0.42) - **86% better risk-adjusted returns**
 
-<div class="methodology-cards-grid">
-  <details class="methodology-card" open>
-    <summary><span class="card-title">1. Conceptual Framework: Leaders vs. Followers</span></summary>
-    <div class="card-content">
-      <ul>
-        <li><b>Value-Weighted (ETFs)</b> <span class="badge-leader">Leaders</span> : pondération selon la capitalisation boursière, donc dominé par les grandes entreprises.</li>
-        <li><b>Equally-Weighted (Portfolios)</b> <span class="badge-follower">Followers</span> : chaque société a le même poids (1/n), reflétant l'ensemble du marché.</li>
-      </ul>
-      <div class="interpretation-box">
-        <b>Logique d'interprétation :</b>
-        <ul>
-          <li><span class="color-leader">ETF &gt; Equally-Weighted</span> : performance tirée par la concentration des grandes capitalisations (<b>Leaders</b>).</li>
-          <li><span class="color-follower">Equally-Weighted &gt; ETF</span> : surperformance des petites et moyennes entreprises (<b>Followers</b>).</li>
-        </ul>
-      </div>
-    </div>
-  </details>
+**Insights:**
+The Health Care sector shows the strongest outperformance of equally-weighted portfolios. With 564 stocks analyzed, the diversification benefits are clear. The biotech and pharmaceutical industries have significant variation between large-cap leaders and smaller innovative companies, allowing equally-weighted portfolios to capture growth across the entire sector spectrum.
 
-  <details class="methodology-card">
-    <summary><span class="card-title">2. Data Sources & Preparation</span></summary>
-    <div class="card-content">
-      <ul>
-        <li><b>NASDAQ Company List</b> : métadonnées (secteur, industrie, market cap).</li>
-        <li><b>Stock Market Dataset</b> : prix quotidiens pour calculer les rendements.</li>
-      </ul>
-      <div class="data-cleaning-box">
-        <b>Règles de nettoyage :</b>
-        <ul>
-          <li><b>Période :</b> 2005-2020 (15 ans)</li>
-          <li><b>Critère d'inclusion :</b> ≥ 2 ans d'historique (2 074 sociétés)</li>
-          <li><b>Gestion des outliers :</b> rendements quotidiens limités à ±50%</li>
-        </ul>
-      </div>
-    </div>
-  </details>
+**Key Observations:**
+- EW portfolio showed remarkable resilience during market downturns
+- Consistent outperformance throughout the 15-year period
+- Higher volatility in EW portfolio was more than compensated by superior returns
 
-  <details class="methodology-card">
-    <summary><span class="card-title">3. Portfolio Construction</span></summary>
-    <div class="card-content">
-      <div class="portfolio-columns">
-        <div>
-          <b>Equally-Weighted Portfolios</b>
-          <ul>
-            <li>Pondération identique (1/n)</li>
-            <li>Rééquilibrage <b>quotidien</b> pour égalité d'exposition</li>
-            <li>Moyenne des rendements journaliers</li>
-          </ul>
-        </div>
-        <div>
-          <b>ETF Benchmarks</b>
-          <ul>
-            <li>Pondération selon la capitalisation</li>
-            <li>Rééquilibrage <b>trimestriel</b> (méthodologie standard)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </details>
+---
 
-  <details class="methodology-card math-collapse">
-    <summary><span class="card-title">4. Limitation : Survivorship Bias</span></summary>
-    <div class="card-content">
-      <b>Le biais de survie</b> : seuls les titres encore cotés en 2020 sont inclus. Les sociétés disparues (faillite, fusion, radiation) sont absentes, ce qui peut <span class="color-follower">surévaluer la performance des petites/moyennes capitalisations</span> ou <span class="color-leader">sous-estimer la volatilité</span>.
-    </div>
-  </details>
-</div>
+### Finance Sector (FTXO)
+
+![Finance Analysis](/assets/img/sector_finance.png)
+
+**Performance Highlights:**
+- **Equally-Weighted Return:** 0.98% annually
+- **ETF Return:** -7.55% annually
+- **Outperformance:** +8.53% in favor of EW portfolio
+- **Sharpe Ratio:** EW (0.05) vs ETF (-0.27) - **ETF had negative risk-adjusted returns**
+
+**Insights:**
+The Finance sector tells a dramatic story. The 2008 financial crisis devastated large financial institutions (heavily weighted in the ETF), while the equally-weighted portfolio, by diversifying across 484 financial stocks, managed to stay positive. This is a powerful demonstration of how equal weighting can protect against sector-specific crises that disproportionately affect market leaders.
+
+**Key Observations:**
+- Both portfolios struggled during 2008-2009 financial crisis
+- EW portfolio recovered faster and maintained positive returns
+- ETF remained below initial investment value for most of the period
+- Largest outperformance difference among all sectors
+
+---
 
 ### Technology Sector (QTEC)
 
