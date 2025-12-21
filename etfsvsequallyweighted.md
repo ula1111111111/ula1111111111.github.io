@@ -639,12 +639,6 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
     </ul>
   </div>
 
-  <div style="border-top:2px solid rgba(176,57,202,.2);padding-top:16px;">
-    <p style="margin:0;color:#333;font-style:italic;line-height:1.7;text-align:center;font-size:0.95rem;">
-      <strong>The Bottom Line:</strong> Market leadership is multidimensional. Size matters, but so does diversity, liquidity, stability, and maturity. The firms that matter most aren't always the largest—they're the ones that are resilient, well-connected, and adaptable to changing market conditions.
-    </p>
-  </div>
-
 </div>
 
 </div>
