@@ -86,6 +86,7 @@ The Power Score is constructed as a weighted combination of five standardized in
 
 
 Weights sum to one and ensure that no single dimension dominates the ranking.
+
 ---
 
 ## Interactive Power Score Calculator
