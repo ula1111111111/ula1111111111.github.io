@@ -55,16 +55,12 @@ nav-title-img: "/assets/img/Logo wide.png"
 # Select the social network links that you want to show in the footer.
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
-social-network-links:
-  email: "urszula.olszewska@epfl.ch"
-  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  # facebook: deanattali
-  github: ula1111111111
-social-network-links:
-  email: "urszula.olszewska@epfl.ch"
-  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  # facebook: deanattali
-  github: ula1111111111
+# social-network-links:
+#   email: "urszula.olszewska@epfl.ch"
+#   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
+#   # facebook: deanattali
+#   github: ula1111111111
+
 
   # twitter: daattali
   # patreon: DeanAttali
