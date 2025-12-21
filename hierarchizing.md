@@ -1,6 +1,6 @@
 *How should companies be sectorized and hierarchized?*
 
-## • Building the Power Score: Beyond Market Cap
+# --> Building the Power Score: Beyond Market Cap
 
 To answer whether the most powerful firms are also the most influential, we need a way to rank companies that goes beyond simple market capitalization. Size matters, but influence is multidimensional.
 
