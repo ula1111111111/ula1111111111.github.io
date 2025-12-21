@@ -13,7 +13,7 @@
 title: A website for ADA Project TheOutliers storytelling and analysis.
 
 # Your name to show in the footer
-author: Some Person
+author: Clement Badre, Andrew Hajjassaf, Amine Louah, Urszula Olszewska, Leonard Rambeau
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -57,7 +57,12 @@ nav-title-img: "/assets/img/Logo wide.png"
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "urszula.olszewska@epfl.ch"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  # facebook: deanattali
+  github: ula1111111111
+social-network-links:
+  email: "urszula.olszewska@epfl.ch"
+  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
   # facebook: deanattali
   github: ula1111111111
 
