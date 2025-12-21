@@ -89,28 +89,6 @@ Weights sum to one and ensure that no single dimension dominates the ranking.
 
 ---
 
-## Interactive Power Score Calculator
-
-See how different companies compare across the five metrics. **Select companies below to compare their Power Score components:**
-
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
-
-<!-- Interactive Flourish Visualization 2: Comparison Tool -->
-<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_COMPARISON_ID" data-height="600">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
-
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> CSV with columns: <code>Company, Sector, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age, Power_Score</code><br>
-    Use Flourish's "Scatter plot" or "Connected dot plot" template with filter enabled.
-  </p>
-</div>
-
-</div>
-
----
-
 ## The Formula
 
 All metrics are first standardized using z-score normalization to ensure fair comparison:
