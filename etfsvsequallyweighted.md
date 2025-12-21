@@ -590,7 +590,8 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 <div style="max-width:1000px;margin:40px auto;">
 
 <div style="background:linear-gradient(135deg, rgba(176,57,202,.12), rgba(255,77,136,.10));border:1px solid rgba(176,57,202,.3);border-radius:16px;padding:28px;margin-bottom:24px;">
-  <h3 style="margin:0 0 18px 0;font-size:1.25rem;color:#b039ca;text-align:center;">The Complete Story of Market Leadership (2005–2020)</h3>
+  <h3 style="margin:0 0 18px 0;font-size:1.25rem;color:#b039ca;text-align:center;">The Complete Story of Market Leadership (20
+  05–2020)</h3>
   
   <p style="margin:0 0 20px 0;color:#333;line-height:1.7;font-size:0.98rem;">
     Our comprehensive analysis across three integrated studies reveals a fundamental tension in modern markets: <strong>size doesn't always equal strength</strong>. Here's what the data tells us.
