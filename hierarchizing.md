@@ -208,7 +208,7 @@ This Power Score becomes the foundation for our leadership analysis. Once we've 
     x_i' = \frac{x_i - \mu_x}{\sigma_x}
     $$
     <p>
-      where $$\mu_x$$ and $$\sigma_x$$ are the mean and standard deviation across all companies.
+      where $$\mu_x and \sigma_x$$ are the mean and standard deviation across all companies.
     </p>
     
     <h3>Weight Constraints</h3>
