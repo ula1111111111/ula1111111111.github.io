@@ -1,8 +1,5 @@
 
 ---
-Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
-Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
-
 Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
 
 We conclude by revisiting our main research questions and summarizing the empirical insights provided by the leader–follower analysis.
