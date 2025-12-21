@@ -1,54 +1,116 @@
 
 ---
 
-### Answering research Questions and Key Findings
+<style>
+  .rq-wrap{max-width:900px;margin:26px 0;font-size:16px;line-height:1.6}
+  .rq-hero{
+    padding:16px 18px;border-radius:14px;
+    background:linear-gradient(90deg, rgba(255,77,136,.12), rgba(176,57,202,.10));
+    border:1px solid rgba(176,57,202,.25);
+    margin-bottom:14px;
+  }
+  .rq-hero h2{margin:0 0 6px 0;font-size:22px}
+  .rq-hero p{margin:0;color:#222}
+  .rq-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .rq-card{
+    background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:14px;
+    padding:14px 16px;box-shadow:0 8px 22px rgba(0,0,0,.06);
+  }
+  .rq-q{
+    font-weight:700;margin:0 0 8px 0;font-size:16px;
+    color:#222;
+  }
+  .rq-a{
+    margin:0;color:#333;
+  }
+  .rq-bullets{margin:10px 0 0 18px;color:#333}
+  .rq-pill{
+    display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;
+    background:rgba(255,77,136,.10);border:1px solid rgba(255,77,136,.25);
+    font-size:13px;color:#222
+  }
+  .rq-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  @media (max-width:720px){.rq-split{grid-template-columns:1fr}}
+  .rq-mini{
+    background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.08);
+    border-radius:12px;padding:10px 12px;
+  }
+  .rq-mini b{color:#222}
+</style>
 
-1. *How do we define a “leader” and a “follower” in stock movements?*
+<div class="rq-wrap">
 
-A **leader** is defined as a stock whose past daily returns improve the prediction of another stock’s future returns.
-A **follower** is a stock whose returns respond with a short delay to movements in the leader.
+  <div class="rq-hero">
+    <h2>Answering Research Questions</h2>
+    <p>
+      Below we summarize the key research questions and the corresponding takeaways from our
+      leader–follower detection pipeline.
+    </p>
+  </div>
 
-In practice, leadership is assigned only when both:
+  <div class="rq-grid">
 
-- a lead–lag correlation is detected at a positive time shift, and
+    <div class="rq-card">
+      <p class="rq-q">1) How do we define a “leader” and a “follower” in stock movements?</p>
+      <p class="rq-a">
+        A <b>leader</b> is a stock whose past daily returns improve prediction of another stock’s future returns.
+        A <b>follower</b> is a stock that reacts with a short delay to leader movements.
+      </p>
+      <ul class="rq-bullets">
+        <li>We require a lead–lag correlation at a positive shift.</li>
+        <li>We confirm direction using a one-way Granger causality test.</li>
+      </ul>
+      <div class="rq-pill">Interpretation: predictive precedence (not true causality)</div>
+    </div>
 
-- a Granger causality test confirms predictive precedence in one direction.
+    <div class="rq-card">
+      <p class="rq-q">2) How can we detect directional influence within a sector?</p>
+      <p class="rq-a">
+        Directional influence is detected using a two-stage filter: a lagged correlation screen followed by
+        Granger causality confirmation. Only pairs supported by both are retained.
+      </p>
+      <div class="rq-split">
+        <div class="rq-mini">
+          <b>Screening</b><br>
+          Lagged cross-correlation identifies candidate links.
+        </div>
+        <div class="rq-mini">
+          <b>Confirmation</b><br>
+          Granger causality validates directionality.
+        </div>
+      </div>
+      <div class="rq-pill">Outcome: sparse, sector-specific directed networks</div>
+    </div>
 
-2. *How can we detect directional influence between stocks within a sector?*
+    <div class="rq-card">
+      <p class="rq-q">3) Can daily returns reveal influence via lead–lag correlation or Granger causality?</p>
+      <p class="rq-a">
+        Yes. Daily return series can expose short-horizon lead–lag effects over a few trading days.
+        Effects are typically moderate in magnitude but statistically meaningful for selected pairs.
+      </p>
+      <div class="rq-pill">Signal: short-term propagation (days, not weeks)</div>
+    </div>
 
-Directional influence is detected using a two-step statistical pipeline:
+    <div class="rq-card">
+      <p class="rq-q">4) Are leader–follower dynamics consistent across sectors?</p>
+      <p class="rq-a">
+        No. Leadership patterns are strongly sector-dependent: some sectors exhibit multi-leader structures,
+        others show only a few isolated links, and a few remain nearly empty under our thresholds.
+      </p>
+      <div class="rq-pill">Key insight: information transmission is industry-specific</div>
+    </div>
 
-Cross-correlation analysis to identify potential lead–lag relationships.
+    <div class="rq-card">
+      <p class="rq-q">5) Do some sectors exhibit stronger leadership patterns than others?</p>
+      <p class="rq-a">
+        Yes. Sectors such as <b>Health Care</b>, <b>Finance</b>, and <b>Public Utilities</b> tend to form denser and more
+        structured networks, while several other sectors remain sparse or fragmented.
+      </p>
+      <div class="rq-pill">Implication: leadership is concentrated, not universal</div>
+    </div>
 
-Granger causality testing to confirm directional predictability.
-
-Only relationships supported by both steps are retained.
-
-Can daily return time series reveal influence through lagged correlations or Granger causality?
-
-Yes.
-Daily return series are sufficiently granular to reveal short-term lead–lag effects at horizons of a few trading days.
-While these effects are generally moderate in magnitude, they are statistically meaningful and robust across sectors.
-
-3. *Are leader–follower dynamics consistent across sectors?*
-
-No.
-Leadership patterns are sector-dependent:
-
-Some sectors exhibit structured hierarchies with multiple leaders,
-
-Others show only one or two dominant leader–follower pairs,
-
-A few sectors display minimal detectable leadership.
-
-This heterogeneity highlights differences in information transmission across industries.
-
-Do some sectors exhibit stronger leadership patterns than others?
-
-Yes.
-Sectors such as Health Care, Finance, and Public Utilities show denser and more structured leadership networks, while others exhibit sparse or isolated relationships.
-
-This suggests that sector-specific characteristics influence how quickly information propagates among firms.
+  </div>
+</div>
 
 ---
 
@@ -454,53 +516,53 @@ fetch(DATA_URL_NETWORK)
 
 The analysis identifies sparse but structured leader–follower relationships within sectors. Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
 
-#### Basic Industries
+### Basic Industries
 
-Leadership is distributed across **Barrick Gold (GOLD)**, **Methanex (MEOH)**, **Royal Gold (RGLD)**, and **WD-40 Company (WDFC)**. Firms such as **Stericycle (SRCL)** and **Balchem (BCPC)** act as downstream followers. The sector exhibits a multi-level hierarchical structure, with both reinforcing and opposing effects.
+Leadership is shared among several industrial firms, with **Steel Dynamics (STLD)**, **WD-40 Company (WDFC)**, and **Matrix Service (MTRX)** acting as upstream movers. Their influence propagates toward firms such as **Stericycle (SRCL)** and **Codexis (CDXS)**, forming a layered but non-centralized structure.
 
-#### Capital Goods
+### Capital Goods
 
-**Garmin (GRMN)** and **Tesla (TSLA)** emerge as leaders, influencing **Icahn Enterprises (IEP)** and **Nordson (NDSN)**, respectively. Leadership effects are clear and directional, though heterogeneous in sign.
+A small group of technology-oriented firms drives leadership. **II-VI (IIVI)** and **Mercury Systems (MRCY)** initiate movements that are followed by **Nordson (MKSI)** and **FLIR Systems (FLIR)**, producing clear and directional influence paths.
 
-#### Consumer Durables
+### Consumer Durables
 
-**Casey's General Stores (CASY)**, **Cronos Group (CRON)**, and **Pool Corporation (POOL)** act as leaders. Their influence propagates toward **Helen of Troy (HELE)**, **iRobot (IRBT)**, and **Lumentum (LITE)**, with mixed positive and negative responses.
+Leadership is fragmented across independent channels. **American Superconductor (AMSC)**, **Central Garden & Pet (CENT)**, and **iRobot (IRBT)** each lead specific followers, resulting in localized influence rather than a single sector-wide hierarchy.
 
-#### Consumer Non-Durables
+### Consumer Non-Durables
 
-**Cintas (CTAS)** and **Hasbro (HAS)** lead firms such as **Columbia Sportswear (COLM)** and **Pilgrim's Pride (PPC)**. The sector displays asymmetric responses, indicating varied short-term adjustment mechanisms.
+The sector is characterized by a few strong but isolated links. **Fossil Group (FOSL)** leads **Crocs (CROX)**, while **Columbia Sportswear (COLM)** influences **Sanderson Farms (SAFM)**, with limited interaction beyond these pairs.
 
-#### Consumer Services
+### Consumer Services
 
-**Amazon (AMZN)** and **Comcast (CMCSA)** dominate leadership dynamics. Amazon's influence on **Netflix (NFLX)** is negative, while Comcast exerts a positive leadership effect on **Starbucks (SBUX)**. Leadership is split across independent channels rather than centralized in a single firm.
+Leadership is highly concentrated. **DISH Network (DISH)** emerges as the sole leader, with its movements preceding those of **Starbucks (SBUX)**, indicating a narrow but detectable information channel.
 
-#### Energy
+### Energy
 
-**Gulfport Energy (GPOR)**, **Patterson-UTI Energy (PTEN)**, and **Viper Energy (VNOM)** influence **Centennial Resource Development (CDEV)**. Leadership effects are consistently negative, identifying Centennial as a clear follower.
+Energy exhibits one of the strongest leadership structures. Firms such as **TUSK Energy (TUSK)**, **Diamondback Energy (FANG)**, and **Viper Energy (VNOM)** influence multiple downstream companies, including **Centennial Resource Development (CDEV)**, reflecting strong and widespread propagation effects.
 
-#### Finance
+### Finance
 
-Multiple firms, including **Cincinnati Financial (CINF)**, **Huntington Bancshares (HBAN/HBANO)**, **Northern Trust (NTRS)**, and **Principal Financial (PFG)**, act as leaders. Their influence extends toward **Nasdaq (NDAQ)**, **Fifth Third Bancorp (FITB)**, and **T. Rowe Price (TROW)**, forming a sparse but non-trivial network.
+Leadership is distributed among several financial institutions. **Carlyle Group (CG)**, **SEI Investments (SEIC)**, and **Principal Financial (PFG)** influence firms such as **Ameritrade (AMTD)** and **T. Rowe Price (TROW)**, forming a sparse but multi-path network.
 
-#### Health Care
+### Health Care
 
-Health Care exhibits the richest internal structure. **Biogen (BIIB)**, **Intuitive Surgical (ISRG)**, **Regeneron (REGN)**, and **IDEXX Laboratories (IDXX)** emerge as leaders, influencing **Vertex Pharmaceuticals (VRTX)**, **Walgreens Boots Alliance (WBA)**, and others. Both positive and negative leadership effects coexist.
+Health Care displays rich internal structure. **Biomarín (BMRN)**, **Intuitive Surgical (ISRG)**, and **Gilead Sciences (GILD)** act as prominent leaders, influencing firms such as **Vertex Pharmaceuticals (VRTX)** and **Hologic (HOLX)** through both positive and negative effects.
 
-#### Miscellaneous
+### Miscellaneous
 
-**Booking Holdings (BKNG)** and **eBay (EBAY)** lead firms such as **CDK Global (CDK)** and **Zillow Group (ZG)**. Leadership relationships are simple but directional.
+Leadership is spread across platform-oriented firms. **HealthEquity (HQY)**, **CoStar Group (CSGP)**, and **MercadoLibre (MELI)** influence several followers, including **Zillow Group (ZG)** and **GoPro (GPRO)**, producing moderate but consistent directional links.
 
-#### Public Utilities
+### Public Utilities
 
-Leadership is distributed across firms including **Alliant Energy (LNT)**, **Otter Tail (OTTR)**, **Shenandoah Telecommunications (SHEN)**, **T-Mobile US (TMUS)**, and **Xcel Energy (XEL)**. This sector displays one of the densest leadership structures.
+The sector shows multiple localized leadership relationships rather than a dominant hub. Firms such as **NextEra Energy (NEXT)**, **ADTRAN (ADTN)**, and **Spark Energy (SPKE)** influence utilities like **Clean Energy Fuels (CLNE)** and **Casella Waste Systems (CWST)**.
 
-#### Technology
+### Technology
 
-**Broadcom (AVGO)** exhibits a clear leadership effect on **Apple (AAPL)**, indicating delayed information transmission rather than purely synchronous movement.
+Leadership is driven by large platform and semiconductor firms. **Broadcom (AVGO)** leads both **Apple (AAPL)** and **Microsoft (MSFT)**, while **Meta Platforms (FB)** and **Adobe (ADBE)** form an opposing influence channel, highlighting delayed information transmission.
 
-#### Transportation
+### Transportation
 
-**JetBlue (JBLU)**, **Landstar (LSTR)**, **Old Dominion Freight Line (ODFL)**, and **United Airlines (UAL)** influence firms such as **CSX (CSX)** and **Expeditors (EXPD)**. Leadership relationships span multiple transportation subsectors.
+Transportation exhibits multi-channel leadership across logistics and airlines. **Old Dominion Freight Line (ODFL)**, **Hub Group (HUBG)**, and **JetBlue (JBLU)** influence firms such as **Ryder (RYAAY)** and **Werner Enterprises (WERN)**, forming a well-connected but non-centralized network.
 
 ### Takeaway
 
