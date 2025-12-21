@@ -1,6 +1,6 @@
 *How should companies be sectorized and hierarchized?*
 
-## • Building the Power Score: Beyond Market Cap
+### --> Building the Power Score: Beyond Market Cap
 
 To answer whether the most powerful firms are also the most influential, we need a way to rank companies that goes beyond simple market capitalization. Size matters, but influence is multidimensional.
 
@@ -49,7 +49,7 @@ We construct a **Power Score** that integrates five key financial indicators. Ea
   <div style="font-size:2.5rem;margin-bottom:8px;">⚖️</div>
   <h3 style="margin:0 0 8px 0;font-size:1.2rem;color:#b039ca;">Volatility (Inverse)</h3>
   <p style="margin:0;color:#555;font-size:0.95rem;line-height:1.6;">
-    <strong>What it measures:</strong> Price stability (used as $1 - \text{Volatility}$)<br>
+    <strong>What it measures:</strong> Price stability (measured as inverse volatility)<br>
     <strong>Why it matters:</strong> Lower volatility signals resilience and institutional appeal
   </p>
 </div>
@@ -69,45 +69,23 @@ We construct a **Power Score** that integrates five key financial indicators. Ea
 
 ## How We Weight Each Factor
 
-Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor's importance in determining market power. **Hover over the chart to see detailed breakdowns:**
+Not all metrics are created equal. Based on financial research and market dynamics, we assign weights that reflect each factor’s importance in determining market power.
 
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
+The Power Score is constructed as a weighted combination of five standardized indicators:
 
-<!-- Interactive Flourish Visualization 1: Weight Breakdown -->
-<div class="flourish-embed flourish-chart" data-src="visualisation/YOUR_WEIGHT_CHART_ID" data-height="500">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
 
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> Create a CSV with columns: <code>Metric, Weight, Color</code><br>
-    Example: Market Cap, 0.40, #ff4d88 | Trading Volume, 0.25, #b039ca | etc.
-  </p>
-</div>
 
-</div>
 
----
+| Metric              | Weight | Interpretation                         |
+|---------------------|--------|-----------------------------------------|
+| Market Capitalization | 0.40   | Size and financial solidity              |
+| Trading Volume       | 0.25   | Liquidity and visibility                 |
+| Mean Return          | 0.15   | Performance over time                    |
+| Inverse Volatility   | 0.10   | Price stability                          |
+| Age Since IPO        | 0.10   | Firm maturity and credibility            |
 
-## Interactive Power Score Calculator
 
-See how different companies compare across the five metrics. **Select companies below to compare their Power Score components:**
-
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
-
-<!-- Interactive Flourish Visualization 2: Comparison Tool -->
-<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_COMPARISON_ID" data-height="600">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
-
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> CSV with columns: <code>Company, Sector, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age, Power_Score</code><br>
-    Use Flourish's "Scatter plot" or "Connected dot plot" template with filter enabled.
-  </p>
-</div>
-
-</div>
+Weights sum to one and ensure that no single dimension dominates the ranking.
 
 ---
 
@@ -119,10 +97,10 @@ $$
 x_i' = \frac{x_i - \mu_x}{\sigma_x}
 $$
 
-Then, the **Power Score** for each company $i$ is calculated as:
+Then, the **Power Score** for each company i is calculated as:
 
 $$
-S_i = 0.40 \cdot Cap_i + 0.25 \cdot Vol_i + 0.15 \cdot Ret_i + 0.10 \cdot (1 - Volat_i) + 0.10 \cdot Age_i
+S_i = 0.40 \cdot Cap_i + 0.25 \cdot Vol_i + 0.15 \cdot Ret_i + 0.10 \cdot (1 - Vol_i) + 0.10 \cdot Age_i
 $$
 
 <div style="max-width:900px;margin:24px auto;padding:20px;border-radius:14px;background:#f8f9fa;border-left:4px solid #b039ca;">
@@ -139,8 +117,6 @@ $$
 
 <div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
 
-<!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
-<!-- Flourish hierarchy embed -->
 <!-- Flourish hierarchy iframe embed -->
 <iframe
   src="https://public.flourish.studio/visualisation/26919257/embed"
@@ -152,28 +128,6 @@ $$
 </iframe>
 
 
-
-</div>
-
----
-
-## Metric Relationships: Interactive Exploration
-
-**How do these metrics relate to each other?** Explore the correlations and patterns:
-
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
-
-<!-- Interactive Flourish Visualization 4: Correlation Matrix or Scatter Grid -->
-<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_CORRELATION_ID" data-height="600">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
-
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> CSV with all five metrics as columns: <code>Company, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age</code><br>
-    <strong>Recommended Templates:</strong> "Grid scatter" or "Scatter with filter" to show relationships between metrics
-  </p>
-</div>
 
 </div>
 
@@ -254,7 +208,7 @@ This Power Score becomes the foundation for our leadership analysis. Once we've 
     x_i' = \frac{x_i - \mu_x}{\sigma_x}
     $$
     <p>
-      where $\mu_x$ and $\sigma_x$ are the mean and standard deviation across all companies.
+      where $$\mu_x ,  \sigma_x$$ are the mean and standard deviation across all companies.
     </p>
     
     <h3>Weight Constraints</h3>
@@ -270,10 +224,11 @@ This Power Score becomes the foundation for our leadership analysis. Once we've 
       The full Power Score formula:
     </p>
     $$
-    S_i = w_1 \cdot Cap_i + w_2 \cdot Vol_i + w_3 \cdot Ret_i + w_4 \cdot (1 - Volat_i) + w_5 \cdot Age_i
+    S_i = w_1 \cdot Cap_i + w_2 \cdot Vol_i + w_3 \cdot Ret_i + w_4 \cdot (1 - Vol_i) + w_5 \cdot Age_i
     $$
-    <p>
-      with $w_1 = 0.40$, $w_2 = 0.25$, $w_3 = 0.15$, $w_4 = 0.10$, $w_5 = 0.10$.
-    </p>
+    with
+    $$
+       w_1 = 0.40, w_2 = 0.25, w_3 = 0.15, w_4 = 0.10, w_5 = 0.10.
+    $$
   </div>
 </details>
