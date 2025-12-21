@@ -117,8 +117,6 @@ $$
 
 <div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
 
-<!-- Interactive Flourish Visualization 3: Top Companies by Sector -->
-<!-- Flourish hierarchy embed -->
 <!-- Flourish hierarchy iframe embed -->
 <iframe
   src="https://public.flourish.studio/visualisation/26919257/embed"
@@ -130,28 +128,6 @@ $$
 </iframe>
 
 
-
-</div>
-
----
-
-## Metric Relationships: Interactive Exploration
-
-**How do these metrics relate to each other?** Explore the correlations and patterns:
-
-<div style="max-width:1000px;margin:32px auto;padding:24px;border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 12px 32px rgba(0,0,0,.08);">
-
-<!-- Interactive Flourish Visualization 4: Correlation Matrix or Scatter Grid -->
-<div class="flourish-embed flourish-scatter" data-src="visualisation/YOUR_CORRELATION_ID" data-height="600">
-  <script src="https://public.flourish.studio/resources/embed.js"></script>
-</div>
-
-<div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:12px;border-left:4px solid #b039ca;">
-  <p style="margin:0;font-size:0.9rem;color:#666;">
-    <strong>📝 Data Format Needed:</strong> CSV with all five metrics as columns: <code>Company, Market_Cap, Trading_Volume, Mean_Return, Volatility, IPO_Age</code><br>
-    <strong>Recommended Templates:</strong> "Grid scatter" or "Scatter with filter" to show relationships between metrics
-  </p>
-</div>
 
 </div>
 
