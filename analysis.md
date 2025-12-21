@@ -5,13 +5,8 @@ Our goal is to detect these short-term leader–follower relationships within se
 
 Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
 
+We conclude by revisiting our main research questions and summarizing the empirical insights provided by the leader–follower analysis.
 <section style="max-width:900px; line-height:1.65; font-size:16px;">
-
-  <p>
-    We conclude by revisiting our main research questions and summarizing the
-    empirical insights provided by the leader–follower analysis.
-  </p>
-
   <hr style="margin:22px 0;">
 
   <p><em>How do we define a “leader” and a “follower” in stock movements?</em></p>
