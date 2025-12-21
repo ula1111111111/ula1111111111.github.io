@@ -1,8 +1,5 @@
 
 ---
-Financial markets rarely move at random. Often, price changes in one company are followed—sometimes within days—by similar or opposite movements in others.
-Our goal is to detect these short-term leader–follower relationships within sectors and visualize how information appears to propagate across firms.
-
 Rather than assuming leadership a priori, we let the data reveal which companies tend to move first.
 
 We conclude by revisiting our main research questions and summarizing the empirical insights provided by the leader–follower analysis.
@@ -472,59 +469,59 @@ fetch(DATA_URL_NETWORK)
 </div>
 
 
-### Sector-by-Sector Leadership Insights
+#### Sector-by-Sector Leadership Insights
 
 The analysis identifies sparse but structured leader–follower relationships within sectors. Rather than dense interactions, leadership effects concentrate around a limited number of firms and propagate in clearly defined directions.
 
-### Basic Industries
+#### Basic Industries
 
 Leadership is shared among several industrial firms, with **Steel Dynamics (STLD)**, **WD-40 Company (WDFC)**, and **Matrix Service (MTRX)** acting as upstream movers. Their influence propagates toward firms such as **Stericycle (SRCL)** and **Codexis (CDXS)**, forming a layered but non-centralized structure.
 
-### Capital Goods
+#### Capital Goods
 
 A small group of technology-oriented firms drives leadership. **II-VI (IIVI)** and **Mercury Systems (MRCY)** initiate movements that are followed by **Nordson (MKSI)** and **FLIR Systems (FLIR)**, producing clear and directional influence paths.
 
-### Consumer Durables
+#### Consumer Durables
 
 Leadership is fragmented across independent channels. **American Superconductor (AMSC)**, **Central Garden & Pet (CENT)**, and **iRobot (IRBT)** each lead specific followers, resulting in localized influence rather than a single sector-wide hierarchy.
 
-### Consumer Non-Durables
+#### Consumer Non-Durables
 
 The sector is characterized by a few strong but isolated links. **Fossil Group (FOSL)** leads **Crocs (CROX)**, while **Columbia Sportswear (COLM)** influences **Sanderson Farms (SAFM)**, with limited interaction beyond these pairs.
 
-### Consumer Services
+#### Consumer Services
 
 Leadership is highly concentrated. **DISH Network (DISH)** emerges as the sole leader, with its movements preceding those of **Starbucks (SBUX)**, indicating a narrow but detectable information channel.
 
-### Energy
+#### Energy
 
 Energy exhibits one of the strongest leadership structures. Firms such as **TUSK Energy (TUSK)**, **Diamondback Energy (FANG)**, and **Viper Energy (VNOM)** influence multiple downstream companies, including **Centennial Resource Development (CDEV)**, reflecting strong and widespread propagation effects.
 
-### Finance
+#### Finance
 
 Leadership is distributed among several financial institutions. **Carlyle Group (CG)**, **SEI Investments (SEIC)**, and **Principal Financial (PFG)** influence firms such as **Ameritrade (AMTD)** and **T. Rowe Price (TROW)**, forming a sparse but multi-path network.
 
-### Health Care
+#### Health Care
 
 Health Care displays rich internal structure. **Biomarín (BMRN)**, **Intuitive Surgical (ISRG)**, and **Gilead Sciences (GILD)** act as prominent leaders, influencing firms such as **Vertex Pharmaceuticals (VRTX)** and **Hologic (HOLX)** through both positive and negative effects.
 
-### Miscellaneous
+#### Miscellaneous
 
 Leadership is spread across platform-oriented firms. **HealthEquity (HQY)**, **CoStar Group (CSGP)**, and **MercadoLibre (MELI)** influence several followers, including **Zillow Group (ZG)** and **GoPro (GPRO)**, producing moderate but consistent directional links.
 
-### Public Utilities
+#### Public Utilities
 
 The sector shows multiple localized leadership relationships rather than a dominant hub. Firms such as **NextEra Energy (NEXT)**, **ADTRAN (ADTN)**, and **Spark Energy (SPKE)** influence utilities like **Clean Energy Fuels (CLNE)** and **Casella Waste Systems (CWST)**.
 
-### Technology
+#### Technology
 
 Leadership is driven by large platform and semiconductor firms. **Broadcom (AVGO)** leads both **Apple (AAPL)** and **Microsoft (MSFT)**, while **Meta Platforms (FB)** and **Adobe (ADBE)** form an opposing influence channel, highlighting delayed information transmission.
 
-### Transportation
+#### Transportation
 
 Transportation exhibits multi-channel leadership across logistics and airlines. **Old Dominion Freight Line (ODFL)**, **Hub Group (HUBG)**, and **JetBlue (JBLU)** influence firms such as **Ryder (RYAAY)** and **Werner Enterprises (WERN)**, forming a well-connected but non-centralized network.
 
-### Takeaway
+#### Takeaway
 
 Across sectors, leadership effects are directional, heterogeneous, and concentrated. A limited set of firms consistently act as short-term influencers, while most stocks respond passively or exhibit no detectable leadership dynamics.
 
