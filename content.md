@@ -1,65 +1,73 @@
 ## Motivations
 
-### Who really moves the market?
+*Who really moves the market?*
 
 Financial markets are often portrayed as being ruled by a handful of giants.  
-But when an entire sector shifts, is it truly the leaders pulling the strings —  
-or is that impression simply a byproduct of size?
+But when an entire sector shifts, is it truly the leaders pulling the strings, or is that impression simply a byproduct of size?
 
-This project treats the Nasdaq not as a single voice, but as a collection of industries, each composed of firms with very different weights and roles.
+In this project, we treat the Nasdaq not as a single voice, but as a set of sectors where firms have very different weights and roles. Rather than assuming large caps dominate, we test it: we rank companies within each sector and track how returns and volatility propagate over time.
 
----
+Think of each sector as a group moving together — but not everyone steps at the same time. Below, we explore who tends to move first and who follows. We also compare two ways of “building the market”: one where big companies weigh more, and one where every company counts equally.
+Side by side, this tells us whether performance comes from a few giants or from the whole pack.
 
-### From intuition to evidence
+*Do signals originate from industry leaders and cascade downward? Or do they form collectively, across companies of all sizes?*
 
-Rather than assuming that large-cap companies dominate their sectors, we test this idea directly.
+By following the data, and letting the charts speak, this project offers a clearer view of market power, sector dynamics, and how information actually diffuses through the Nasdaq.
 
-Using historical stock price data enriched with industry and company metadata, we group firms by sector, rank them using objective criteria, and observe how price movements and volatility spread across companies over time.
 
-The charts that follow visualize this process:  
-they reveal **who moves first**, **who reacts**, and **whether leadership is consistent or contextual**.
+<!-- NASDAQ acronym -->
+<div class="nasdaq-reveal" id="nasdaqReveal" aria-label="NASDAQ acronym reveal">
 
----
+  <div class="nasdaq-letters" role="list" aria-label="Reveal each letter">
+    <button class="nasdaq-letter" type="button" data-word="Not" aria-label="N - Not">
+      <span class="L">N</span>
+      <span class="word">Not</span>
+    </button>
 
-### Concentration or collective behavior?
+    <button class="nasdaq-letter" type="button" data-word="Always" aria-label="A - Always">
+      <span class="L">A</span>
+      <span class="word">Always</span>
+    </button>
 
-Market indices often hide internal dynamics behind a single performance line.  
-To uncover what lies beneath, we compare:
+    <button class="nasdaq-letter" type="button" data-word="Size" aria-label="S - Size">
+      <span class="L">S</span>
+      <span class="word">Size</span>
+    </button>
 
-- **Value-weighted ETFs**, where the largest firms carry the most influence  
-- **Equally weighted portfolios**, where every company counts the same
+    <button class="nasdaq-letter" type="button" data-word="Driven" aria-label="D - Driven">
+      <span class="L">D</span>
+      <span class="word">Driven</span>
+    </button>
 
-By placing these performances side by side, the visuals highlight whether returns are driven by a few dominant players — or emerge from broader, distributed behavior.
+    <button class="nasdaq-letter" type="button" data-word="Across" aria-label="A - Across">
+      <span class="L">A</span>
+      <span class="word">Across</span>
+    </button>
 
----
+    <button class="nasdaq-letter" type="button" data-word="Quotes" aria-label="Q - Quotes">
+      <span class="L">Q</span>
+      <span class="word">Quotes</span>
+    </button>
+  </div>
 
-### Reading the market differently
+  <div class="nasdaq-full" aria-live="polite">
+    <span class="label">Decoded:</span>
+    <span class="sentence" id="nasdaqSentence">
+      Hover or tap each letter to discover our first intuition.
+    </span>
+  </div>
 
-Together, these visualizations aim to locate the true source of price discovery.  
-Do signals originate from industry leaders and cascade downward?  
-Or do they form collectively, across companies of all sizes?
+</div>
+<!-- end NASDAQ acronym -->
 
-By following the data — and letting the charts speak — this project offers a clearer view of market power, sector dynamics, and how information actually diffuses through the Nasdaq.
 
 
 ## Data Overview
 
-### Provided Data: NASDAQ Stock Market Dataset
+- NASDAQ Stock Market Dataset (Kaggle): daily OHLCV price data for stocks and ETFs + unified metadata (`symbols_valid_meta.csv`)  
 
-**Source:** Kaggle Stock Market Dataset  
-**Components:** 
-- Daily OHLCV price data for individual stocks and ETFs  
-- Unified metadata file (`symbols_valid_meta.csv`) identifying security type, exchange, and name  
+- External Data: NASDAQ Company List (Kaggle): companies only, with Market Cap, Sector/Industry, and IPO Year (`companylist.csv`) 
 
----
-### External Data: NASDAQ Company List
-
-**Source:** Kaggle (`companylist.csv`)
-**Components:** 
-- Companies only (no ETFs)
-- Symbol, Name, Market Capitalization, Sector, Industry, IPO Year  
-**Purpose:** Provides sector classification and market capitalization data for listed companies
- 
 **External Dataset overview:**  
 <h2></h2>
 <p style="max-width: 900px;">

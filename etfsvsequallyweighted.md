@@ -91,60 +91,233 @@ We apply this comparative framework at two levels:
 
 ## Methodology
 
-### 1. Conceptual Framework: Leaders vs. Followers
-This analysis employs a comparative method to assess market dynamics:
-* **Value-Weighted (ETFs):** Represents "Market Leaders." Weights are proportional to market capitalization, meaning performance is heavily driven by large-cap firms.
-* **Equally-Weighted (Portfolios):** Represents "Market Followers" and the broader economy. Every company has the same weight (1/n), regardless of size.
+<div style="max-width:1000px;margin:32px auto;padding:20px 24px;border-radius:16px;background:linear-gradient(135deg, rgba(255,77,136,.08), rgba(176,57,202,.06));border:1px solid rgba(176,57,202,.2);">
+  <p style="margin:0;font-size:1.05rem;line-height:1.7;color:#222;">
+    <strong>🔬 Our Approach:</strong> We compare two investment philosophies using rigorous data science to understand whether market performance is driven by a handful of giants or by the collective strength of the broader market.
+  </p>
+</div>
 
-**Interpretation Logic:**
-* If **ETF > Equally-Weighted**: Sector performance is driven by large-cap concentration (Leaders).
-* If **Equally-Weighted > ETF**: Returns are driven by broader participation of small and mid-sized firms (Followers).
+---
+
+### 1. Conceptual Framework: Leaders vs. Followers
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0;max-width:900px;margin-left:auto;margin-right:auto;">
+
+<div style="padding:24px;border-radius:14px;background:linear-gradient(135deg, rgba(255,77,136,.08), rgba(255,255,255,.5));border:2px solid rgba(255,77,136,.2);box-shadow:0 8px 20px rgba(0,0,0,.05);">
+  <div style="font-size:2.8rem;margin-bottom:12px;">👑</div>
+  <h3 style="margin:0 0 10px 0;font-size:1.15rem;color:#b039ca;font-weight:700;">Market Leaders</h3>
+  <p style="margin:0;color:#333;line-height:1.6;font-size:0.95rem;">
+    <strong>Value-Weighted (ETFs)</strong><br>
+    Weights proportional to market cap. Performance driven by large-cap firms.
+  </p>
+</div>
+
+<div style="padding:24px;border-radius:14px;background:linear-gradient(135deg, rgba(176,57,202,.08), rgba(255,255,255,.5));border:2px solid rgba(176,57,202,.2);box-shadow:0 8px 20px rgba(0,0,0,.05);">
+  <div style="font-size:2.8rem;margin-bottom:12px;">🌐</div>
+  <h3 style="margin:0 0 10px 0;font-size:1.15rem;color:#b039ca;font-weight:700;">Market Followers</h3>
+  <p style="margin:0;color:#333;line-height:1.6;font-size:0.95rem;">
+    <strong>Equally-Weighted (Portfolios)</strong><br>
+    Equal weight (1/n) for every company. Captures broader market participation.
+  </p>
+</div>
+
+</div>
+
+<div style="max-width:900px;margin:24px auto;padding:16px 18px;border-radius:12px;background:#f8f9fa;border-left:4px solid #ff4d88;">
+  <p style="margin:0;color:#444;line-height:1.7;font-size:0.95rem;">
+    <strong>📊 Interpretation Logic:</strong><br>
+    • If <strong>ETF > Equally-Weighted</strong> → Leaders dominate (concentration wins)<br>
+    • If <strong>Equally-Weighted > ETF</strong> → Followers outperform (breadth wins)
+  </p>
+</div>
+
+---
 
 ### 2. Data Sources & Preparation
-The analysis relies on two primary datasets covering the period **2005-2020**:
-1.  **NASDAQ Company List:** Provides metadata (Sector, Industry, Market Cap) to classify firms.
-2.  **Stock Market Dataset:** Daily price data (Open, Close, Adjusted Close) used to compute returns.
 
-**Data Cleaning Rules:**
-* **Time Period:** 15 years (2005-2020).
-* **Inclusion Criteria:** NASDAQ stocks with 2 years or more of historical data (Total: 2,074 companies).
-* **Outlier Handling:** Daily returns clipped at +/- 50% to filter data errors.
+<div style="max-width:900px;margin:32px auto;">
+
+<div style="margin-bottom:20px;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,77,136,.10), transparent);border-left:4px solid #ff4d88;">
+  <h4 style="margin:0 0 10px 0;font-size:1rem;color:#2b2b2b;">📂 Dataset #1: NASDAQ Company List</h4>
+  <p style="margin:0;color:#555;line-height:1.6;font-size:0.93rem;">Metadata including Sector, Industry, and Market Cap to classify firms.</p>
+</div>
+
+<div style="margin-bottom:20px;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(176,57,202,.10), transparent);border-left:4px solid #b039ca;">
+  <h4 style="margin:0 0 10px 0;font-size:1rem;color:#2b2b2b;">📈 Dataset #2: Stock Market Data</h4>
+  <p style="margin:0;color:#555;line-height:1.6;font-size:0.93rem;">Daily price data (Open, Close, Adjusted Close) to compute returns.</p>
+</div>
+
+</div>
+
+<div style="max-width:900px;margin:24px auto;padding:20px;border-radius:12px;background:#f5f5f5;border:1px solid #ddd;">
+  <h4 style="margin:0 0 14px 0;font-size:1rem;color:#2b2b2b;text-align:center;">🔧 Data Cleaning Rules</h4>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center;">
+    <div style="padding:10px;background:#fff;border-radius:8px;border:1px solid #eee;">
+      <div style="font-size:2rem;margin-bottom:4px;">⏱️</div>
+      <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Time Period:</strong><br>15 years (2005–2020)</p>
+    </div>
+    <div style="padding:10px;background:#fff;border-radius:8px;border:1px solid #eee;">
+      <div style="font-size:2rem;margin-bottom:4px;">📊</div>
+      <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Inclusion Criteria:</strong><br>2+ years historical data (2,074 stocks)</p>
+    </div>
+    <div style="padding:10px;background:#fff;border-radius:8px;border:1px solid #eee;">
+      <div style="font-size:2rem;margin-bottom:4px;">⚠️</div>
+      <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Outlier Handling:</strong><br>Daily returns clipped at ±50%</p>
+    </div>
+    <div style="padding:10px;background:#fff;border-radius:8px;border:1px solid #eee;">
+      <div style="font-size:2rem;margin-bottom:4px;">✅</div>
+      <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Quality Check:</strong><br>Remove data errors & anomalies</p>
+    </div>
+  </div>
+</div>
+
+---
 
 ### 3. Portfolio Construction
-To ensure a robust comparison, we applied strict construction rules:
 
-**Equally-Weighted Portfolios:**
-* **Weighting:** Each stock is assigned an identical weight of 1/n.
-* **Rebalancing:** **Daily rebalancing** is performed to maintain equal exposure, preventing high-performing stocks from dominating the portfolio over time.
-* **Calculation:** Mean-based averaging of daily returns across all active constituents.
+<div style="max-width:900px;margin:32px auto;">
 
-**ETF Benchmarks:**
-* **Weighting:** Value-weighted (Market Capitalization).
-* **Rebalancing:** Follows the standard index methodology (typically quarterly).
+<details style="border:1px solid rgba(176,57,202,.3);border-radius:12px;padding:16px;background:linear-gradient(135deg, rgba(176,57,202,.04), transparent);margin-bottom:16px;">
+  <summary style="cursor:pointer;font-weight:700;color:#b039ca;font-size:1.05rem;padding:0;">
+    📌 Equally-Weighted Portfolios
+  </summary>
+  <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(176,57,202,.2);">
+    <div style="display:grid;gap:10px;">
+      <div style="padding:10px;background:#fff;border-radius:8px;border-left:3px solid #b039ca;">
+        <strong>Weighting:</strong> Each stock gets identical weight (1/n)
+      </div>
+      <div style="padding:10px;background:#fff;border-radius:8px;border-left:3px solid #b039ca;">
+        <strong>Rebalancing:</strong> <span style="background:rgba(176,57,202,.15);padding:2px 6px;border-radius:4px;">Daily</span> to maintain equal exposure
+      </div>
+      <div style="padding:10px;background:#fff;border-radius:8px;border-left:3px solid #b039ca;">
+        <strong>Calculation:</strong> Mean-based averaging of daily returns across all constituents
+      </div>
+    </div>
+  </div>
+</details>
+
+<details style="border:1px solid rgba(255,77,136,.3);border-radius:12px;padding:16px;background:linear-gradient(135deg, rgba(255,77,136,.04), transparent);">
+  <summary style="cursor:pointer;font-weight:700;color:#ff4d88;font-size:1.05rem;padding:0;">
+    📌 ETF Benchmarks
+  </summary>
+  <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,77,136,.2);">
+    <div style="display:grid;gap:10px;">
+      <div style="padding:10px;background:#fff;border-radius:8px;border-left:3px solid #ff4d88;">
+        <strong>Weighting:</strong> Value-weighted (Market Capitalization)
+      </div>
+      <div style="padding:10px;background:#fff;border-radius:8px;border-left:3px solid #ff4d88;">
+        <strong>Rebalancing:</strong> <span style="background:rgba(255,77,136,.15);padding:2px 6px;border-radius:4px;">Quarterly</span> index methodology
+      </div>
+    </div>
+  </div>
+</details>
+
+</div>
+
+---
 
 ### 4. Limitations: Survivorship Bias
-A general limitation that affects all analyses in this project is the presence of **survivorship bias**. Because the NASDAQ dataset only includes companies that were still active and listed in 2020, firms that went bankrupt, were delisted, or merged before that date are missing from the data.
 
-This exclusion primarily affects small and mid-cap firms, which are more likely to disappear over time, and may lead to an overestimation of their average performance or an underestimation of market volatility.
+<div style="max-width:900px;margin:32px auto;padding:20px;border-radius:14px;background:linear-gradient(135deg, rgba(255,77,136,.08), rgba(176,57,202,.04));border-left:5px solid #ff4d88;">
+  <div style="display:flex;gap:14px;align-items:flex-start;">
+    <div style="font-size:2.5rem;flex-shrink:0;line-height:1;">⚡</div>
+    <div>
+      <h3 style="margin:0 0 10px 0;color:#b039ca;font-size:1.1rem;">The Survivorship Bias Challenge</h3>
+      <p style="margin:0;color:#333;line-height:1.7;font-size:0.95rem;">
+        Our NASDAQ dataset includes only companies listed in 2020. Firms that went bankrupt, were delisted, or merged before 2020 are excluded. This primarily affects small and mid-cap firms and may lead to:
+      </p>
+      <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="padding:8px;background:rgba(255,77,136,.15);border-radius:6px;font-size:0.9rem;color:#333;">
+          ❌ Overestimation of small-cap performance
+        </div>
+        <div style="padding:8px;background:rgba(255,77,136,.15);border-radius:6px;font-size:0.9rem;color:#333;">
+          ❌ Underestimation of market volatility
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+---
 
 ### 5. Global & Sector Benchmarks
-The analysis starts with a global market view before diving into specific sectors:
 
-| Scope | ETF Benchmark | Stock Count (EW Portfolio) | ETF Description |
-|-------|---------------|----------------------------|-----------------|
-| **Global Market** | **ONEQ** | **2,074** | **Fidelity Nasdaq Composite Index Tracking Stock** |
-| **Health Care** | IBB | 564 | iShares NASDAQ Biotechnology ETF |
-| **Finance** | FTXO | 484 | First Trust NASDAQ Bank ETF |
-| **Technology** | QTEC | 377 | First Trust NASDAQ-100 Tech Index |
-| **Consumer Services** | FTXD | 283 | First Trust Consumer Discretionary AlphaDEX |
+<div style="max-width:1000px;margin:32px auto;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 24px rgba(0,0,0,.06);">
+  <div style="background:linear-gradient(90deg, rgba(176,57,202,.1), rgba(255,77,136,.08));padding:16px 20px;border-bottom:1px solid rgba(0,0,0,.08);">
+    <h4 style="margin:0;color:#b039ca;font-size:1rem;">📋 Five Scopes of Analysis</h4>
+  </div>
+  <table style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr style="background:#f8f9fa;border-bottom:2px solid rgba(0,0,0,.1);">
+        <th style="padding:12px;text-align:left;font-weight:700;color:#2b2b2b;font-size:0.9rem;">Scope</th>
+        <th style="padding:12px;text-align:left;font-weight:700;color:#2b2b2b;font-size:0.9rem;">ETF Benchmark</th>
+        <th style="padding:12px;text-align:left;font-weight:700;color:#2b2b2b;font-size:0.9rem;">Stock Count</th>
+        <th style="padding:12px;text-align:left;font-weight:700;color:#2b2b2b;font-size:0.9rem;">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,.05);background:linear-gradient(90deg, rgba(176,57,202,.02), transparent);">
+        <td style="padding:12px;font-weight:700;color:#b039ca;">Global Market</td>
+        <td style="padding:12px;">ONEQ</td>
+        <td style="padding:12px;text-align:center;"><strong>2,074</strong></td>
+        <td style="padding:12px;font-size:0.9rem;color:#555;">Fidelity Nasdaq Composite</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,.05);background:linear-gradient(90deg, rgba(255,77,136,.02), transparent);">
+        <td style="padding:12px;font-weight:700;color:#ff4d88;">Health Care</td>
+        <td style="padding:12px;">IBB</td>
+        <td style="padding:12px;text-align:center;">564</td>
+        <td style="padding:12px;font-size:0.9rem;color:#555;">NASDAQ Biotechnology</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,.05);background:linear-gradient(90deg, rgba(176,57,202,.02), transparent);">
+        <td style="padding:12px;font-weight:700;color:#b039ca;">Finance</td>
+        <td style="padding:12px;">FTXO</td>
+        <td style="padding:12px;text-align:center;">484</td>
+        <td style="padding:12px;font-size:0.9rem;color:#555;">First Trust NASDAQ Bank</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,.05);background:linear-gradient(90deg, rgba(255,77,136,.02), transparent);">
+        <td style="padding:12px;font-weight:700;color:#ff4d88;">Technology</td>
+        <td style="padding:12px;">QTEC</td>
+        <td style="padding:12px;text-align:center;">377</td>
+        <td style="padding:12px;font-size:0.9rem;color:#555;">First Trust NASDAQ-100 Tech</td>
+      </tr>
+      <tr style="background:linear-gradient(90deg, rgba(176,57,202,.02), transparent);">
+        <td style="padding:12px;font-weight:700;color:#b039ca;">Consumer Services</td>
+        <td style="padding:12px;">FTXD</td>
+        <td style="padding:12px;text-align:center;">283</td>
+        <td style="padding:12px;font-size:0.9rem;color:#555;">First Trust Consumer Discretionary</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
 
 ### 6. Performance Metrics
-To evaluate the "Leaders vs. Followers" dynamic, we calculated:
-* **Annualized Returns:** Geometric average of yearly growth.
-* **Volatility:** Annualized standard deviation of daily returns.
-* **Sharpe Ratio:** Risk-adjusted performance measure.
-* **Cumulative Returns:** Total growth over the 15-year period.
+
+<div style="max-width:900px;margin:32px auto;">
+  <div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:14px;">
+    <div style="padding:18px;border-radius:10px;background:linear-gradient(135deg, rgba(255,77,136,.08), transparent);border:1px solid rgba(255,77,136,.2);box-shadow:0 4px 12px rgba(0,0,0,.04);">
+      <div style="font-size:2rem;margin-bottom:8px;">📈</div>
+      <h4 style="margin:0 0 6px 0;color:#ff4d88;font-size:0.95rem;font-weight:700;">Annualized Returns</h4>
+      <p style="margin:0;color:#555;font-size:0.85rem;line-height:1.5;">Geometric average of yearly growth rates.</p>
+    </div>
+    <div style="padding:18px;border-radius:10px;background:linear-gradient(135deg, rgba(176,57,202,.08), transparent);border:1px solid rgba(176,57,202,.2);box-shadow:0 4px 12px rgba(0,0,0,.04);">
+      <div style="font-size:2rem;margin-bottom:8px;">📊</div>
+      <h4 style="margin:0 0 6px 0;color:#b039ca;font-size:0.95rem;font-weight:700;">Volatility</h4>
+      <p style="margin:0;color:#555;font-size:0.85rem;line-height:1.5;">Annualized standard deviation of daily returns.</p>
+    </div>
+    <div style="padding:18px;border-radius:10px;background:linear-gradient(135deg, rgba(255,77,136,.08), transparent);border:1px solid rgba(255,77,136,.2);box-shadow:0 4px 12px rgba(0,0,0,.04);">
+      <div style="font-size:2rem;margin-bottom:8px;">⚖️</div>
+      <h4 style="margin:0 0 6px 0;color:#ff4d88;font-size:0.95rem;font-weight:700;">Sharpe Ratio</h4>
+      <p style="margin:0;color:#555;font-size:0.85rem;line-height:1.5;">Risk-adjusted performance measure.</p>
+    </div>
+    <div style="padding:18px;border-radius:10px;background:linear-gradient(135deg, rgba(176,57,202,.08), transparent);border:1px solid rgba(176,57,202,.2);box-shadow:0 4px 12px rgba(0,0,0,.04);">
+      <div style="font-size:2rem;margin-bottom:8px;">🎯</div>
+      <h4 style="margin:0 0 6px 0;color:#b039ca;font-size:0.95rem;font-weight:700;">Cumulative Returns</h4>
+      <p style="margin:0;color:#555;font-size:0.85rem;line-height:1.5;">Total growth over the 15-year period.</p>
+    </div>
+  </div>
+</div>
 
   
 ---
@@ -222,9 +395,9 @@ We first broke down returns into four distinct market phases. The interactive vi
 
 <div class="visualization-grid" style="margin-top: 8px;">
   <div class="visualization-grid-item">
-    <div class="flourish-embed flourish-chart" data-src="visualisation/26918460">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/26927050">
       <script src="https://public.flourish.studio/resources/embed.js"></script>
-      <noscript><img src="https://public.flourish.studio/visualisation/26918460/thumbnail" width="100%" alt="chart visualization" /></noscript>
+      <noscript><img src="https://public.flourish.studio/visualisation/26927050/thumbnail" width="100%" alt="chart visualization" /></noscript>
     </div>
   </div>
   
@@ -409,6 +582,66 @@ This comprehensive analysis reveals that **equally-weighted portfolios outperfor
 
 5. **Market leadership isn't everything:** Large market cap doesn't always translate to superior returns
 
+
+---
+
+## Global Conclusions: The Complete Market Picture
+
+<div style="max-width:1000px;margin:40px auto;">
+
+<div style="background:linear-gradient(135deg, rgba(176,57,202,.12), rgba(255,77,136,.10));border:1px solid rgba(176,57,202,.3);border-radius:16px;padding:28px;margin-bottom:24px;">
+  <h3 style="margin:0 0 18px 0;font-size:1.25rem;color:#b039ca;text-align:center;">The Complete Story of Market Leadership (2005–2020)</h3>
+  
+  <p style="margin:0 0 20px 0;color:#333;line-height:1.7;font-size:0.98rem;">
+    Our comprehensive analysis across three integrated studies reveals a fundamental tension in modern markets: <strong>size doesn't always equal strength</strong>. Here's what the data tells us.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+    
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #ff4d88;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#ff4d88;font-weight:700;">📊 Portfolio Performance</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Equally-weighted portfolios outperformed in <strong>75% of sectors</strong>, challenging the assumption that market-cap concentration drives returns.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #b039ca;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#b039ca;font-weight:700;">👑 Power Score Hierarchy</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Market leaders (highest Power Scores) control significant resources, but influence is <strong>distributed differently by sector</strong>.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #ff4d88;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#ff4d88;font-weight:700;">📈 Leadership Dynamics</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        Stock leadership networks show that <strong>influence flows through unexpected pathways</strong>, not always from the largest firms.
+      </p>
+    </div>
+
+    <div style="padding:16px;background:#fff;border-radius:10px;border-left:4px solid #b039ca;">
+      <h4 style="margin:0 0 8px 0;font-size:0.95rem;color:#b039ca;font-weight:700;">🌐 Market Structure</h4>
+      <p style="margin:0;font-size:0.88rem;color:#555;line-height:1.5;">
+        The market operates as a <strong>network of interconnected sectors</strong>, where diversification provides both returns and resilience.
+      </p>
+    </div>
+
+  </div>
+
+  <div style="background:#f8f9fa;border-radius:10px;padding:16px;margin-bottom:16px;">
+    <h4 style="margin:0 0 12px 0;font-size:0.95rem;color:#2b2b2b;">🎯 Key Insights Across All Analyses:</h4>
+    <ul style="margin:0;padding-left:20px;color:#555;font-size:0.9rem;line-height:1.8;">
+      <li><strong>Crisis resilience matters:</strong> During downturns (2008, 2020), diversification outperformed concentration</li>
+      <li><strong>Regime shifts are real:</strong> 2015 marked a turning point where Big Tech dominance changed market dynamics</li>
+      <li><strong>Sector heterogeneity is crucial:</strong> Leaders dominate Consumer Services; Followers excel in Health Care & Finance</li>
+      <li><strong>Power doesn't guarantee returns:</strong> Large market cap correlates with stability but not always with growth</li>
+      <li><strong>Breadth beats concentration:</strong> Over 15 years, the average stock (EW) outperformed the weighted index (ETF)</li>
+    </ul>
+  </div>
+
+</div>
+
+</div>
 
 ---
 
